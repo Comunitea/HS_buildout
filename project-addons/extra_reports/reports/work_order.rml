@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+  <template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="57.0" y1="57.0" width="481" height="728"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontName="Helvetica" alignment="RIGHT"/>
+    <paraStyle name="P2" fontName="Helvetica" alignment="LEFT"/>
+    <paraStyle name="P3" fontName="Helvetica" alignment="CENTER"/>
+    <paraStyle name="Standard" fontName="Helvetica"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Helvetica" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Helvetica"/>
+    <images/>
+  </stylesheet>
+  <story>
+    <para style="Standard">[[repeatIn(objects,'work')]]</para>
+    <para style="Standard">[[ setLang(work.company_id.partner_id.lang) ]]</para>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <para style="P3">ORDEN DE TRABAJO [[ work.task_id.project_id.complete_name ]]</para>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <para style="Standard">Nombre del cliente: [[ work.company_id.partner_id.name ]]</para>
+    <para style="Standard">Inicio de obra: [[ work.task_id.date_start ]]</para>
+    <para style="Standard">Contrato: [[ work.task_id.project_id.complete_name ]]</para>
+    <para style="Standard">Pago fin de obra: [[ work.task_id.x_pago_fin ]]</para>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <para style="P1">Dirección de la vivienda: </para>
+    <para style="P1">[[ display_address(work.task_id.project_id) ]]</para>
+    <para style="P1">[[ work.task_id.project_id.x_street ]]</para>
+    <para style="P1">[[ work.task_id.project_id.x_city ]]</para>
+    <para style="P1">
+      <font color="white"> </font>
+    </para>
+    <para style="P2">Orden de trabajo:</para>
+    <para style="P2">[[ work.task_id.description ]]</para>
+  </story>
+</document>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+        auto="False" 
+        id="work_order" 
+        model="project.task" 
+        name="work_order" 
+        rml="extra_reports/reports/work_order.rml" 
+        string="Orden de trabajo"/>
+    </data>
+</openerp>
