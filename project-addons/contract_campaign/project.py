@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from osv import orm, fields
+from openerp.osv import orm, fields
 
 
 class project_project(orm.Model):
@@ -11,14 +11,12 @@ class project_project(orm.Model):
         for project in self.browse (cr, uid, ids):
             lead_ids= lead_pool.search(cr, uid, [('partner_id', '=', project.partner_id.id)])
             if lead_ids:
-                res[project.id] = lead_pool.browse(cr, uid, lead_ids)[0].type_id.id or False
+                res[project.id] = lead_pool.browse(cr, uid, lead_ids)[0].campaign_id.id or False
             else:
                 res[project.id] = False
         return res
 
     _columns = {
-        'campaign_id': fields.function(_get_campaign_id, method=True, type='many2one', obj="crm.case.resource.type",
+        'campaign_id': fields.function(_get_campaign_id, method=True, type='many2one', obj="crm.tracking.campaign",
                                        string="Campaign", store=True),
     }
-
-project_project()
