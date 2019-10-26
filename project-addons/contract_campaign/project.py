@@ -17,6 +17,6 @@ class project_project(orm.Model):
         return res
 
     _columns = {
-        'campaign_id': fields.function(_get_campaign_id, method=True, type='many2one', obj="crm.tracking.campaign",
-                                       string="Campaign", store=True),
+        'campaign_id': fields.function(_get_campaign_id, method=True, type='many2one', obj="utm.campaign",
+                                       string="Campaign", store=False),
     }
