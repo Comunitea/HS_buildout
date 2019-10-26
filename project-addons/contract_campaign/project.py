@@ -1,22 +1,18 @@
 # -*- coding: utf-8 -*-
-from openerp.osv import orm, fields
+from odoo import models, fields
 
 
-class project_project(orm.Model):
+class ProjectProject(models.Model):
     _inherit = 'project.project'
 
-    def _get_campaign_id(self, cr, uid, ids, name, arg, context):
-        lead_pool = self.pool.get('crm.lead')
-        res ={}
-        for project in self.browse (cr, uid, ids):
-            lead_ids= lead_pool.search(cr, uid, [('partner_id', '=', project.partner_id.id)])
+    def _get_campaign_id(self):
+        lead_pool = self.env['crm.lead']
+        for project in self:
+            lead_ids= lead_pool.search([('partner_id', '=',
+                                         project.partner_id.id),
+                                        ('campaign_id', '!=', False)], limit=1)
             if lead_ids:
-                res[project.id] = lead_pool.browse(cr, uid, lead_ids)[0].campaign_id.id or False
-            else:
-                res[project.id] = False
-        return res
+                project.campaign_id = lead_ids[0].campaign_id.id
 
-    _columns = {
-        'campaign_id': fields.function(_get_campaign_id, method=True, type='many2one', obj="utm.campaign",
-                                       string="Campaign", store=False),
-    }
+    campaign_id = fields.Many2one("utm.campaign", compute="_get_campaign_id",
+                                  string="Campaign", store=True)
