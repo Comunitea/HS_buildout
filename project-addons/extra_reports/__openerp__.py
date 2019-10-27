@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 {
     'name' : 'TS - Extra Reports',
-    'version' : '1.0',
+    'version' : '12.0.0.0.0',
     'category' : 'Extra Reports',
     'author'  : 'Anas Taji',
     'license' : 'AGPL-3',

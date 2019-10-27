@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 {
     'name' : 'HS - Campaign in projects',
-    'version' : '1.0',
+    'version' : '12.0.0.0.0',
     'category' : 'Custom',
     'author'  : 'CMNT',
     'license' : 'AGPL-3',
