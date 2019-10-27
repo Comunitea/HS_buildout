@@ -6,7 +6,7 @@
     'author'  : 'Anas Taji',
     'license' : 'AGPL-3',
     'depends' : ['base',],
-    'update_xml' : ['extra_reports_reports.xml',],
+    #TODO: Migrar'update_xml' : ['extra_reports_reports.xml',],
     'installable': True,
     'application': True,
     'auto_install': False,
