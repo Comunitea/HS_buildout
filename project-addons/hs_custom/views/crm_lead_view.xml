@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_case_form_view_leads_add_custom" model="ir.ui.view">
+        <field name="name">crm.lead.form.lead.add_custom</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="arch" type="xml">
+            <field name="mobile" position="after">
+                <field name="x_tenant_name"/>
+                <field name="fax"/>
+            </field>
+            <page name="extra" position="after">
+                <page string="Datos de Zoho CRM">
+                   <group>
+                      <field name="x_date_received"/>
+                      <field name="x_estado"/>
+                      <field name="x_vendedor"/>
+                   </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="crm_case_form_view_oppor" model="ir.ui.view">
+        <field name="name">crm.lead.form.opportunity</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="mobile" position="replace"/>
+            <field name="phone" position="after">
+                <field name="mobile"/>
+                <field name="x_tenant_name"/>
+                <field name="fax"/>
+            </field>
+            <field name="website" position="after">
+                <field name="x_date_received"/>
+                <field name="x_estado"/>
+                <field name="x_vendedor"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

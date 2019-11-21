@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_form_add_custom" model="ir.ui.view">
+        <field name="name">account.invoice.form.add_custom</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="fiscal_position_id" position="after">
+                <field name="x_project_id" required="True"/>
+                <field name="x_project_id2"/>
+                <field name="x_project_id3"/>
+            </field>
+            <page name="other_info" position="after">
+                <page string="Pagos y comisiones" groups="base.group_user">
+                   <group>
+                      <field name="x_condiciones_pago" class="oe_inline" placeholder="% a la firma, % fin de obra ..."/>
+                      <group>
+                         <field name="x_pagable"/>
+                         <field name="x_comision_pagada"/>
+                         <field name="x_tasa_comision"/>
+                         <field name="x_tasa_comision_2"/>
+                         <field name="x_tasa_comision_3"/>
+                      </group>
+                      <group>
+                         <field name="x_comision_finconsum" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                      </group>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="invoice_tree_add_custom" model="ir.ui.view">
+        <field name="name">account.invoice.tree.add_custom</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="x_project_id"/>
+                <field name="x_comision_finconsum"/>
+                <field name="x_tasa_comision"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="edit_project_custom" model="ir.ui.view">
+        <field name="name">project.project.form.custom</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <button name="%(portal.portal_share_action)d" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </button>
+            <field name="user_id" position="replace"/>
+            <field name="partner_id" position="replace"/>
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <group>
+                    <group>
+                       <group colspan="1">
+                          <field name="x_iva"/>
+                          <field name="x_iva_doc"/>
+                          <field name="x_info"/>
+                       </group>
+                       <group colspan="1">
+                          <field name="x_plano"/>
+                          <field name="x_pago_fianza"/>
+                          <field name="x_original"/>
+                       </group>
+                       <group colspan="2">
+                           <field name="type_id"/>
+                           <field name="start_date"/>
+                           <field name="end_date" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="partner_id" required="True"/>
+
+                        <field name="user_id" string="Comercial" required="True"/>
+                        <label for="street" string="Dirección"/>
+                        <div>
+                            <field name="x_street" placeholder="Calle..."/>
+                            <field name="x_street2"/>
+                            <div class="address_format">
+                                <field name="x_city" placeholder="Ciudad" style="width: 60%"/>
+                                <field name="x_zip" placeholder="C.P." style="width: 36%"/>
+                            </div>
+                            <field name="x_state_id"  options="{'no_open': True}" placeholder="Provincia"/>
+                            <field name="x_country_id" placeholder="País" options="{'no_open': True}"/>
+                        </div>
+                    </group>
+                </group>
+                <label for="x_trabajos"/>
+                <field name="x_trabajos" colspan="2" placeholder="Descripción de los servicios contratados"/>
+            </xpath>
+            <page name="settings" position="before">
+                <page name="invoicing" string="Datos de facturación">
+                    <group>
+                       <field name="x_condiciones_pago"/>
+                       <field name="x_subtotal"/>
+                       <field name="x_subtotalneto"/>
+                       <field name="x_vendedor"/>
+                       <field name="x_nif"/>
+                       <field name="x_estado"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="view_project_custom" model="ir.ui.view">
+        <field name="name">project.project.tree.custom</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </field>
+            <field name="name" position="after">
+                <field name="x_subtotal"/>
+                <field name="x_subtotalneto"/>
+            </field>
+            <field name="user_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="partner_id" position="after">
+                <field name="type_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_task_form2_custom" model="ir.ui.view">
+        <field name="name">project.task.form.custom</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <button name="%(portal.portal_share_action)d" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </button>
+            <field name="tag_ids" position="after">
+                <field name="x_pago_fin"/>
+            </field>
+            <field name="legend_done" position="after">
+                <group string="Fechas">
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_task_tree2_inherited_add_custom" model="ir.ui.view">
+        <field name="name">project.task.tree.inherited.add_custom</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_tree2_inherited" />
+        <field name="arch" type="xml">
+            <field name="planned_hours" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="remaining_hours" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="progress" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="remaining_hours" position="after">
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
