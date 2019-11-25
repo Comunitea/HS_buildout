@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_invoice_document_custom" inherit_id="account.report_invoice_document">
+        <div name="description" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </div>
+        <div name="due_date" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </div>
+        <div name="customer_code" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </div>
+        <div name="reference" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </div>
+        <div name="origin" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </div>
+        <div name="reference" position="after">
+            <div name="contract" class="col-auto mw-100 mb-2" t-if="o.x_project_id">
+                <strong>Contratos asociados:</strong>
+                <p class="m-0" t-field="o.x_project_id.name"/>
+            </div>
+        </div>
+        <xpath expr="//span[contains(@t-esc, 'line.invoice_line_tax_ids')]" position="attributes">
+            <attribute name="t-esc">', '.join(map(lambda x: (x.name), line.invoice_line_tax_ids))</attribute>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <template id="report_taskorder_document_custom" inherit_id="project_task_report.task_report">
+        <tr t-if="o.date_last_stage_update" position="replace">
+            <tr t-if="o.date_start">
+                <th>Start date</th>
+                <td><span t-field="o.date_start"/></td>
+            </tr>
+        </tr>
+        <tr t-if="o.partner_id" position="after">
+            <tr t-if="o.partner_id.phone">
+                <th>Phone</th>
+                <td><span t-field="o.partner_id.phone"/></td>
+            </tr>
+            <tr t-if="o.partner_id.mobile">
+                <th>Other Phone</th>
+                <td><span t-field="o.partner_id.mobile"/></td>
+            </tr>
+            <tr t-if="o.partner_id.x_tenant_name">
+                <th>Nombre inquilino</th>
+                <td><span t-field="o.partner_id.x_tenant_name"/></td>
+            </tr>
+            <tr t-if="o.partner_id.fax">
+                <th>Teléfono inquilino</th>
+                <td><span t-field="o.partner_id.fax"/></td>
+            </tr>
+        </tr>
+        <span t-field="o.description" position="after">
+            <p t-if="o.x_pago_fin">Pago fin de obra: </p>
+            <span t-if="o.x_pago_fin" t-field="o.x_pago_fin"></span>
+        </span>
+    </template>
+
+</odoo>

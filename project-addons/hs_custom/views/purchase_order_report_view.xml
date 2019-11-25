@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_purchasequotation_document_custom" inherit_id="purchase.report_purchasequotation_document">
+        <span t-field="order_line.date_planned" position="attributes">
+            <attribute name="t-options">{"widget": "date"}</attribute>
+        </span>
+    </template>
+
+    <template id="report_purchaseorder_document_custom" inherit_id="purchase.report_purchaseorder_document">
+        <span t-field="line.date_planned" position="attributes">
+            <attribute name="t-options">{"widget": "date"}</attribute>
+        </span>
+        <p t-field="o.date_order" position="attributes">
+            <attribute name="t-options">{"widget": "date"}</attribute>
+        </p>
+    </template>
+
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document_custom" inherit_id="sale.report_saleorder_document">
+        <p t-field="doc.note" position="before">
+            <b><h4 t-field="doc.x_discount_str" style="color: #ff7101"/></b>
+        </p>
+        <p id="fiscal_position_remark" position="after">
+            <b>Conforme cliente</b>
+        </p>
+        <div name="signature" position="after">
+            <br/><br/><br/><br/><br/><br/>
+            <b>Validez del presupuesto: 30 días</b>
+        </div>
+        <xpath expr="//div[@t-if='doc.user_id.name']/strong" position="replace">
+            <strong>Delegado técnico:</strong>
+        </xpath>
+        <xpath expr="//span[contains(@t-esc, 'line.tax_id')]" position="attributes">
+            <attribute name="t-esc">', '.join(map(lambda x: (x.name), line.tax_id))</attribute>
+        </xpath>
+    </template>
+
+</odoo>

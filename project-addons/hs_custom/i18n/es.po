@@ -1,0 +1,409 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#       * hs_custom
+#       * project_task_report
+#       * project_task_digitized_signature
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-25 12:14+0000\n"
+"PO-Revision-Date: 2019-11-25 12:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.invoice_form_add_custom
+msgid "% a la firma, % fin de obra ..."
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_tasa_comision
+msgid "% comisión"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_tasa_comision_2
+msgid "% comisión 2"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_tasa_comision_3
+msgid "% comisión 3"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_saleorder_document_custom
+msgid "<b>Conforme cliente</b>"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_saleorder_document_custom
+msgid "<br/><br/><br/><br/><br/><br/>\n"
+"            <b>Validez del presupuesto: 30 días</b>"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_invoice_document_custom
+msgid "<strong>Contratos asociados:</strong>"
+msgstr ""
+
+#. module: project_task_digitized_signature
+#: model_terms:ir.ui.view,arch_db:project_task_digitized_signature.report_taskorder_document
+msgid "<strong>Customer acceptance:</strong>"
+msgstr "<strong>Aceptación del cliente:</strong>"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_saleorder_document_custom
+msgid "<strong>Delegado técnico:</strong>"
+msgstr ""
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Assigned to"
+msgstr "Asignada a"
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Assigning Date"
+msgstr "Fecha de asignación"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_zip
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "C.P."
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_street
+msgid "Calle"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_street2
+msgid "Calle 2"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Calle..."
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__type_id
+msgid "Categoría"
+msgstr ""
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+msgid "Chatter"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_city
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Ciudad"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Comercial"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_comision_finconsum
+msgid "Comisión"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_pagable
+msgid "Comisión pagable"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_comision_pagada
+msgid "Comisión pagada"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_condiciones_pagos
+msgid "Condiciones de Pago"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_condiciones_pago
+msgid "Condiciones de pago"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_project_id2
+msgid "Contrato 2"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_project_id3
+msgid "Contrato 3"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_original
+msgid "Contrato original"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_project_id
+msgid "Contrato vinculado"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_date_received
+msgid "Cupón recibido"
+msgstr ""
+
+#. module: project_task_digitized_signature
+#: model:ir.model.fields,field_description:project_task_digitized_signature.field_project_task__customer_signature
+msgid "Customer acceptance"
+msgstr "Conforme cliente"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_leads_add_custom
+msgid "Datos de Zoho CRM"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Datos de facturación"
+msgstr ""
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Deadline"
+msgstr "Fecha límite"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Descripción de los servicios contratados"
+msgstr ""
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Dirección"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_iva_doc
+msgid "Documento de IVA"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_estado
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_estado
+msgid "Estado"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__start_date
+msgid "Fecha de firma"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_task_form2_custom
+msgid "Fechas"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_pago_fianza
+msgid "Fianza pagada"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__end_date
+msgid "Fin de obra"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_info
+msgid "Hoja de información"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_iva
+msgid "IVA reducido"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_sale_order__x_discount_str
+msgid "Info descuento"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task__x_pago_fin
+msgid "Instrucciones para el pago fin de obra"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Last Stage Update"
+msgstr "Fecha últ. actualización de etapa"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_nif
+msgid "NIF"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_tenant_name
+#: model:ir.model.fields,field_description:hs_custom.field_res_partner__x_tenant_name
+#: model:ir.model.fields,field_description:hs_custom.field_res_users__x_tenant_name
+msgid "Nombre del inquilino"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
+msgid "Nombre inquilino"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
+msgid "Other Phone"
+msgstr "Otro teléfono"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
+msgid "Pago fin de obra:"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.invoice_form_add_custom
+msgid "Pagos y comisiones"
+msgstr ""
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_country_id
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "País"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_plano
+msgid "Plano disponible"
+msgstr ""
+
+#. module: project_task_report
+#: model:ir.actions.report,name:project_task_report.report_project_task_action
+msgid "Print Task"
+msgstr "Imprimir tarea"
+
+#. module: project_task_report
+#: model:ir.actions.report,name:project_task_report.report_project_task_chatter_action
+msgid "Print Task and Chatter"
+msgstr "Imprimir tarea y mensajería"
+
+#. modules: hs_custom, project_task_report
+#: model:ir.model,name:hs_custom.model_project_project
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Project"
+msgstr "Contrato"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_state_id
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Provincia"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_sale_order
+msgid "Sale Order"
+msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
+msgid "Start date"
+msgstr "Inicio de obra"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_subtotalneto
+msgid "Subtotal Neto"
+msgstr ""
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Tags"
+msgstr "Personal"
+
+#. modules: hs_custom, project_task_digitized_signature
+#: model:ir.model,name:hs_custom.model_project_task
+#: model:ir.model,name:project_task_digitized_signature.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: project_task_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_chatter_report
+#: model_terms:ir.ui.view,arch_db:project_task_report.task_report
+msgid "Task:"
+msgstr "Orden de trabajo:"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__fax
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
+msgid "Teléfono inquilino"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_trabajos
+msgid "Trabajos a realizar"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_vendedor
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_vendedor
+msgid "Vendedor"
+msgstr ""
