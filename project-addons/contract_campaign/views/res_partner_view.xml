@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_add_utm" model="ir.ui.view">
+        <field name="name">res.partner.form.add_utm</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <group name="purchase" position="after">
+                <group string="Marketing" name="utm_link" groups="base.group_no_one">
+                    <field name="campaign_id"/>
+                    <field name="source_id"/>
+                    <field name="medium_id"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

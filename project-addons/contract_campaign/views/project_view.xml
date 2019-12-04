@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="edit_project_add_utm" model="ir.ui.view">
+        <field name="name">project.project.form.add_utm</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <group name="configuration" position="after">
+                <group string="Marketing" name="utm_link" groups="base.group_no_one">
+                    <field name="campaign_id"/>
+                    <field name="source_id"/>
+                    <field name="medium_id"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>
