@@ -28,6 +28,12 @@
                     </group>
                 </page>
             </page>
+            <field name="user_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']" position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
         </field>
     </record>
 

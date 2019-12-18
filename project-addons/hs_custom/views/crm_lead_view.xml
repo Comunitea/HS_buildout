@@ -19,6 +19,18 @@
                    </group>
                 </page>
             </page>
+            <field name="country_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <field name="phone" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <field name="campaign_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <field name="medium_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
         </field>
     </record>
 
@@ -37,6 +49,18 @@
                 <field name="x_date_received"/>
                 <field name="x_estado"/>
                 <field name="x_vendedor"/>
+            </field>
+            <field name="phone" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <field name="campaign_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <field name="medium_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <field name="user_id" position="attributes">
+                <attribute name="required">True</attribute>
             </field>
         </field>
     </record>
