@@ -15,4 +15,15 @@
         </field>
     </record>
 
+    <record id="view_users_form_add_stock_loc" model="ir.ui.view">
+        <field name="name">res.users.form.add_stock_loc</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <group name="preferences" position="inside">
+                <field name="location_source_id"/>
+            </group>
+        </field>
+    </record>
+
 </odoo>

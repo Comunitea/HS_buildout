@@ -15,7 +15,8 @@
         'account',
         'purchase',
         'project_task_digitized_signature',
-        'sale_order_type'
+        'sale_order_type',
+        'project_task_material_stock'
     ],
     'data': ['views/project_view.xml',
              'views/account_invoice_view.xml',
