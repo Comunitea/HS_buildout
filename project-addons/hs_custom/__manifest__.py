@@ -14,7 +14,8 @@
         'partner_fax',
         'account',
         'purchase',
-        'project_task_digitized_signature'
+        'project_task_digitized_signature',
+        'sale_order_type'
     ],
     'data': ['views/project_view.xml',
              'views/account_invoice_view.xml',

@@ -20,4 +20,10 @@
         </xpath>
     </template>
 
+    <template id="external_layout_boxed_logo_by_type" inherit_id="web.external_layout_boxed">
+        <xpath expr="//img[@t-if='company.logo']" position="attributes">
+            <attribute name="t-att-src">('type_id' in o and o.type_id.logo) and image_data_uri(o.type_id.logo) or image_data_uri(company.logo)</attribute>
+        </xpath>
+    </template>
+
 </odoo>
