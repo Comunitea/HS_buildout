@@ -30,6 +30,7 @@ class ProjectProject(models.Model):
                               "Categoría", required=True)
     start_date = fields.Date("Fecha de firma")
     end_date = fields.Date("Fin de obra")
+    sale_type_id = fields.Many2one("sale.order.type", "División")
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):

@@ -18,6 +18,25 @@ class SaleOrder(models.Model):
         return invoice_vals
 
 
+class SaleOrderLine(models.Model):
+
+    _inherit = "sale.order.line"
+
+    @api.multi
+    def _timesheet_create_project(self):
+        project = super()._timesheet_create_project()
+        if self.order_id.type_id and not project.sale_type_id:
+            project.sale_type_id = self.order_id.type_id.id
+
+        return project
+
+    def _timesheet_create_task_prepare_values(self, project):
+        vals = super()._timesheet_create_task_prepare_values(project)
+        if self.order_id.type_id:
+            vals['sale_type_id'] = self.order_id.type_id.id
+        return vals
+
+
 class SaleOrderType(models.Model):
 
     _inherit = "sale.order.type"

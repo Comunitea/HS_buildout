@@ -10,7 +10,7 @@
     'depends': [
         'hr_timesheet',
         'crm',
-        'sale',
+        'sale_timesheet',
         'partner_fax',
         'account',
         'purchase',
