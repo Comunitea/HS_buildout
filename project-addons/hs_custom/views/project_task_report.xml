@@ -4,17 +4,17 @@
     <template id="report_taskorder_document_custom" inherit_id="project_task_report.task_report">
         <tr t-if="o.date_last_stage_update" position="replace">
             <tr t-if="o.date_start">
-                <th>Start date</th>
+                <th>Fecha de inicio</th>
                 <td><span t-field="o.date_start"/></td>
             </tr>
         </tr>
         <tr t-if="o.partner_id" position="after">
             <tr t-if="o.partner_id.phone">
-                <th>Phone</th>
+                <th>Teléfono</th>
                 <td><span t-field="o.partner_id.phone"/></td>
             </tr>
             <tr t-if="o.partner_id.mobile">
-                <th>Other Phone</th>
+                <th>Otro teléfono</th>
                 <td><span t-field="o.partner_id.mobile"/></td>
             </tr>
             <tr t-if="o.partner_id.x_tenant_name">
@@ -30,6 +30,16 @@
             <p t-if="o.x_pago_fin">Pago fin de obra: </p>
             <span t-if="o.x_pago_fin" t-field="o.x_pago_fin"></span>
         </span>
+        <xpath expr="//div[@id='signature']" position="after">
+            <div id="customer_signature" t-if="o.user_id.digital_signature">
+                    <p>
+                        <strong>Firma del operario:</strong>
+                        <span>
+                            <img class="image" t-att-src="'data:image/png;base64,%s' % to_text(o.user_id.digital_signature)" style="border:auto;"/>
+                        </span>
+                    </p>
+                </div>
+        </xpath>
     </template>
 
 </odoo>
