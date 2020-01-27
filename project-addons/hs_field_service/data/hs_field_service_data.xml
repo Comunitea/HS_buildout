@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<odoo noupdate="1">
+
+    <record id="project_task_send_by_mail.email_task_template" model="mail.template">
+        <field name="subject">${object.company_id.name} Service (Ref ${object.name or 'n/a'})</field>
+        <field name="partner_to"></field>
+        <field name="auto_delete" eval="False"/>
+        <field name="report_name">Service</field>
+        <field name="body_html"><![CDATA[
+<table style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td align="center">
+<table style="padding: 24px; background-color: white; color: #454748; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+    <tr>
+        <td style="min-width: 590px;" align="center">
+            <table style="background-color: white; padding: 0; border-collapse:separate;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody><tr><td valign="middle">
+                    <span style="font-size: 10px;">Work part</span><br>
+                    <span style="font-size: 20px; font-weight: bold;">
+                        ${object.name}
+                    </span>
+                </td><td valign="middle" align="right">
+                    <span>${object.company_id.name}</span>
+                </td></tr>
+                <tr><td colspan="2" style="text-align:center;">
+                  <hr style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:4px 0px 32px 0px;" width="100%">
+                </td></tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td style="min-width: 590px;">
+            <p style="margin:0px">Hello,</p>
+            <p style="margin:0px">You will find attached the signed work part.</p>
+        </td>
+    </tr>
+    <tr>
+        <td style="min-width: 590px;">
+            <br/>
+            <p style="margin:0px">If you have any question, do not hesitate to contact us.</p>
+            <p style="margin:0px">Thank you for choosing ${object.company_id.name}!</p>
+        </td>
+    </tr>
+    <tr>
+        <td style="min-width: 590px; padding: 0 8px 0 8px; font-size:11px;" align="center">
+            <hr style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 4px 0px;" width="100%">
+            <b>${object.company_id.name}</b><br>
+            <div style="color: #999999;">
+                ${object.company_id.phone}
+                 |
+                    <a style="text-decoration:none; color: #999999;" href="mailto:${object.company_id.email}">${object.company_id.email}</a>
+
+                 |
+                    <a style="text-decoration:none; color: #999999;" href="${object.company_id.website}">
+                        ${object.company_id.website}
+                    </a>
+
+            </div>
+        </td>
+    </tr>
+</tbody>
+</table>
+</td></tr>
+<tr><td style="min-width: 590px;" align="center"><br></td></tr>
+</tbody></table>
+        ]]></field>
+    </record>
+
+</odoo>

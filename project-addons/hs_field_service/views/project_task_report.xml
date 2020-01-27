@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="task_report_field_service" inherit_id="hs_custom.report_taskorder_document_custom">
+        <xpath expr="//h3" position="replace">
+            <h3>Works done</h3>
+        </xpath>
+        <xpath expr="//span[@t-field='o.description']" position="replace">
+            <span t-field="o.work_description"/>
+            <center><h3>Observations</h3></center>
+            <span t-field="o.observations"/>
+        </xpath>
+        <xpath expr="//tr[@t-if='o.partner_id.fax']" position="after">
+            <tr t-if="o.email_from">
+                <th>Contact email</th>
+                <td><span t-field="o.email_from"/></td>
+            </tr>
+            <tr t-if="o.installation">
+                <th>Installation</th>
+                <td>Yes</td>
+            </tr>
+            <tr t-if="o.warranty">
+                <th>Warranty assistance</th>
+                <td>Yes</td>
+            </tr>
+            <tr t-if="o.maintenance">
+                <th>Maintenance</th>
+                <td>Yes</td>
+            </tr>
+            <tr t-if="o.success">
+                <th>Successfully done</th>
+                <td>Yes</td>
+            </tr>
+            <tr t-if="o.cancelled">
+                <th>Customer cancellation</th>
+                <td>Yes</td>
+            </tr>
+        </xpath>
+    </template>
+
+</odoo>

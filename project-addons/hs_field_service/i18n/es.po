@@ -1,0 +1,247 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#       * hs_field_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-27 14:03+0000\n"
+"PO-Revision-Date: 2020-01-27 14:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_field_service
+#: code:addons/hs_field_service/models/project_task.py:30
+#, python-format
+msgid "Any stage set as closed stage"
+msgstr "Ninguna etapa marcada como etapa de cierre"
+
+#. module: hs_field_service
+#: model:ir.actions.act_window,name:hs_field_service.action_view_attach_pictures_wzd
+msgid "Attach Pictures"
+msgstr "Adjuntar fotografías"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Attach pictures"
+msgstr "Adjuntar fotografías"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hs_field_service
+#: code:addons/hs_field_service/models/project_task.py:32
+#, python-format
+msgid "Cannot exists more than one stage set as closed."
+msgstr "No puede existir más de una etapa establecida como de cierre."
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Close & send"
+msgstr "Cerrar y enviar"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__closed
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Contact email"
+msgstr "Email de contacto"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_task_search_form_add_current
+msgid "Current"
+msgstr "Activas"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__cancelled
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Customer cancellation"
+msgstr "Cancelada por el cliente"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task_material__name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hs_field_service
+#: model:ir.ui.menu,name:hs_field_service.menu_main_fs
+msgid "Field Service"
+msgstr "Obras"
+
+#. module: hs_field_service
+#: model:res.groups,name:hs_field_service.group_field_service_user
+msgid "Field Service: User"
+msgstr "Obras: Usuario"
+
+#. module: hs_field_service
+#: model:ir.actions.act_window,name:hs_field_service.action_view_field_services
+msgid "Field services"
+msgstr "Obras"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__id
+msgid "ID"
+msgstr ""
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__installation
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Installation"
+msgstr "Instalación"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__maintenance
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Maintenance"
+msgstr "Mantenimiento"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Materials"
+msgstr "Materiales"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Materials consumed"
+msgstr "Materiales consumidos"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Materials used"
+msgstr "Materiales usados"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__observations
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_task_form2_custom2
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__image_ids
+msgid "Pictures"
+msgstr "Fotografías"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_task_form2_custom2
+msgid "Public description"
+msgstr "Descripción pública"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd
+msgid "Save"
+msgstr "Guardar"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Signature"
+msgstr "Firma"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__success
+msgid "Successfully"
+msgstr "Terminada con éxito"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Successfully done"
+msgstr "Terminada con éxito"
+
+#. module: hs_field_service
+#: model:ir.model,name:hs_field_service.model_project_task
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Task"
+msgstr "Tarea"
+
+#. module: hs_field_service
+#: model:ir.model,name:hs_field_service.model_project_task_material
+msgid "Task Material Used"
+msgstr "Materiales usados en la tarea"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Task Title..."
+msgstr "Título de tarea..."
+
+#. module: hs_field_service
+#: model:ir.model.fields,help:hs_field_service.field_project_task__closed
+msgid "Tasks in this stage are considered closed."
+msgstr "Tareas en esta etapa se considerarán cerradas."
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Technical Notes"
+msgstr "Notas técnicas"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__warranty
+msgid "Warranty"
+msgstr "Garantía"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Warranty assistance"
+msgstr "Asistencia garantía"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__work_description
+msgid "Work Description"
+msgstr "Descripción del trabajo"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_task_form2_custom2
+msgid "Work description"
+msgstr "Descripción del trabajo"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Works done"
+msgstr "Trabajos realizados"
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
+msgid "Yes"
+msgstr "Sí"

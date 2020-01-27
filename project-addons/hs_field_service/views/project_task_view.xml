@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_field_service_form" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field eval="200" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Task" create="0">
+                <header>
+                    <field name="stage_id" widget="statusbar" options="{'fold_field': 'fold'}"/>
+                    <field name="closed" invisible="1"/>
+                </header>
+                <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button name="%(action_view_attach_pictures_wzd)d" string="Attach pictures" type="action" class="oe_stat_button" icon="fa-camera" attrs="{'invisible': [('closed', '=', True)]}"/>
+                    <button name="action_close_send" string="Close &amp; send" type="object" class="oe_stat_button" icon="fa-envelope" attrs="{'invisible': [('closed', '=', True)]}"/>
+                </div>
+                <div class="oe_title pr-0">
+                    <h1 class="d-flex flex-row justify-content-between">
+                        <field name="name" class="o_task_name text-truncate" placeholder="Task Title..." readonly="1"/>
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name="project_id" readonly="1" options='{"no_open": True}'/>
+                        <field name="partner_id" readonly="1" context="{'show_address': 1}" options='{"always_reload": True}'/>
+                        <field name="email_from" attrs="{'readonly': [('closed', '=', True)]}"/>
+                    </group>
+                    <group>
+                        <field name="date_start" attrs="{'readonly': [('closed', '=', True)]}"/>
+                        <field name="date_end" readonly="1"/>
+                        <field name="user_id" class="o_task_user_field" options='{"no_open": True}' readonly="1"/>
+                        <field name="sale_type_id" options='{"no_open": True}' readonly="1"/>
+                    </group>
+                    <group col="6" colspan="6">
+                        <field name="installation" attrs="{'readonly': [('closed', '=', True)]}"/>
+                        <field name="warranty" attrs="{'readonly': [('closed', '=', True)]}"/>
+                        <field name="maintenance" attrs="{'readonly': [('closed', '=', True)]}"/>
+                        <field name="success" attrs="{'readonly': [('closed', '=', True)]}"/>
+                        <field name="cancelled" attrs="{'readonly': [('closed', '=', True)]}"/>
+                    </group>
+                    <separator string="Work description"/>
+                    <field name="work_description" type="html" attrs="{'readonly': [('closed', '=', True)]}"/>
+                    <separator string="Observations"/>
+                    <field name="observations" type="html" attrs="{'readonly': [('closed', '=', True)]}"/>
+                </group>
+                <notebook>
+                    <page name="signature_page" string="Signature">
+                        <div class="oe_clear"/>
+                        <label for="customer_signature" class="oe_edit_only"/>
+                        <field name="customer_signature" widget="signature" attrs="{'readonly': [('closed', '=', True)]}"/>
+                    </page>
+                    <page name="materials_page" string="Materials">
+                        <group string="Materials consumed" name="materials_consumed">
+                            <field name="material_ids" attrs="{'readonly': [('closed', '=', True)]}">
+                                <tree string="Materials used">
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="product_uom_id" groups="uom.group_uom"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                        <field name="product_uom_id" groups="uom.group_uom"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="technical_notes" string="Technical Notes">
+                        <field name="description" type="html" attrs="{'readonly': [('closed', '=', True)]}"/>
+                    </page>
+                </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_task_search_form_add_current" model="ir.ui.view">
+        <field name="name">project.task.search.form.add_current</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <filter name="my_tasks" position="before">
+                <filter string="Current" name="current" domain="[('closed','=',False)]"/>
+                <separator/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_task_tree2_closed_grey" model="ir.ui.view">
+        <field name="name">project.task.tree.closed_grey</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <field name="stage_id" position="after">
+                <field name="closed" invisible="1"/>
+            </field>
+            <xpath expr="/tree" position="attributes">
+                <attribute name="decoration-muted">closed</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_view_field_services" model="ir.actions.act_window">
+        <field name="name">Field services</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="search_view_id" ref="project.view_task_search_form"/>
+        <field name="domain">[('user_id', '=', uid)]</field>
+        <field name="context">{'search_default_current': True}</field>
+    </record>
+    <record id="open_action_view_field_services_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">tree</field>
+        <field name="act_window_id" ref="action_view_field_services"/>
+    </record>
+    <record id="open_action_view_field_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_field_service_form"/>
+        <field name="act_window_id" ref="action_view_field_services"/>
+    </record>
+
+    <record id="view_task_form2_custom2" model="ir.ui.view">
+        <field name="name">project.task.form.custom2</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hs_custom.view_task_form2_custom"/>
+        <field name="arch" type="xml">
+            <page name="description_page" position="before">
+                <page string="Public description" name="public_description">
+                    <group col="6" colspan="6">
+                        <field name="installation"/>
+                        <field name="warranty"/>
+                        <field name="maintenance"/>
+                        <field name="success"/>
+                        <field name="cancelled"/>
+                    </group>
+                    <separator string="Work description"/>
+                    <field name="work_description" type="html"/>
+                    <div class="oe_clear"/>
+                    <separator string="Observations"/>
+                    <field name="observations" type="html"/>
+                    <div class="oe_clear"/>
+                </page>
+            </page>
+        </field>
+    </record>
+
+</odoo>

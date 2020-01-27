@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_project_fs,project.project.fs,project.model_project_project,hs_field_service.group_field_service_user,1,0,0,0
+access_project_task_fs,project.task.fs,project.model_project_task,hs_field_service.group_field_service_user,1,1,0,0
+access_partner_task user_fs,base.res.partner user fs,base.model_res_partner,hs_field_service.group_field_service_user,1,0,0,0
+access_account_analytic_account_user_fs,account.analytic.account.fs,analytic.model_account_analytic_account,hs_field_service.group_field_service_user,1,0,0,0
+access_model_project_task_material_project_user_fs,model_project_task_material_project_user_fs,project_task_material.model_project_task_material,hs_field_service.group_field_service_user,1,1,1,1
+project_status_user_fs,Project Status User FS,project_status.model_project_status,hs_field_service.group_field_service_user,1,0,0,0
+access_sale_order_type_fs,sale.order.type.fs,sale_order_type.model_sale_order_type,hs_field_service.group_field_service_user,1,0,0,0

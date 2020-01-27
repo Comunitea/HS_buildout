@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Field Service"
+            id="menu_main_fs"
+            groups="group_field_service_user"
+            web_icon="hs_field_service,static/description/icon.png"
+            sequence="49"
+            action="action_view_field_services"/>
+
+</odoo>
