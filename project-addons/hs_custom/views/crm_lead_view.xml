@@ -65,10 +65,6 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="crm.crm_lead_all_leads">
-        <field name="domain">['|', ('active', '=', False), ('active', '=', True), '|', ('type','=','lead'), ('type','=',False)]</field>
-    </record>
-
     <record id="crm_case_tree_view_leads_custom" model="ir.ui.view">
         <field name="name">crm.lead.tree.lead.custom</field>
         <field name="model">crm.lead</field>
