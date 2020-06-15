@@ -15,5 +15,6 @@ class CrmLead(models.Model):
     def action_set_lost(self):
         res = super().action_set_lost()
         stage = self.env.ref('crm.stage_lead7')
-        self.stage_id = stage.id
+        self.write({'stage_id': stage.id,
+                    'active': True})
         return res
