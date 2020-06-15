@@ -65,4 +65,19 @@
         </field>
     </record>
 
+    <record model="ir.actions.act_window" id="crm.crm_lead_all_leads">
+        <field name="domain">['|', ('active', '=', False), ('active', '=', True), '|', ('type','=','lead'), ('type','=',False)]</field>
+    </record>
+
+    <record id="crm_case_tree_view_leads_custom" model="ir.ui.view">
+        <field name="name">crm.lead.tree.lead.custom</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="decoration-muted">active == False</attribute>
+            </tree>
+        </field>
+    </record>
+
 </odoo>
