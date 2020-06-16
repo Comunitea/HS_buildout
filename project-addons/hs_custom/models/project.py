@@ -25,6 +25,7 @@ class ProjectProject(models.Model):
     x_vendedor = fields.Char("Vendedor", readonly=True)
     x_nif = fields.Char("NIF", readonly=True)
     x_estado = fields.Char("Estado", readonly=True)
+    user_id = fields.Many2one(default=None)
 
     type_id = fields.Many2one('account.analytic.group',
                               "Categoría", required=True)

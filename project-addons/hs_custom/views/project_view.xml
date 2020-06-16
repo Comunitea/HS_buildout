@@ -54,7 +54,7 @@
             <page name="settings" position="before">
                 <page name="invoicing" string="Datos de facturación">
                     <group>
-                       <field name="x_condiciones_pago"/>
+                       <field name="x_condiciones_pagos"/>
                        <field name="x_subtotal"/>
                        <field name="x_subtotalneto"/>
                        <field name="x_vendedor"/>
@@ -76,8 +76,8 @@
                 <field name="end_date"/>
             </field>
             <field name="name" position="after">
-                <field name="x_subtotal"/>
-                <field name="x_subtotalneto"/>
+                <field name="x_subtotal" sum="Subtotal"/>
+                <field name="x_subtotalneto" sum="Subtotal Neto"/>
             </field>
             <field name="user_id" position="attributes">
                 <attribute name="invisible">1</attribute>
