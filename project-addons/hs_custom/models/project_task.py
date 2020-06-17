@@ -7,6 +7,7 @@ class ProjectTask(models.Model):
 
     x_pago_fin = fields.Text("Instrucciones para el pago fin de obra")
     sale_type_id = fields.Many2one("sale.order.type", "División")
+    incidence = fields.Boolean("Incidencia")
 
     @api.onchange('user_id')
     def _onchange_user(self):

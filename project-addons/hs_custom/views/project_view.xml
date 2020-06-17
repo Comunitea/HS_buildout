@@ -27,7 +27,7 @@
                        <group colspan="2">
                            <field name="type_id"/>
                            <field name="sale_type_id"/>
-                           <field name="start_date"/>
+                           <field name="start_date" required="True"/>
                            <field name="end_date" />
                         </group>
                     </group>
@@ -128,5 +128,35 @@
             </field>
         </field>
     </record>
+
+    <record id="view_task_search_form_incidences" model="ir.ui.view">
+        <field name="name">project.task.search.form.incidences</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="after">
+                <separator/>
+                <filter string="Incidencias" name="incidence" domain="[('incidence','=',True)]"/>
+                <filter string="Tareas" name="tasks" domain="[('incidence','=',False)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="project.action_view_task" model="ir.actions.act_window">
+        <field name="domain">[('incidence', '=', False)]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="action_view_incidences" model="ir.actions.act_window">
+        <field name="name">Incidencias</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">kanban,tree,form,calendar,pivot,graph,activity</field>
+        <field name="context">{'default_incidence': True}</field>
+        <field name="domain">[('incidence', '=', True)]</field>
+        <field name="search_view_id" ref="project.view_task_search_form"/>
+    </record>
+
+    <menuitem name="Incidencias" id="menu_incidences" parent="project.menu_main_pm"
+            action="action_view_incidences" sequence="3" groups="base.group_no_one,project.group_project_user"/>
 
 </odoo>

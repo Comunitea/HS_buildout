@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="project_project_action_from_partner" model="ir.actions.act_window">
+        <field name="name">Proyectos</field>
+        <field name="res_model">project.project</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
     <record id="view_partner_form_fax_custom" model="ir.ui.view">
         <field name="name">Add fax on partner</field>
         <field name="model">res.partner</field>
@@ -12,6 +18,13 @@
             <field name="fax" position="before">
                 <field name="x_tenant_name"/>
             </field>
+            <button name="toggle_active" position="before">
+                <button class="oe_stat_button" type="action" name="%(project_project_action_from_partner)d"
+                    context="{'search_default_partner_id': active_id, 'default_partner_id': active_id}" attrs="{'invisible': [('project_count', '=', 0)]}"
+                    icon="fa-tasks-alt">
+                    <field string="Proyectos" name="project_count" widget="statinfo"/>
+                </button>
+            </button>
         </field>
     </record>
 
@@ -23,6 +36,17 @@
             <group name="preferences" position="inside">
                 <field name="location_source_id"/>
             </group>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_custom" model="ir.ui.view">
+        <field name="name">res.partner.tree.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="before">
+                <field name="ref"/>
+            </field>
         </field>
     </record>
 
