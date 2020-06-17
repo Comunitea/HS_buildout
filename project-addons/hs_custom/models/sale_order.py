@@ -42,3 +42,11 @@ class SaleOrderType(models.Model):
     _inherit = "sale.order.type"
 
     logo = fields.Binary("Logo", attachment=True)
+
+
+class MailThread(models.AbstractModel):
+    _inherit = 'mail.thread'
+
+    @api.multi
+    def _message_auto_subscribe_notify(self, partner_ids, template):
+        return

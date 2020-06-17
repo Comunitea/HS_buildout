@@ -15,3 +15,4 @@ class AccountInvoice(models.Model):
     x_tasa_comision_2 = fields.Float("% comisión 2", digits=(5, 2))
     x_tasa_comision_3 = fields.Float("% comisión 3", digits=(5, 2))
     x_comision_finconsum = fields.Float("Comisión", digits=(5, 2))
+    comment = fields.Text(readonly=False, states={})
