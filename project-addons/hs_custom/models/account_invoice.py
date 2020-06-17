@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class AccountInvoice(models.Model):
@@ -16,3 +16,18 @@ class AccountInvoice(models.Model):
     x_tasa_comision_3 = fields.Float("% comisión 3", digits=(5, 2))
     x_comision_finconsum = fields.Float("Comisión", digits=(5, 2))
     comment = fields.Text(readonly=False, states={})
+
+
+class AccountBankStatement(models.Model):
+
+    _inherit = "account.bank.statement"
+
+    @api.model
+    def create(self, vals):
+        res = super().create(vals)
+        if not res.name:
+            SequenceObj = self.env['ir.sequence']
+            context = {'ir_sequence_date': res.date}
+            res.name = SequenceObj.with_context(**context).\
+                next_by_code('account.bank.statement')
+        return res
