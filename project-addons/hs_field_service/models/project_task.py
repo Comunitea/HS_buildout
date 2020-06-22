@@ -18,6 +18,7 @@ class ProjectTask(models.Model):
     success = fields.Boolean("Successfully")
     cancelled = fields.Boolean("Customer cancellation")
     observations = fields.Html("Observations")
+    worker_id = fields.Many2one("res.users", "Technician")
 
     def action_close_send(self):
         closed_state = self.env['project.task.type'].\

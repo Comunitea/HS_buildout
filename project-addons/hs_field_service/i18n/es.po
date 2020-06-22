@@ -216,6 +216,11 @@ msgid "Technical Notes"
 msgstr "Notas técnicas"
 
 #. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__worker_id
+msgid "Technician"
+msgstr "Técnico"
+
+#. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_project_task__warranty
 msgid "Warranty"
 msgstr "Garantía"

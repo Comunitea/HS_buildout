@@ -31,6 +31,7 @@
                         <field name="date_start" attrs="{'readonly': [('closed', '=', True)]}"/>
                         <field name="date_end" readonly="1"/>
                         <field name="user_id" class="o_task_user_field" options='{"no_open": True}' readonly="1"/>
+                        <field name="worker_id" class="o_task_user_field" options='{"no_open": True}' readonly="1"/>
                         <field name="sale_type_id" options='{"no_open": True}' readonly="1"/>
                     </group>
                     <group col="6" colspan="6">
@@ -111,7 +112,7 @@
         <field name="res_model">project.task</field>
         <field name="view_mode">tree,form,calendar</field>
         <field name="search_view_id" ref="project.view_task_search_form"/>
-        <field name="domain">[('user_id', '=', uid)]</field>
+        <field name="domain">[('worker_id', '=', uid)]</field>
         <field name="context">{'search_default_current': True}</field>
     </record>
     <record id="open_action_view_field_services_tree" model="ir.actions.act_window.view">
@@ -131,6 +132,9 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="hs_custom.view_task_form2_custom"/>
         <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="worker_id" class="o_task_user_field" options='{"no_open": True}'/>
+            </field>
             <page name="description_page" position="before">
                 <page string="Public description" name="public_description">
                     <group col="6" colspan="6">
