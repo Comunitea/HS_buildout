@@ -16,19 +16,19 @@
             </tr>
             <tr t-if="o.partner_id.phone">
                 <th>Teléfono</th>
-                <td><span t-field="o.partner_id.phone"/></td>
+                <td><span t-field="o.project_id.partner_id.phone"/></td>
             </tr>
             <tr t-if="o.partner_id.mobile">
                 <th>Otro teléfono</th>
-                <td><span t-field="o.partner_id.mobile"/></td>
+                <td><span t-field="o.project_id.partner_id.mobile"/></td>
             </tr>
             <tr t-if="o.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>
-                <td><span t-field="o.partner_id.x_tenant_name"/></td>
+                <td><span t-field="o.project_id.partner_id.x_tenant_name"/></td>
             </tr>
             <tr t-if="o.partner_id.fax">
                 <th>Teléfono inquilino</th>
-                <td><span t-field="o.partner_id.fax"/></td>
+                <td><span t-field="o.project_id.partner_id.fax"/></td>
             </tr>
         </tr>
         <span t-field="o.description" position="after">
@@ -62,19 +62,19 @@
             </tr>
             <tr t-if="o.partner_id.phone">
                 <th>Teléfono</th>
-                <td><span t-field="o.partner_id.phone"/></td>
+                <td><span t-field="o.project_id.partner_id.phone"/></td>
             </tr>
             <tr t-if="o.partner_id.mobile">
                 <th>Otro teléfono</th>
-                <td><span t-field="o.partner_id.mobile"/></td>
+                <td><span t-field="o.project_id.partner_id.mobile"/></td>
             </tr>
             <tr t-if="o.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>
-                <td><span t-field="o.partner_id.x_tenant_name"/></td>
+                <td><span t-field="o.project_id.partner_id.x_tenant_name"/></td>
             </tr>
             <tr t-if="o.partner_id.fax">
                 <th>Teléfono inquilino</th>
-                <td><span t-field="o.partner_id.fax"/></td>
+                <td><span t-field="o.project_id.partner_id.fax"/></td>
             </tr>
         </tr>
         <span t-field="o.description" position="after">
