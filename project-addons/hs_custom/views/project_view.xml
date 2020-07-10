@@ -63,6 +63,10 @@
                     </group>
                 </page>
             </page>
+            <field name="message_follower_ids" position="after">
+                <field name="activity_ids" widget="mail_activity"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </field>
         </field>
     </record>
 

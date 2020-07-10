@@ -2,8 +2,8 @@ from odoo import api, fields, models
 
 
 class ProjectProject(models.Model):
-
-    _inherit = "project.project"
+    _name = "project.project"
+    _inherit = ["project.project", 'mail.activity.mixin']
 
     x_iva = fields.Boolean("IVA reducido")
     x_iva_doc = fields.Boolean("Documento de IVA")
