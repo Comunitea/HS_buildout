@@ -8,25 +8,25 @@
                 <td><span t-field="o.date_start"/></td>
             </tr>
         </tr>
-        <tr t-if="o.partner_id" position="after">
+        <tr t-if="o.project_id.partner_id" position="after">
             <tr t-if="o.project_id.x_street">
                 <th>Dirección de obra</th>
                 <td><span t-field="o.project_id.x_street"/> <span t-field="o.project_id.x_street2"/><br/>
                     <span t-field="o.project_id.x_zip"/> <span t-field="o.project_id.x_city"/> <span t-field="o.project_id.x_state_id.name"/></td>
             </tr>
-            <tr t-if="o.partner_id.phone">
+            <tr t-if="o.project_id.partner_id.phone">
                 <th>Teléfono</th>
                 <td><span t-field="o.project_id.partner_id.phone"/></td>
             </tr>
-            <tr t-if="o.partner_id.mobile">
+            <tr t-if="o.project_id.partner_id.mobile">
                 <th>Otro teléfono</th>
                 <td><span t-field="o.project_id.partner_id.mobile"/></td>
             </tr>
-            <tr t-if="o.partner_id.x_tenant_name">
+            <tr t-if="o.project_id.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>
                 <td><span t-field="o.project_id.partner_id.x_tenant_name"/></td>
             </tr>
-            <tr t-if="o.partner_id.fax">
+            <tr t-if="o.project_id.partner_id.fax">
                 <th>Teléfono inquilino</th>
                 <td><span t-field="o.project_id.partner_id.fax"/></td>
             </tr>
@@ -54,25 +54,25 @@
                 <td><span t-field="o.date_start"/></td>
             </tr>
         </tr>
-        <tr t-if="o.partner_id" position="after">
+        <tr t-if="o.project_id.partner_id" position="after">
             <tr t-if="o.project_id.x_street">
                 <th>Dirección de obra</th>
                 <td><span t-field="o.project_id.x_street"/> <span t-field="o.project_id.x_street2"/><br/>
                     <span t-field="o.project_id.x_zip"/> <span t-field="o.project_id.x_city"/> <span t-field="o.project_id.x_state_id.name"/></td>
             </tr>
-            <tr t-if="o.partner_id.phone">
+            <tr t-if="o.project_id.partner_id.phone">
                 <th>Teléfono</th>
                 <td><span t-field="o.project_id.partner_id.phone"/></td>
             </tr>
-            <tr t-if="o.partner_id.mobile">
+            <tr t-if="o.project_id.partner_id.mobile">
                 <th>Otro teléfono</th>
                 <td><span t-field="o.project_id.partner_id.mobile"/></td>
             </tr>
-            <tr t-if="o.partner_id.x_tenant_name">
+            <tr t-if="o.project_id.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>
                 <td><span t-field="o.project_id.partner_id.x_tenant_name"/></td>
             </tr>
-            <tr t-if="o.partner_id.fax">
+            <tr t-if="o.project_id.partner_id.fax">
                 <th>Teléfono inquilino</th>
                 <td><span t-field="o.project_id.partner_id.fax"/></td>
             </tr>
