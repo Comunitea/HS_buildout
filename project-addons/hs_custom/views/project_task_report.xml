@@ -8,7 +8,7 @@
                 <td><span t-field="o.date_start"/></td>
             </tr>
         </tr>
-        <tr t-if="o.project_id.partner_id" position="after">
+        <tr t-if="o.partner_id" position="after">
             <tr t-if="o.project_id.x_street">
                 <th>Dirección de obra</th>
                 <td><span t-field="o.project_id.x_street"/> <span t-field="o.project_id.x_street2"/><br/>
@@ -30,6 +30,9 @@
                 <th>Teléfono inquilino</th>
                 <td><span t-field="o.project_id.partner_id.fax"/></td>
             </tr>
+        </tr>
+        <tr t-if="o.partner_id" position="attributes">
+            <attribute name="t-if">o.project_id.partner_id</attribute>
         </tr>
         <span t-field="o.description" position="after">
             <p t-if="o.x_pago_fin">Pago fin de obra: </p>
@@ -54,7 +57,7 @@
                 <td><span t-field="o.date_start"/></td>
             </tr>
         </tr>
-        <tr t-if="o.project_id.partner_id" position="after">
+        <tr t-if="o.partner_id" position="after">
             <tr t-if="o.project_id.x_street">
                 <th>Dirección de obra</th>
                 <td><span t-field="o.project_id.x_street"/> <span t-field="o.project_id.x_street2"/><br/>
@@ -76,6 +79,9 @@
                 <th>Teléfono inquilino</th>
                 <td><span t-field="o.project_id.partner_id.fax"/></td>
             </tr>
+        </tr>
+        <tr t-if="o.partner_id" position="attributes">
+            <attribute name="t-if">o.project_id.partner_id</attribute>
         </tr>
         <span t-field="o.description" position="after">
             <p t-if="o.x_pago_fin">Pago fin de obra: </p>
