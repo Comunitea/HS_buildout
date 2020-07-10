@@ -10,7 +10,7 @@
             <center><h3>Observations</h3></center>
             <span t-field="o.observations"/>
         </xpath>
-        <xpath expr="//tr[@t-if='o.partner_id.fax']" position="after">
+        <xpath expr="//tr[@t-if='o.project_id.partner_id.fax']" position="after">
             <tr t-if="o.email_from">
                 <th>Contact email</th>
                 <td><span t-field="o.email_from"/></td>
