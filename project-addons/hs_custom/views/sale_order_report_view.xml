@@ -24,6 +24,18 @@
         <xpath expr="//img[@t-if='company.logo']" position="attributes">
             <attribute name="t-att-src">('type_id' in o and o.type_id.logo) and image_data_uri(o.type_id.logo) or (('sale_type_id' in o and o.sale_type_id.logo) and image_data_uri(o.sale_type_id.logo) or image_data_uri(company.logo))</attribute>
         </xpath>
+        <xpath expr="//span[@t-field='company.partner_id']" position="attributes">
+            <attribute name="t-options">{"widget": "contact", "fields": ["address"], "no_marker": true}</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='company.phone']" position="replace">
+            <span t-esc="('type_id' in o and o.type_id.phone) and o.type_id.phone or company.phone"/>
+        </xpath>
+        <xpath expr="//span[@t-field='company.email']" position="replace">
+            <span t-esc="('type_id' in o and o.type_id.email) and o.type_id.email or company.email"/>
+        </xpath>
+        <xpath expr="//span[@t-field='company.website']" position="replace">
+            <span t-esc="('type_id' in o and o.type_id.website) and o.type_id.website or company.website"/>
+        </xpath>
     </template>
 
 </odoo>

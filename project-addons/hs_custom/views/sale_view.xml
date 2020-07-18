@@ -22,6 +22,11 @@
             <xpath expr="//div[hasclass('oe_title')]/.." position="before">
                 <field name="logo" widget="image"  class="oe_avatar"/>
             </xpath>
+            <field name="sequence_id" position="after">
+                <field name="email"/>
+                <field name="website"/>
+                <field name="phone"/>
+            </field>
         </field>
     </record>
 

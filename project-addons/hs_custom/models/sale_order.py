@@ -42,6 +42,9 @@ class SaleOrderType(models.Model):
     _inherit = "sale.order.type"
 
     logo = fields.Binary("Logo", attachment=True)
+    email = fields.Char("Email")
+    website = fields.Char("Web")
+    phone = fields.Char("Phone")
 
 
 class MailThread(models.AbstractModel):
