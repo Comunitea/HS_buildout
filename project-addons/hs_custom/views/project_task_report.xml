@@ -34,6 +34,9 @@
         <tr t-if="o.partner_id" position="attributes">
             <attribute name="t-if">o.project_id.partner_id</attribute>
         </tr>
+        <span t-field="o.partner_id" position="attributes">
+            <attribute name="t-field">o.project_id.partner_id</attribute>
+        </span>
         <span t-field="o.description" position="after">
             <p t-if="o.x_pago_fin">Pago fin de obra: </p>
             <span t-if="o.x_pago_fin" t-field="o.x_pago_fin"></span>
@@ -83,6 +86,9 @@
         <tr t-if="o.partner_id" position="attributes">
             <attribute name="t-if">o.project_id.partner_id</attribute>
         </tr>
+        <span t-field="o.partner_id" position="attributes">
+            <attribute name="t-field">o.project_id.partner_id</attribute>
+        </span>
         <span t-field="o.description" position="after">
             <p t-if="o.x_pago_fin">Pago fin de obra: </p>
             <span t-if="o.x_pago_fin" t-field="o.x_pago_fin"></span>
