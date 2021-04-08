@@ -2,6 +2,16 @@
 <odoo>
 
     <template id="report_taskorder_document_custom" inherit_id="project_task_report.task_report">
+        <xpath expr="//br" position="replace"/>
+        <xpath expr="//br" position="replace"/>
+        <xpath expr="//h2" position="attributes">
+            <attribute name="class">mt0 mb16</attribute>
+            <attribute name="style">font-size: 21px;</attribute>
+        </xpath>
+        <xpath expr="//table" position="attributes">
+            <attribute name="class">table table-sm table-bordered</attribute>
+        </xpath>
+        <tr t-if="o.date_assign" position="replace"/>
         <tr t-if="o.date_last_stage_update" position="replace">
             <tr t-if="o.date_start">
                 <th>Fecha de inicio</th>
@@ -17,10 +27,6 @@
             <tr t-if="o.project_id.partner_id.phone">
                 <th>Teléfono</th>
                 <td><span t-field="o.project_id.partner_id.phone"/></td>
-            </tr>
-            <tr t-if="o.project_id.partner_id.mobile">
-                <th>Otro teléfono</th>
-                <td><span t-field="o.project_id.partner_id.mobile"/></td>
             </tr>
             <tr t-if="o.project_id.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>
@@ -54,6 +60,16 @@
     </template>
 
     <template id="report_task_chatter_document_custom" inherit_id="project_task_report.task_chatter_report">
+        <xpath expr="//br" position="replace"/>
+        <xpath expr="//br" position="replace"/>
+        <xpath expr="//h2" position="attributes">
+            <attribute name="class">mt0 mb16</attribute>
+            <attribute name="style">font-size: 21px;</attribute>
+        </xpath>
+        <xpath expr="//table" position="attributes">
+            <attribute name="class">table table-sm table-bordered</attribute>
+        </xpath>
+        <tr t-if="o.date_assign" position="replace"/>
          <tr t-if="o.date_last_stage_update" position="replace">
             <tr t-if="o.date_start">
                 <th>Fecha de inicio</th>
@@ -69,10 +85,6 @@
             <tr t-if="o.project_id.partner_id.phone">
                 <th>Teléfono</th>
                 <td><span t-field="o.project_id.partner_id.phone"/></td>
-            </tr>
-            <tr t-if="o.project_id.partner_id.mobile">
-                <th>Otro teléfono</th>
-                <td><span t-field="o.project_id.partner_id.mobile"/></td>
             </tr>
             <tr t-if="o.project_id.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>

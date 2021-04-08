@@ -3,11 +3,11 @@
 
     <template id="task_report_field_service" inherit_id="hs_custom.report_taskorder_document_custom">
         <xpath expr="//h3" position="replace">
-            <h3>Works done</h3>
+            <h4>Works done</h4>
         </xpath>
         <xpath expr="//span[@t-field='o.description']" position="replace">
             <span t-field="o.work_description"/>
-            <center><h3>Observations</h3></center>
+            <center><h4>Observations</h4></center>
             <span t-field="o.observations"/>
         </xpath>
         <xpath expr="//tr[@t-if='o.project_id.partner_id.fax']" position="after">

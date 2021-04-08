@@ -164,6 +164,11 @@ msgid "Country"
 msgstr "País"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__creation_date
+msgid "Creation Date"
+msgstr "Fecha de creación"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_date_received
 msgid "Cupón recibido"
 msgstr ""

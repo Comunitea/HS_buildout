@@ -10,6 +10,8 @@ class CrmLead(models.Model):
     x_date_received = fields.Datetime("Cupón recibido")
     x_estado = fields.Char("Estado")
     x_vendedor = fields.Char("Vendedor")
+    creation_date = fields.Datetime('Creation Date', index=True,
+                                    default=fields.Datetime.now)
 
     @api.multi
     def action_set_lost(self):
