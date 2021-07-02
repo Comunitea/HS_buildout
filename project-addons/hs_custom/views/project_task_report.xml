@@ -18,7 +18,7 @@
                 <td><span t-field="o.date_start"/></td>
             </tr>
         </tr>
-        <xpath expr="//span[@t-field='o.user_id.name']/../../" position="replace"/>
+        <xpath expr="//span[@t-field='o.user_id.name']/../.." position="replace"/>
         <tr t-if="o.partner_id" position="after">
             <tr t-if="o.project_id.x_street">
                 <th>Dirección de obra</th>
