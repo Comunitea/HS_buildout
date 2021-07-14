@@ -19,6 +19,7 @@
             </tr>
         </tr>
         <xpath expr="//span[@t-field='o.user_id.name']/../../" position="replace"/>
+        <xpath expr="//tr[@t-if='o.tag_ids']" position="replace"/>
         <tr t-if="o.partner_id" position="after">
             <tr t-if="o.project_id.x_street">
                 <th>Dirección de obra</th>
