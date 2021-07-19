@@ -19,6 +19,20 @@ class ProjectTask(models.Model):
     cancelled = fields.Boolean("Customer cancellation")
     observations = fields.Html("Observations")
     worker_id = fields.Many2one("res.users", "Technician")
+    project_street = fields.Char("Calle", related="project_id.x_street",
+                                 readonly=True)
+    project_street2 = fields.Char("Calle 2", related="project_id.x_street2",
+                                  readonly=True)
+    project_zip = fields.Char("C.P-", related="project_id.x_zip",
+                              readonly=True)
+    project_city = fields.Char("Ciudad", related="project_id.x_city",
+                               readonly=True)
+    project_state_id = fields.Many2one("res.country.state", "Provincia",
+                                       related="project_id.x_state_id",
+                                       readonly=True)
+    project_country_id = fields.Many2one("res.country", "País",
+                                         related="project_id.x_country_id",
+                                         readonly=True)
 
     def action_close_send(self):
         closed_state = self.env['project.task.type'].\
