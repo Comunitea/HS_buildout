@@ -32,13 +32,3 @@ class ProjectProject(models.Model):
     start_date = fields.Date("Fecha de firma")
     end_date = fields.Date("Fin de obra")
     sale_type_id = fields.Many2one("sale.order.type", "División")
-
-    @api.onchange('partner_id')
-    def onchange_partner_id(self):
-        if self.partner_id:
-            self.x_street = self.partner_id.street
-            self.x_street2 = self.partner_id.street2
-            self.x_city = self.partner_id.city
-            self.x_zip = self.partner_id.zip
-            self.x_state_id = self.partner_id.state_id.id
-            self.x_country_id = self.partner_id.country_id.id

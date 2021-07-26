@@ -115,6 +115,9 @@
             <xpath expr="/tree" position="attributes">
                 <attribute name="decoration-muted">closed</attribute>
             </xpath>
+            <field name="project_id" position="attributes">
+                <attribute name="options">{"no_open": True}</attribute>
+            </field>
         </field>
     </record>
 

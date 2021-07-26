@@ -20,4 +20,6 @@ class ProjectTask(models.Model):
         res = super()._onchange_project()
         if self.project_id and self.project_id.sale_type_id:
             self.sale_type_id = self.project_id.sale_type_id.id
+        if self.project_id and self.project_id.partner_id:
+            self.partner_id = self.project_id.partner_id.id
         return res
