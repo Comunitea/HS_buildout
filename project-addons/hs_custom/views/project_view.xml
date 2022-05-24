@@ -166,6 +166,17 @@
         </field>
     </record>
 
+    <record id="view_project_project_filter_inherit" model="ir.ui.view">
+        <field name="name">view.project.project.filter.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <filter name="Partner" position="after">
+                <filter string="Campaign" name="Campaign" context="{'group_by': 'campaign_id'}"/>
+            </filter>
+        </field>
+    </record>
+
     <record id="project.action_view_task" model="ir.actions.act_window">
         <field name="domain">[('incidence', '=', False)]</field>
         <field name="context">{}</field>
