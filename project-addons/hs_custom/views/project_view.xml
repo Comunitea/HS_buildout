@@ -9,9 +9,7 @@
             <button name="%(portal.portal_share_action)d" position="attributes">
                 <attribute name="invisible">True</attribute>
             </button>
-            <field name="user_id" position="replace">
-                <field name="responsible_id"/>
-            </field>
+            <field name="user_id" position="replace"/>
             <field name="partner_id" position="replace"/>
             <xpath expr="//div[hasclass('oe_title')]" position="after">
                 <group>
@@ -28,6 +26,7 @@
                        </group>
                        <group colspan="2">
                            <field name="type_id"/>
+                           <field name="responsible_id"/>
                            <field name="sale_type_id"/>
                            <field name="start_date" required="True"/>
                            <field name="end_date" />
