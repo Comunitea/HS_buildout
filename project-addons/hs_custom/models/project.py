@@ -32,3 +32,4 @@ class ProjectProject(models.Model):
     start_date = fields.Date("Fecha de firma")
     end_date = fields.Date("Fin de obra")
     sale_type_id = fields.Many2one("sale.order.type", "División")
+    responsible_id = fields.Many2one("res.users", "Responsable de proyecto")

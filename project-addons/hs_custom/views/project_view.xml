@@ -9,7 +9,9 @@
             <button name="%(portal.portal_share_action)d" position="attributes">
                 <attribute name="invisible">True</attribute>
             </button>
-            <field name="user_id" position="replace"/>
+            <field name="user_id" position="replace">
+                <field name="responsible_id"/>
+            </field>
             <field name="partner_id" position="replace"/>
             <xpath expr="//div[hasclass('oe_title')]" position="after">
                 <group>
@@ -143,6 +145,24 @@
                 <filter string="Incidencias" name="incidence" domain="[('incidence','=',True)]"/>
                 <filter string="Tareas" name="tasks" domain="[('incidence','=',False)]"/>
             </filter>
+            <filter name="my_tasks" position="attributes">
+                <attribute name="domain">['|',('user_id','=',uid),('responsible_id', '=', uid)]</attribute>
+            </filter>
+            <filter name="unassigned" position="attributes">
+                <attribute name="domain">['|',('user_id','=',False),('responsible_id', '=', False)]</attribute>
+            </filter>
+            <filter name="user" position="attributes">
+                <attribute name="string">Comercial</attribute>
+            </filter>
+            <filter name="user" position="after">
+                <filter string="Responsable" name="responsible" context="{'group_by':'responsible_id'}"/>
+            </filter>
+            <field name="user_id" position="attributes">
+                <attribute name="string">Comercial</attribute>
+            </field>
+            <field name="user_id" position="after">
+                <field name="responsible_id"/>
+            </field>
         </field>
     </record>
 
