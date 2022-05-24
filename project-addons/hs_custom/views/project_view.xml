@@ -145,24 +145,6 @@
                 <filter string="Incidencias" name="incidence" domain="[('incidence','=',True)]"/>
                 <filter string="Tareas" name="tasks" domain="[('incidence','=',False)]"/>
             </filter>
-            <filter name="my_tasks" position="attributes">
-                <attribute name="domain">['|',('user_id','=',uid),('responsible_id', '=', uid)]</attribute>
-            </filter>
-            <filter name="unassigned" position="attributes">
-                <attribute name="domain">['|',('user_id','=',False),('responsible_id', '=', False)]</attribute>
-            </filter>
-            <filter name="user" position="attributes">
-                <attribute name="string">Comercial</attribute>
-            </filter>
-            <filter name="user" position="after">
-                <filter string="Responsable" name="responsible" context="{'group_by':'responsible_id'}"/>
-            </filter>
-            <field name="user_id" position="attributes">
-                <attribute name="string">Comercial</attribute>
-            </field>
-            <field name="user_id" position="after">
-                <field name="responsible_id"/>
-            </field>
         </field>
     </record>
 
@@ -173,6 +155,18 @@
         <field name="arch" type="xml">
             <filter name="Partner" position="after">
                 <filter string="Campaign" name="Campaign" context="{'group_by': 'campaign_id'}"/>
+            </filter>
+            <field name="user_id" position="attributes">
+                <attribute name="string">Comercial</attribute>
+            </field>
+            <field name="user_id" position="after">
+                <field name="responsible_id"/>
+            </field>
+            <filter name="Manager" position="attributes">
+                <attribute name="context">{'group_by':'responsible_id'}</attribute>
+            </filter>
+            <filter name="Manager" position="after">
+                <filter string="Comercial" name="comercial" context="{'group_by':'user_id'}"/>
             </filter>
         </field>
     </record>
