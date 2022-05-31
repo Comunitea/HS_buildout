@@ -14,7 +14,7 @@
                 <sheet>
                 <div class="oe_button_box" name="button_box">
                     <button name="%(action_view_attach_pictures_wzd)d" string="Attach pictures" type="action" class="oe_stat_button" icon="fa-camera" attrs="{'invisible': [('closed', '=', True)]}"/>
-                    <button name="action_close_send" string="Close &amp; send" type="object" class="oe_stat_button" icon="fa-envelope" attrs="{'invisible': [('closed', '=', True)]}"/>
+                    <button name="action_close_send" string="Close &amp; send" type="object" class="oe_stat_button" icon="fa-envelope" attrs="{'invisible': [('closed', '=', True)]}" confirm="¿Está seguro de cerrar la tarea?"/>
                 </div>
                 <div class="oe_title pr-0">
                     <h1 class="d-flex flex-row justify-content-between">
