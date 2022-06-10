@@ -6,7 +6,8 @@ class ProjectTask(models.Model):
     _inherit = "project.task"
 
     x_pago_fin = fields.Text("Instrucciones para el pago fin de obra")
-    sale_type_id = fields.Many2one("sale.order.type", "División")
+    sale_type_id = fields.Many2one("sale.order.type", "División",
+                                   required=True)
     incidence = fields.Boolean("Incidencia")
 
     @api.onchange('user_id')
