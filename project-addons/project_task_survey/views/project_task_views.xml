@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="inherit_project_task_type_edit" model="ir.ui.view">
+        <field name="name">inherit.project.task.type.edit</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mail_template_id']" position="after">
+                <field name="survey_id"/>
+                <field name="survey_receiver" attrs="{'invisible': [('survey_id', '=', False)]}"/>
+                <field name="extra_survey_id"/>
+                <field name="extra_survey_receiver" attrs="{'invisible': [('extra_survey_id', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
