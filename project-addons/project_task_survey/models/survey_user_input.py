@@ -8,7 +8,7 @@ class SurveyUserInput(models.Model):
 
     def create(self, vals):
         res = super().create(vals)
-        params = self.env.context.get('params', False)
-        if params and params.get('model', False) == 'project.task' and params.get('id', False):
-            res.project_task_id = params.get('id', False)
+        ctx = self.env.context.copy()
+        if 'task_id' in ctx:
+            res.project_task_id = ctx.get('task_id', False)
         return res

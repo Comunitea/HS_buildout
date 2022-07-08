@@ -25,12 +25,16 @@ class ProjectTask(models.Model):
                     'model': self.stage_id.survey_id._name,
                     'res_id': self.stage_id.survey_id.id,
                 })
+                ctx = self.env.context.copy()
+                ctx['task_id'] = self.id
                 message.onchange_template_id_wrapper()
-                message.send_mail_action()
+                message.subject = "{}: {}".format(self.display_name, self.stage_id.survey_id.title)
+                message.with_context(ctx).send_mail_action()
             except Exception as e:
                 _logger.error("survey mail error: {}".format(e))
 
-        if 'stage_id' in vals and self.stage_id.extra_survey_id:
+        # We only send the extra survey if it's not an incidence.
+        if 'stage_id' in vals and self.stage_id.extra_survey_id and not self.incidence:
             try:
                 if self.stage_id.extra_survey_receiver == "manager":
                     partner_id = self.project_id.responsible_id.partner_id
@@ -45,8 +49,11 @@ class ProjectTask(models.Model):
                     'model': self.stage_id.extra_survey_id._name,
                     'res_id': self.stage_id.extra_survey_id.id,
                 })
+                ctx = self.env.context.copy()
+                ctx['task_id'] = self.id
                 message.onchange_template_id_wrapper()
-                message.send_mail_action()
+                message.subject = "{}: {}".format(self.display_name, self.stage_id.extra_survey_id.title)
+                message.with_context(ctx).send_mail_action()
             except Exception as e:
                 _logger.error("survey mail error: {}".format(e))
         return res

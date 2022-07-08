@@ -10,6 +10,7 @@
     'depends': [
         'project',
         'survey',
+        'hs_custom',
     ],
     'data': [
         "views/project_task_views.xml",
