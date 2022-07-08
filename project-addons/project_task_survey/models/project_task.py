@@ -13,7 +13,7 @@ class ProjectTask(models.Model):
 
             try:
                 if self.stage_id.survey_receiver == "manager":
-                    partner_id = self.project_id.responsible_id.partner_id
+                    partner_id = self.user_id.partner_id
                 else:
                     partner_id = self.project_id.user_id.partner_id
                 template = self.env.ref('survey.email_template_survey', raise_if_not_found=False)
@@ -37,7 +37,7 @@ class ProjectTask(models.Model):
         if 'stage_id' in vals and self.stage_id.extra_survey_id and not self.incidence:
             try:
                 if self.stage_id.extra_survey_receiver == "manager":
-                    partner_id = self.project_id.responsible_id.partner_id
+                    partner_id = self.user_id.partner_id
                 else:
                     partner_id = self.project_id.user_id.partner_id
                 template = self.env.ref('survey.email_template_survey', raise_if_not_found=False)
