@@ -5,6 +5,7 @@ class SurveyUserInput(models.Model):
     _inherit = 'survey.user_input'
 
     project_task_id = fields.Many2one('project.task', string='Project task')
+    tag_ids = fields.Many2many('project.tags', related="project_task_id.tag_ids", string="Tags")
 
     def create(self, vals):
         res = super().create(vals)

@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='token']" position="after">
                 <field name="project_task_id"/>
+                <field name="tag_ids" widget="many2many_tags"/>
             </xpath>
         </field>
     </record>
@@ -19,6 +20,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='state']" position="after">
                 <field name="project_task_id"/>
+                <field name="tag_ids" widget="many2many_tags"/>
             </xpath>
         </field>
     </record>
