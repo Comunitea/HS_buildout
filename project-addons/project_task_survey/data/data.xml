@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="project_task_survey_marketing_user" model="ir.config_parameter">
+            <field name="key">project_task_survey.survey_marketing_user</field>
+            <field name="value">14604</field>
+        </record>
+    </data>
+</openerp>

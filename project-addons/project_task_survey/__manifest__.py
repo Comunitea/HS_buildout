@@ -13,6 +13,7 @@
         'hs_custom',
     ],
     'data': [
+        "data/data.xml",
         "views/project_task_views.xml",
         "views/survey_user_input.xml",
     ],

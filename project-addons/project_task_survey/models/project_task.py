@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime, timedelta
 from odoo import api, fields, models
 _logger = logging.getLogger(__name__)
 
@@ -15,7 +16,8 @@ class ProjectTask(models.Model):
                 if self.stage_id.survey_receiver == "manager":
                     partner_id = self.user_id.partner_id
                 else:
-                    partner_id = self.project_id.user_id.partner_id
+                    survey_marketing_user = self.env["ir.config_parameter"].sudo().get_param("project_task_survey.survey_marketing_user")
+                    partner_id = self.env['res.partner'].browse(int(survey_marketing_user))
                 template = self.env.ref('survey.email_template_survey', raise_if_not_found=False)
                 message = self.env['survey.mail.compose.message'].create({
                     'survey_id': self.stage_id.survey_id.id,
@@ -39,7 +41,8 @@ class ProjectTask(models.Model):
                 if self.stage_id.extra_survey_receiver == "manager":
                     partner_id = self.user_id.partner_id
                 else:
-                    partner_id = self.project_id.user_id.partner_id
+                    survey_marketing_user = self.env["ir.config_parameter"].sudo().get_param("project_task_survey.survey_marketing_user")
+                    partner_id = self.env['res.partner'].browse(int(survey_marketing_user))
                 template = self.env.ref('survey.email_template_survey', raise_if_not_found=False)
                 message = self.env['survey.mail.compose.message'].create({
                     'survey_id': self.stage_id.extra_survey_id.id,
@@ -51,6 +54,8 @@ class ProjectTask(models.Model):
                 })
                 ctx = self.env.context.copy()
                 ctx['task_id'] = self.id
+                # We add a delay of 7 days
+                ctx['default_scheduled_date'] = datetime.now() + timedelta(weeks=1)
                 message.onchange_template_id_wrapper()
                 message.subject = "{}: {}".format(self.display_name, self.stage_id.extra_survey_id.title)
                 message.with_context(ctx).send_mail_action()
