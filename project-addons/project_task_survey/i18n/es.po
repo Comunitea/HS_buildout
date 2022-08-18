@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 07:24+0000\n"
-"PO-Revision-Date: 2022-07-08 07:24+0000\n"
+"POT-Creation-Date: 2022-08-18 11:48+0000\n"
+"PO-Revision-Date: 2022-08-18 11:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: project_task_survey
+#: model_terms:ir.ui.view,arch_db:project_task_survey.inherit_survey_user_input_tree
+msgid "Average"
+msgstr "Promedio"
 
 #. module: project_task_survey
 #: model:ir.model.fields,field_description:project_task_survey.field_project_task_type__extra_survey_id
@@ -38,6 +43,11 @@ msgid "Marketing"
 msgstr ""
 
 #. module: project_task_survey
+#: model:ir.model,name:project_task_survey.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Correos salientes"
+
+#. module: project_task_survey
 #: model:ir.model.fields,field_description:project_task_survey.field_survey_user_input__project_task_id
 msgid "Project task"
 msgstr "Tarea"
@@ -58,6 +68,11 @@ msgid "Survey User Input"
 msgstr "Entrada de usuario de la encuesta"
 
 #. module: project_task_survey
+#: model:ir.model.fields,field_description:project_task_survey.field_survey_user_input__tag_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: project_task_survey
 #: model:ir.model,name:project_task_survey.model_project_task
 msgid "Task"
 msgstr "Tarea"
@@ -67,3 +82,7 @@ msgstr "Tarea"
 msgid "Task Stage"
 msgstr "Etapa de la tarea"
 
+#. module: project_task_survey
+#: model:ir.model.fields,field_description:project_task_survey.field_survey_user_input__team_tag
+msgid "Team tag"
+msgstr "Equipo"
