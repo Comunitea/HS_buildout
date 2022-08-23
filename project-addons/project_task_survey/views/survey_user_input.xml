@@ -26,4 +26,15 @@
         </field>
     </record>
 
+    <record id="inherit_survey_user_input_search" model="ir.ui.view">
+        <field name="name">inherit.survey.user.input.search</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='group_by_partner']" position="after">
+                <filter string="Team" name="group_by_team" domain="[]" context="{'group_by': 'team_tag'}"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
