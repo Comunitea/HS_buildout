@@ -18,14 +18,10 @@
         <field name="model">survey.user_input</field>
         <field name="inherit_id" ref="survey.survey_user_input_tree"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='quizz_score']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
             <xpath expr="//field[@name='state']" position="after">
                 <field name="project_task_id"/>
                 <field name="tag_ids" widget="many2many_tags"/>
                 <field name="team_tag"/>
-                <field name="quizz_score" avg="Average"/>
             </xpath>
         </field>
     </record>
