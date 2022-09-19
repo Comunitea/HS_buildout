@@ -5,5 +5,10 @@
             <field name="key">project_task_survey.survey_marketing_user</field>
             <field name="value">14604</field>
         </record>
+
+        <record id="project_task_survey_on_create_survey_id" model="ir.config_parameter">
+            <field name="key">project_task_survey.on_create_survey_id</field>
+            <field name="value">1</field>
+        </record>
     </data>
 </openerp>

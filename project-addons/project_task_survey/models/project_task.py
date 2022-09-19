@@ -8,6 +8,36 @@ class ProjectTask(models.Model):
 
     _inherit = 'project.task'
 
+    def send_date_start_survey(self):
+        partner_id = self.user_id.partner_id
+        template = self.env.ref('survey.email_template_survey', raise_if_not_found=False)
+        on_create_survey_id = self.env["ir.config_parameter"].sudo().get_param("project_task_survey.on_create_survey_id")
+        survey_id = self.env['survey.survey'].browse(int(on_create_survey_id))
+
+        message = self.env['survey.mail.compose.message'].create({
+            'survey_id': survey_id.id,
+            'public': 'email_private',
+            'partner_ids': [(4, partner_id.id)],
+            'template_id': template.id,
+            'model': survey_id._name,
+            'res_id': survey_id.id,
+        })
+        ctx = self.env.context.copy()
+        ctx['task_id'] = self.id
+        ctx['default_scheduled_date'] = self.date_start
+        message.onchange_template_id_wrapper()
+        message.subject = "{}: {}".format(self.display_name, survey_id.title)
+        message.with_context(ctx).send_mail_action()
+
+    def create(self, vals):
+        res = super().create(vals)
+        if 'date_start' in vals[0]:
+            try:
+                res.send_date_start_survey()
+            except Exception as e:
+                _logger.error("survey mail error: {}".format(e))
+        return res
+
     def write(self, vals):
         res = super().write(vals)
         if 'stage_id' in vals and self.stage_id.survey_id:
@@ -59,6 +89,12 @@ class ProjectTask(models.Model):
                 message.onchange_template_id_wrapper()
                 message.subject = "{}: {}".format(self.display_name, self.stage_id.extra_survey_id.title)
                 message.with_context(ctx).send_mail_action()
+            except Exception as e:
+                _logger.error("survey mail error: {}".format(e))
+        
+        if 'date_start' in vals:
+            try:
+                self.send_date_start_survey()
             except Exception as e:
                 _logger.error("survey mail error: {}".format(e))
         return res

@@ -22,6 +22,8 @@
                 <field name="project_task_id"/>
                 <field name="tag_ids" widget="many2many_tags"/>
                 <field name="team_tag"/>
+                <field name="survey_last_update" invisible="1"/>
+                <field name="worker_id"/>
             </xpath>
         </field>
     </record>
@@ -33,6 +35,7 @@
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='group_by_partner']" position="after">
                 <filter string="Team" name="group_by_team" domain="[]" context="{'group_by': 'team_tag'}"/>
+                <filter string="Technician" name="group_by_worker_id" domain="[]" context="{'group_by': 'worker_id'}"/>
             </xpath>
         </field>
     </record>
