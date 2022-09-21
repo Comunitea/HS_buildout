@@ -6,9 +6,7 @@ class SurveyUserInput(models.Model):
 
     project_task_id = fields.Many2one('project.task', string='Project task')
     tag_ids = fields.Many2many('project.tags', related="project_task_id.tag_ids", string="Tags")
-    #REvisar esto antes de subirlo que creo que puso el campo a none
-    # Mirar si hay que quitarle el store, píllate una base de datos nueva y actualizas módulo
-    worker_id = fields.Many2one("res.users", "Technician", related="project_task_id.worker_id")
+    worker_id = fields.Many2one("res.users", "Technician", related="project_task_id.worker_id", store=True)
     team_tag = fields.Char(
         string='Team tag',
         compute='_compute_team_tag', store=True)
