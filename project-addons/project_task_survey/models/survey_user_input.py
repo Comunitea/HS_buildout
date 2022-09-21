@@ -42,7 +42,7 @@ class SurveyUserInput(models.Model):
         res = read_group_res = super().read_group(
             domain, fields, groupby, offset=offset, limit=limit, orderby=orderby
         )
-        if groupby and groupby[0] == "team_tag":
+        if groupby:
             if 'quizz_score' in fields:
                 for user_input in res:
                     if '__domain' in user_input:
