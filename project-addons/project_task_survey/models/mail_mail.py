@@ -8,12 +8,13 @@ class MailMail(models.Model):
 
     _inherit = 'mail.mail'
 
+    @api.model
     def create(self, vals):
         ctx = self.env.context.copy()
         default_scheduled_date = ctx.get("default_scheduled_date", False)
         if default_scheduled_date:
             vals['scheduled_date'] = default_scheduled_date
-        res = super().create(vals)        
+        res = super().create(vals)
         return res
 
     @api.multi

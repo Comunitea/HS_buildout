@@ -29,15 +29,17 @@ class ProjectTask(models.Model):
         message.subject = "{}: {}".format(self.display_name, survey_id.title)
         message.with_context(ctx).send_mail_action()
 
+    @api.model
     def create(self, vals):
         res = super().create(vals)
-        if 'date_start' in vals[0]:
+        if 'date_start' in vals:
             try:
                 res.send_date_start_survey()
             except Exception as e:
                 _logger.error("survey mail error: {}".format(e))
         return res
 
+    @api.multi
     def write(self, vals):
         res = super().write(vals)
         if 'stage_id' in vals and self.stage_id.survey_id:
@@ -91,7 +93,7 @@ class ProjectTask(models.Model):
                 message.with_context(ctx).send_mail_action()
             except Exception as e:
                 _logger.error("survey mail error: {}".format(e))
-        
+
         if 'date_start' in vals:
             try:
                 self.send_date_start_survey()

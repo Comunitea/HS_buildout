@@ -11,6 +11,7 @@
         'project',
         'survey',
         'hs_custom',
+        'hs_field_service'
     ],
     'data': [
         "data/data.xml",

@@ -12,6 +12,7 @@ class SurveyUserInput(models.Model):
         compute='_compute_team_tag', store=True)
     survey_last_update = fields.Datetime('Survey Last Date', compute='_compute_survey_last_update', store=True)
 
+    @api.model
     def create(self, vals):
         res = super().create(vals)
         ctx = self.env.context.copy()
@@ -26,13 +27,13 @@ class SurveyUserInput(models.Model):
             for tag in user_input.tag_ids:
                 team_tag += " {}".format(tag.name)
             user_input.team_tag = team_tag
-    
+
     @api.depends('user_input_line_ids')
     def _compute_survey_last_update(self):
         for user_input in self:
             if user_input.user_input_line_ids:
                 user_input.survey_last_update = max(user_input.user_input_line_ids.mapped('write_date'))
-    
+
     @api.model
     def read_group(
         self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True
