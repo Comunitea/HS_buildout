@@ -126,6 +126,9 @@ class CrmLead(models.Model):
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
                     self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
+        elif not self.phone and not self.managed:
+            self.action_set_lost()
+            self.managed = True
 
         return self
 
