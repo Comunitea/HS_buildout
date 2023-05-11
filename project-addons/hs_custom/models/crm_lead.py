@@ -21,6 +21,7 @@ class CrmLead(models.Model):
         string='Sale Type',
         default=_get_order_type
     )
+    managed = fields.Boolean("Automatizada", default=False)
 
     @api.onchange('zip')
     def _onchange_zip(self):
@@ -95,7 +96,7 @@ class CrmLead(models.Model):
     @api.multi
     def create_opportunity(self):
         self.ensure_one()
-        if self.phone:
+        if self.phone and not self.managed:
             try:
                 number = self.phone_format_custom(
                     self.phone, company=self.company_id)
@@ -105,6 +106,7 @@ class CrmLead(models.Model):
                 self.message_post(body=_("Invalid phone number ") + self.phone)
                 self.phone = ""
                 self.action_set_lost()
+                self.managed = True
             else:
                 campaign_id = self.campaign_id
                 users_list = self.get_users_list()
@@ -122,6 +124,7 @@ class CrmLead(models.Model):
                 elif users_list and self.user_id in users_list.user_ids:
                     self.convert_opportunity(self.partner_id.id,
                                              [self.user_id.id], self.team_id.id)
+                    self.managed = True
 
         return self
 
@@ -161,4 +164,7 @@ class CrmLead(models.Model):
                 if users_list:
                     if users_list.user_id != self.user_id:
                         users_list.user_id = self.user_id
+        for lead in self:
+            if lead.type == 'lead':
+                lead.create_opportunity()
         return res
