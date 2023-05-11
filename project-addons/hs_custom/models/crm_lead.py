@@ -125,7 +125,7 @@ class CrmLead(models.Model):
                     self.convert_opportunity(self.partner_id.id,
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
-                    self.message_post(body="Cupón nuevo")
+                    self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
 
         return self
 
