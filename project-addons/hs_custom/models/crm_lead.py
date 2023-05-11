@@ -102,7 +102,7 @@ class CrmLead(models.Model):
             except UserError as e:
                 number = e
             if isinstance(number, UserError):
-                self.description = _("Invalid phone number ") + self.phone
+                self.message_post(body=_("Invalid phone number ") + self.phone)
                 self.phone = ""
                 self.action_set_lost()
             else:
@@ -155,8 +155,10 @@ class CrmLead(models.Model):
     @api.multi
     def write(self, vals):
         res = super().write(vals)
-        users_list = self.get_users_list()
-        if users_list:
-            if users_list.user_id != self.user_id:
-                users_list.user_id = self.user_id
+        if vals.get('state_id') and not vals.get('user_id'):
+            for lead in self:
+                users_list = lead.get_users_list()
+                if users_list:
+                    if users_list.user_id != self.user_id:
+                        users_list.user_id = self.user_id
         return res
