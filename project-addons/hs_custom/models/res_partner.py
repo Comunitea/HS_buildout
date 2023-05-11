@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class ResPartner(models.Model):
@@ -25,8 +25,45 @@ class ResUsers(models.Model):
 
     _inherit = "res.users"
 
+    sequence = fields.Integer(default=10)
     location_source_id = fields.Many2one(
         comodel_name='stock.location',
         string='Ubicación de consumo',
         help="Location by default for user's task",
     )
+
+
+class ResUsersList(models.Model):
+
+    _name = "res.users.list"
+
+    def _get_order_type(self):
+        return self.env['sale.order.type'].search([], limit=1)
+
+    name = fields.Char("Name")
+    state_id = fields.Many2one(comodel_name="res.country.state",
+                               string="State")
+    user_ids = fields.Many2many(comodel_name="res.users",
+                                string="User")
+    user_id = fields.Many2one(comodel_name="res.users",
+                              string="Last assigned user", readonly=True)
+    sale_type_id = fields.Many2one(
+        comodel_name='sale.order.type',
+        string='Sale Type',
+        default=_get_order_type,
+        required=True
+    )
+
+    # def rotate_users(self):
+    #     self.ensure_one()
+
+    #     if self.user_ids:
+    #         current_user = self.user_id
+    #         if current_user:
+    #             current_index = self.user_ids.ids.index(current_user.id)
+    #             next_index = (current_index + 1) % len(self.user_ids)
+    #             next_user = self.user_ids[next_index]
+    #             self.last_assigned_user = next_user
+    #             self.user_id = next_user
+    #         else:
+    #             self.user_id = self.user_ids[0]

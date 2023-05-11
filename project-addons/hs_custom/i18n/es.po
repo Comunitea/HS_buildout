@@ -1,19 +1,25 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#       * hs_custom
+#	* hs_custom
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-16 16:58+0000\n"
-"PO-Revision-Date: 2020-06-16 16:58+0000\n"
+"POT-Creation-Date: 2023-05-11 10:21+0000\n"
+"PO-Revision-Date: 2023-05-11 10:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_partner__project_count
+#: model:ir.model.fields,field_description:hs_custom.field_res_users__project_count
+msgid "# Proyectos"
+msgstr ""
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.invoice_form_add_custom
@@ -62,9 +68,19 @@ msgid "<strong>Firma del operario:</strong>"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_invoice__comment
+msgid "Additional Information"
+msgstr "Información adicional"
+
+#. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "Address"
 msgstr "Dirección"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Extracto bancario"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_zip
@@ -88,6 +104,11 @@ msgid "Calle..."
 msgstr ""
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
+msgid "Campaign"
+msgstr "Campaña"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__type_id
 msgid "Categoría"
 msgstr ""
@@ -105,6 +126,7 @@ msgstr ""
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
 msgid "Comercial"
 msgstr ""
 
@@ -124,6 +146,11 @@ msgid "Comisión pagada"
 msgstr ""
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.external_layout_boxed_logo_by_type
+msgid "Company Name:"
+msgstr "Razón Social:"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_condiciones_pagos
 msgid "Condiciones de Pago"
 msgstr ""
@@ -131,6 +158,11 @@ msgstr ""
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_condiciones_pago
 msgid "Condiciones de pago"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_partner
+msgid "Contact"
 msgstr ""
 
 #. module: hs_custom
@@ -156,7 +188,7 @@ msgstr ""
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_crm_lead2opportunity_partner
 msgid "Convert Lead to Opportunity (not in mass)"
-msgstr "Convertir iniciativa a oportunidad (no masivamente)"
+msgstr ""
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
@@ -164,9 +196,25 @@ msgid "Country"
 msgstr "País"
 
 #. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_country_state
+#: model_terms:ir.ui.view,arch_db:hs_custom.users_list_view_search
+msgid "Country state"
+msgstr "Provincia"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__creation_date
 msgid "Creation Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_date_received
@@ -200,6 +248,11 @@ msgid "Dirección de obra"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__sale_type_id
 #: model:ir.model.fields,field_description:hs_custom.field_project_task__sale_type_id
 msgid "División"
@@ -209,6 +262,16 @@ msgstr ""
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_iva_doc
 msgid "Documento de IVA"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_sale_order_type__email
+msgid "Email"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_mail_thread
+msgid "Email Thread"
+msgstr "Hilo de mensajes"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_estado
@@ -243,13 +306,40 @@ msgid "Fin de obra"
 msgstr ""
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
+msgid "Future Activities"
+msgstr "Actividades futuras"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.users_list_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_info
 msgid "Hoja de información"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__id
+msgid "ID"
+msgstr ""
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_iva
 msgid "IVA reducido"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task__incidence
+msgid "Incidencia"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.actions.act_window,name:hs_custom.action_view_incidences
+#: model:ir.ui.menu,name:hs_custom.menu_incidences
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_task_search_form_incidences
+msgid "Incidencias"
 msgstr ""
 
 #. module: hs_custom
@@ -263,6 +353,12 @@ msgid "Instrucciones para el pago fin de obra"
 msgstr ""
 
 #. module: hs_custom
+#: code:addons/hs_custom/models/crm_lead.py:105
+#, python-format
+msgid "Invalid phone number "
+msgstr "Número de teléfono erróneo"
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_account_invoice
 msgid "Invoice"
 msgstr "Factura"
@@ -270,7 +366,32 @@ msgstr "Factura"
 #. module: hs_custom
 #: model:ir.actions.report,name:hs_custom.account_invoices_with_description
 msgid "Invoices with description"
-msgstr "Factura con descripción"
+msgstr "Facturas (descripción)"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__user_id
+msgid "Last assigned user"
+msgstr "Último usuario asignado"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
+msgid "Late Activities"
+msgstr "Actividades tardías"
 
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_crm_lead
@@ -288,9 +409,19 @@ msgid "Logo"
 msgstr ""
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
+msgid "My Activities"
+msgstr "Mis actividades"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_nif
 msgid "NIF"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__name
+msgid "Name"
+msgstr "Nombre"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_tenant_name
@@ -303,12 +434,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_task_chatter_document_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
 msgid "Nombre inquilino"
-msgstr ""
-
-#. module: hs_custom
-#: model_terms:ir.ui.view,arch_db:hs_custom.report_task_chatter_document_custom
-#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
-msgid "Otro teléfono"
 msgstr ""
 
 #. module: hs_custom
@@ -327,6 +452,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
 msgid "País"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_sale_order_type__phone
+msgid "Phone"
+msgstr "Teléfono"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_plano
@@ -350,11 +480,47 @@ msgid "Provincia"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.actions.act_window,name:hs_custom.project_project_action_from_partner
+#: model:ir.model.fields,field_description:hs_custom.field_res_partner__project_ids
+#: model:ir.model.fields,field_description:hs_custom.field_res_users__project_ids
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_partner_form_fax_custom
+msgid "Proyectos"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__responsible_id
+msgid "Responsable de proyecto"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_sale_order
+msgid "Sale Order"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__sale_type_id
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__sale_type_id
+#: model_terms:ir.ui.view,arch_db:hs_custom.users_list_view_search
+msgid "Sale Type"
+msgstr "Tipo de venta"
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_sale_order_line
 msgid "Sales Order Line"
 msgstr "Línea pedido de venta"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
+msgid "Show all records which has next action date is before today"
+msgstr "Mostrar todos los registros que tienen la próxima fecha de acción antes de hoy"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__state_id
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "State"
 msgstr "Estado"
@@ -382,6 +548,11 @@ msgid "Subtotal Neto"
 msgstr ""
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_task_search_form_incidences
+msgid "Tareas"
+msgstr ""
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_project_task
 msgid "Task"
 msgstr "Tarea"
@@ -400,6 +571,11 @@ msgid "Teléfono inquilino"
 msgstr ""
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
+msgid "Today Activities"
+msgstr "Actividades de Hoy"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_trabajos
 msgid "Trabajos a realizar"
 msgstr ""
@@ -415,14 +591,37 @@ msgid "Ubicación de consumo"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__user_ids
+msgid "User"
+msgstr "Usuario"
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_users
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_users_list_form
 msgid "Users"
 msgstr "Usuarios"
+
+#. module: hs_custom
+#: model:ir.actions.act_window,name:hs_custom.users_list_action
+#: model:ir.model.fields,field_description:hs_custom.field_res_country_state__user_list_ids
+msgid "Users List"
+msgstr "Lista de usuarios"
+
+#. module: hs_custom
+#: model:ir.ui.menu,name:hs_custom.users_list_menu
+#: model_terms:ir.ui.view,arch_db:hs_custom.res_country_state_form_inherit
+msgid "Users Lists"
+msgstr "Listas de usuarios"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_vendedor
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_vendedor
 msgid "Vendedor"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_sale_order_type__website
+msgid "Web"
 msgstr ""
 
 #. module: hs_custom
@@ -434,3 +633,9 @@ msgstr "C.P."
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "e.g. https://www.odoo.com"
 msgstr "e.j. https://www.odoo.com"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_users_list
+msgid "res.users.list"
+msgstr ""
+

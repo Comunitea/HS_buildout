@@ -181,7 +181,6 @@
                         domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
                         ]"/>
             </xpath>
-
         </field>
     </record>
 

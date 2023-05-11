@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_users_list_form" model="ir.ui.view">
+        <field name="name">view.users.list.form</field>
+        <field name="model">res.users.list</field>
+        <field name="type">form</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="state_id"/>
+                    <field name="sale_type_id"/>
+                    <field name="user_id" invisible="1"/>
+                </group>
+                <notebook colspan="4">
+                    <page name="users" string="Users">
+                        <field name="user_ids">
+                            <tree  default_order='sequence'>
+                                <field name="sequence" widget="handle"/>
+                                <field name="name" />
+                                <field name="login" />
+                                <field name="lang" />
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_users_list_tree" model="ir.ui.view" >
+        <field name="name">Users List</field>
+        <field name="model">res.users.list</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state_id"/>
+                <field name="sale_type_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="users_list_view_search" model="ir.ui.view">
+        <field name="name">users.list.view.search</field>
+        <field name="model">res.users.list</field>
+         <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="state_id"/>
+                <field name="sale_type_id"/>
+                <group string="Group By" name="groupby">
+                    <filter name="state_groupby" string="Country state" context="{'group_by': 'state_id'}"/>
+                    <filter name="sale_type_groupby" string="Sale Type" context="{'group_by': 'sale_type_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="users_list_action" model="ir.actions.act_window">
+        <field name="name">Users List</field>
+        <field name="res_model">res.users.list</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="users_list_view_search"/>
+    </record>
+
+    <menuitem
+        id="users_list_menu"
+        name="Users Lists"
+        action="users_list_action"
+        parent="contacts.menu_localisation"
+        sequence="10"/>
+
+</odoo>

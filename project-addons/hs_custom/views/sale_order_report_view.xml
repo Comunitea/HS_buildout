@@ -36,6 +36,9 @@
         <xpath expr="//span[@t-field='company.website']" position="replace">
             <span t-esc="('type_id' in o and o.type_id.website) and o.type_id.website or company.website"/>
         </xpath>
+        <xpath expr="//div[hasclass('o_boxed_footer')]/div/ul/li[1]" position="before">
+            <li t-if="company.name" class="list-inline-item">Company Name: <span t-field="company.name"/></li>
+        </xpath>
     </template>
 
 </odoo>

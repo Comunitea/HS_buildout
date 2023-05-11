@@ -12,7 +12,7 @@ class ProjectTask(models.Model):
 
     @api.onchange('user_id')
     def _onchange_user(self):
-        super()._onchange_user()
+        # super()._onchange_user()
         if self.user_id and self.user_id.location_source_id:
             self.location_source_id = self.user_id.location_source_id.id
 

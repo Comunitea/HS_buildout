@@ -9,6 +9,7 @@
             <field name="mobile" position="after">
                 <field name="x_tenant_name"/>
                 <field name="fax"/>
+                <field name="sale_type_id"/>
             </field>
             <page name="extra" position="after">
                 <page string="Datos de Zoho CRM">
