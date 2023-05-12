@@ -45,6 +45,7 @@
                 <field name="mobile"/>
                 <field name="x_tenant_name"/>
                 <field name="fax"/>
+                <field name="sale_type_id"/>
             </field>
             <field name="website" position="after">
                 <field name="x_date_received"/>
