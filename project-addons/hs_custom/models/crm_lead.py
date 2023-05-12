@@ -57,7 +57,8 @@ class CrmLead(models.Model):
     @api.model
     def create(self, vals):
         res = super().create(vals)
-        res = res.create_opportunity()
+        if self.phone:
+            res = res.create_opportunity()
         return res
 
     def phone_format_custom(self, number, country=None, company=None):
@@ -126,7 +127,7 @@ class CrmLead(models.Model):
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
                     self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
-        elif not self.phone and not self.managed and not self.message_ids.filtered(lambda m: m.message_type == 'email'):
+        elif not self.phone and not self.managed:
             self.managed = True
             self.action_set_lost()
 
