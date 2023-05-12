@@ -117,16 +117,24 @@ class CrmLead(models.Model):
                     users = tomerge.mapped('user_id').filtered(
                         lambda x: x.active)
                     self = self.action_merge(tomerge)
+                    self.managed = True
                     self.campaign_id = campaign_id
                     if users:
                         self.allocate_salesman([users[0].id], self.team_id.id)
                     elif users_list and self.user_id in users_list.user_ids:
                         self.allocate_salesman([self.user_id.id], self.team_id.id)
-                elif users_list and (not self.user_id or self.user_id in users_list.user_ids):
+                elif users_list and self.user_id in users_list.user_ids:                       
                     self.convert_opportunity(self.partner_id.id,
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
                     self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
+                elif users_list and not user_id:
+                    self._onchange_state_id()
+                    if self.user_id:
+                        self.convert_opportunity(self.partner_id.id,
+                                                 [self.user_id.id], self.team_id.id)
+                        self.managed = True
+                        self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
         elif not self.phone and not self.managed:
             self.managed = True
             self.action_set_lost()
@@ -163,12 +171,6 @@ class CrmLead(models.Model):
     @api.multi
     def write(self, vals):
         res = super().write(vals)
-        if vals.get('state_id') and not vals.get('user_id'):
-            for lead in self:
-                users_list = lead.get_users_list()
-                if users_list:
-                    if users_list.user_id != self.user_id:
-                        users_list.user_id = self.user_id
         for lead in self:
             if lead.type == 'lead' and lead.phone:
                 lead.create_opportunity()
