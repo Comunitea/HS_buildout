@@ -122,7 +122,7 @@ class CrmLead(models.Model):
                         self.allocate_salesman([users[0].id], self.team_id.id)
                     elif users_list and self.user_id in users_list.user_ids:
                         self.allocate_salesman([self.user_id.id], self.team_id.id)
-                elif users_list and self.user_id in users_list.user_ids:
+                elif users_list and (not self.user_id or self.user_id in users_list.user_ids):
                     self.convert_opportunity(self.partner_id.id,
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
