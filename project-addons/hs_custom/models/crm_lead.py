@@ -57,7 +57,7 @@ class CrmLead(models.Model):
     @api.model
     def create(self, vals):
         res = super().create(vals)
-        if self.phone:
+        if res.phone:
             res = res.create_opportunity()
         return res
 
