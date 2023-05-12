@@ -128,7 +128,7 @@ class CrmLead(models.Model):
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
                     self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
-                elif users_list and not user_id:
+                elif users_list and not self.user_id:
                     self._onchange_state_id()
                     if self.user_id:
                         self.convert_opportunity(self.partner_id.id,
