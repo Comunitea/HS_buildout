@@ -116,7 +116,7 @@ class CrmLead(models.Model):
                 if len(tomerge) >= 2:
                     users = tomerge.mapped('user_id').filtered(
                         lambda x: x.active)
-                    self = self.action_merge(tomerge)
+                    self = self.with_context(merge=true).action_merge(tomerge)
                     self.managed = True
                     self.campaign_id = campaign_id
                     if users:
@@ -167,6 +167,6 @@ class CrmLead(models.Model):
     def write(self, vals):
         res = super().write(vals)
         for lead in self:
-            if lead.type == 'lead' and lead.phone:
+            if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False):
                 lead.create_opportunity()
         return res
