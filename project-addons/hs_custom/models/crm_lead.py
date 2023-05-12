@@ -170,6 +170,6 @@ class CrmLead(models.Model):
                     if users_list.user_id != self.user_id:
                         users_list.user_id = self.user_id
         for lead in self:
-            if lead.type == 'lead':
+            if lead.type == 'lead' and lead.phone:
                 lead.create_opportunity()
         return res
