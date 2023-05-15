@@ -116,7 +116,7 @@ class CrmLead(models.Model):
                 if len(tomerge) >= 2:
                     users = tomerge.mapped('user_id').filtered(
                         lambda x: x.active)
-                    self = self.with_context(merge=true).action_merge(tomerge)
+                    self = self.with_context(merge=True).action_merge(tomerge)
                     self.managed = True
                     self.campaign_id = campaign_id
                     if users:
