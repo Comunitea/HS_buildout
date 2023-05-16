@@ -92,6 +92,11 @@ class CrmLead(models.Model):
     def action_merge(self, opportunity_ids):
         self.ensure_one()
         return opportunity_ids.merge_opportunity()
+    
+    @api.multi
+    def merge_opportunity(self, user_id=False, team_id=False):
+        return super(CrmLead, self.with_context(merge=True)).\
+            merge_opportunity(user_id=user_id, team_id=team_id)
 
     @api.multi
     def create_opportunity(self):
@@ -115,7 +120,7 @@ class CrmLead(models.Model):
                 if len(tomerge) >= 2:
                     users = tomerge.filtered(lambda x: x.id != self.id).mapped('user_id').filtered(
                         lambda x: x.active)
-                    self = self.with_context(merge=True).action_merge(tomerge)
+                    self = self.action_merge(tomerge)
                     self.managed = True
                     self.campaign_id = campaign_id
                     self.creation_date = fields.Datetime.now()
