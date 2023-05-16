@@ -91,8 +91,7 @@ class CrmLead(models.Model):
     @api.multi
     def action_merge(self, opportunity_ids):
         self.ensure_one()
-        return opportunity_ids.merge_opportunity(self.user_id.id,
-                                                 self.team_id.id)
+        return opportunity_ids.merge_opportunity()
 
     @api.multi
     def create_opportunity(self):
@@ -114,16 +113,17 @@ class CrmLead(models.Model):
                 tomerge = self._get_duplicated_leads_by_phone(
                     self.phone, include_lost=False)
                 if len(tomerge) >= 2:
-                    users = tomerge.mapped('user_id').filtered(
+                    users = tomerge.filtered(lambda x: x.id != self.id).mapped('user_id').filtered(
                         lambda x: x.active)
                     self = self.with_context(merge=True).action_merge(tomerge)
                     self.managed = True
                     self.campaign_id = campaign_id
                     if users:
-                        self.allocate_salesman([users[0].id], self.team_id.id)
+                        # self.allocate_salesman([users[0].id], self.team_id.id)
+                        self.user_id = users[0]
                     elif users_list and self.user_id in users_list.user_ids:
                         self.allocate_salesman([self.user_id.id], self.team_id.id)
-                elif users_list and self.user_id in users_list.user_ids:                       
+                elif users_list and self.user_id in users_list.user_ids:
                     self.convert_opportunity(self.partner_id.id,
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
@@ -165,6 +165,7 @@ class CrmLead(models.Model):
 
     @api.multi
     def write(self, vals):
+        managed = vals.get('managed', False)
         res = super().write(vals)
         for lead in self:
             if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False):
