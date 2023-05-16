@@ -118,6 +118,7 @@ class CrmLead(models.Model):
                     self = self.with_context(merge=True).action_merge(tomerge)
                     self.managed = True
                     self.campaign_id = campaign_id
+                    self.creation_date = fields.Datetime.now()
                     if users:
                         # self.allocate_salesman([users[0].id], self.team_id.id)
                         self.user_id = users[0]
@@ -165,7 +166,6 @@ class CrmLead(models.Model):
 
     @api.multi
     def write(self, vals):
-        managed = vals.get('managed', False)
         res = super().write(vals)
         for lead in self:
             if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False):
