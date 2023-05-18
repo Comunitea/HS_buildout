@@ -31,6 +31,7 @@ class ResUsers(models.Model):
         string='Ubicación de consumo',
         help="Location by default for user's task",
     )
+    assignment_cycle = fields.Integer('Assignment Cycle', default=1)
 
 
 class ResUsersList(models.Model):
@@ -53,6 +54,7 @@ class ResUsersList(models.Model):
         default=_get_order_type,
         required=True
     )
+    assignment_cycle = fields.Integer('Assignment Cycle', readonly=True)
 
     # def rotate_users(self):
     #     self.ensure_one()

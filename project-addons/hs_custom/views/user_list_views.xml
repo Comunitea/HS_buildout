@@ -16,6 +16,7 @@
                     <field name="state_id"/>
                     <field name="sale_type_id"/>
                     <field name="user_id" invisible="1"/>
+                    <field name="assignment_cycle" invisible="1"/>
                 </group>
                 <notebook colspan="4">
                     <page name="users" string="Users">
@@ -25,6 +26,7 @@
                                 <field name="name" />
                                 <field name="login" />
                                 <field name="lang" />
+                                <field name="assignment_cycle" />
                             </tree>
                         </field>
                     </page>

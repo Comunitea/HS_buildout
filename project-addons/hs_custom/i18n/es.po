@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 10:21+0000\n"
-"PO-Revision-Date: 2023-05-11 10:21+0000\n"
+"POT-Creation-Date: 2023-05-18 11:26+0000\n"
+"PO-Revision-Date: 2023-05-18 11:26+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -76,6 +76,17 @@ msgstr "Información adicional"
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "Address"
 msgstr "Dirección"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users__assignment_cycle
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__assignment_cycle
+msgid "Assignment Cycle"
+msgstr "Ciclo de asignación"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__managed
+msgid "Automatizada"
+msgstr ""
 
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_account_bank_statement
@@ -148,7 +159,7 @@ msgstr ""
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.external_layout_boxed_logo_by_type
 msgid "Company Name:"
-msgstr "Razón Social:"
+msgstr "Razón Social: "
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_condiciones_pagos
@@ -353,7 +364,7 @@ msgid "Instrucciones para el pago fin de obra"
 msgstr ""
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/crm_lead.py:105
+#: code:addons/hs_custom/models/crm_lead.py:111
 #, python-format
 msgid "Invalid phone number "
 msgstr "Número de teléfono erróneo"
@@ -635,7 +646,11 @@ msgid "e.g. https://www.odoo.com"
 msgstr "e.j. https://www.odoo.com"
 
 #. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_partner_list
+msgid "res.partner.list"
+msgstr ""
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_users_list
 msgid "res.users.list"
 msgstr ""
-

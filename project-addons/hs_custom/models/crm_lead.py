@@ -92,7 +92,7 @@ class CrmLead(models.Model):
     def action_merge(self, opportunity_ids):
         self.ensure_one()
         return opportunity_ids.merge_opportunity()
-    
+
     @api.multi
     def merge_opportunity(self, user_id=False, team_id=False):
         return super(CrmLead, self.with_context(merge=True)).\
@@ -130,6 +130,11 @@ class CrmLead(models.Model):
                     elif users_list and self.user_id in users_list.user_ids:
                         self.allocate_salesman([self.user_id.id], self.team_id.id)
                 elif users_list and self.user_id in users_list.user_ids:
+                    if users_list.user_id == self.user_id:
+                        users_list.assignment_cycle += 1
+                    else:
+                        users_list.user_id = self.user_id
+                        users_list.assignment_cycle = 1
                     self.convert_opportunity(self.partner_id.id,
                                              [self.user_id.id], self.team_id.id)
                     self.managed = True
@@ -160,6 +165,8 @@ class CrmLead(models.Model):
         if users_list.user_ids:
             current_user = users_list.user_id
             if current_user and current_user in users_list.user_ids:
+                if users_list.assignment_cycle < current_user.assignment_cycle:
+                    return current_user
                 current_index = users_list.user_ids.sorted('sequence').ids.index(current_user.id)
                 next_index = (current_index + 1) % len(users_list.user_ids)
                 next_user = users_list.user_ids.sorted('sequence')[next_index]
@@ -171,8 +178,20 @@ class CrmLead(models.Model):
 
     @api.multi
     def write(self, vals):
-        res = super().write(vals)
+        leads = self.env['crm.lead']
         for lead in self:
-            if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False):
+            if vals.get('user_id') and lead.user_id.id != vals['user_id']:
+                leads |= lead
+        res = super().write(vals)
+        for lead in leads:
+            users_list = lead.get_users_list()
+            if users_list:
+                if users_list.user_id == lead.user_id:
+                    users_list.assignment_cycle += 1
+                else:
+                    users_list.user_id = lead.user_id
+                    users_list.assignment_cycle = 1
+        for lead in self:
+            if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False) and not lead.managed:
                 lead.create_opportunity()
         return res
