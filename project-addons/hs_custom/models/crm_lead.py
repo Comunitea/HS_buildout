@@ -6,6 +6,14 @@ from odoo.exceptions import UserError
 class CrmLead(models.Model):
     _inherit = "crm.lead"
 
+    @api.depends("phone")
+    def _compute_phone_no_format(self):
+        for record in self:
+            if record.phone:
+                record.phone_no_format = record.phone.replace(" ", "")
+            else:
+                record.phone_no_format = ""
+
     def _get_order_type(self):
         return self.env['sale.order.type'].search([], limit=1)
 
@@ -22,6 +30,9 @@ class CrmLead(models.Model):
         default=_get_order_type
     )
     managed = fields.Boolean("Automatizada", default=False)
+    phone_no_format = fields.Char(string='Phone',
+                                  compute="_compute_phone_no_format",
+                                  store=True)
 
     @api.onchange('zip')
     def _onchange_zip(self):
@@ -56,7 +67,7 @@ class CrmLead(models.Model):
 
     @api.model
     def create(self, vals):
-        res = super().create(vals)
+        res = super(CrmLead,self.with_context(merge=True)).create(vals)
         if res.phone:
             res = res.create_opportunity()
         return res
@@ -113,6 +124,8 @@ class CrmLead(models.Model):
                 self.action_set_lost()
                 self.managed = True
             else:
+                self.managed = True
+                self.phone = number
                 campaign_id = self.campaign_id
                 users_list = self.get_users_list()
                 tomerge = self._get_duplicated_leads_by_phone(
@@ -121,14 +134,15 @@ class CrmLead(models.Model):
                     users = tomerge.filtered(lambda x: x.id != self.id).mapped('user_id').filtered(
                         lambda x: x.active)
                     self = self.action_merge(tomerge)
-                    self.managed = True
+                    self.managed= True
                     self.campaign_id = campaign_id
                     self.creation_date = fields.Datetime.now()
                     if users:
                         # self.allocate_salesman([users[0].id], self.team_id.id)
                         self.user_id = users[0]
-                    elif users_list and self.user_id in users_list.user_ids:
+                    elif users_list and self.user_id not in users_list.user_ids:
                         self.allocate_salesman([self.user_id.id], self.team_id.id)
+                        #  self.user_id = self.get_user(users_list)
                 elif users_list and self.user_id in users_list.user_ids:
                     if users_list.user_id == self.user_id:
                         users_list.assignment_cycle += 1
@@ -137,7 +151,6 @@ class CrmLead(models.Model):
                         users_list.assignment_cycle = 1
                     self.convert_opportunity(self.partner_id.id,
                                              [self.user_id.id], self.team_id.id)
-                    self.managed = True
                     self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
                 elif users_list and not self.user_id:
                     self._onchange_state_id()
