@@ -1,6 +1,7 @@
 from odoo import fields, models, api, _
 from odoo.addons.phone_validation.tools import phone_validation
 from odoo.exceptions import UserError
+from dateutil.relativedelta import relativedelta
 
 
 class CrmLead(models.Model):
@@ -13,6 +14,22 @@ class CrmLead(models.Model):
                 record.phone_no_format = record.phone.replace(" ", "")
             else:
                 record.phone_no_format = ""
+
+    @api.depends("mobile")
+    def _compute_mobile_no_format(self):
+        for record in self:
+            if record.mobile:
+                record.mobile_no_format = record.mobile.replace(" ", "")
+            else:
+                record.mobile_no_format = ""
+
+    @api.depends("fax")
+    def _compute_fax_no_format(self):
+        for record in self:
+            if record.fax:
+                record.fax_no_format = record.fax.replace(" ", "")
+            else:
+                record.fax_no_format = ""
 
     def _get_order_type(self):
         return self.env['sale.order.type'].search([], limit=1)
@@ -33,6 +50,12 @@ class CrmLead(models.Model):
     phone_no_format = fields.Char(string='Phone',
                                   compute="_compute_phone_no_format",
                                   store=True)
+    mobile_no_format = fields.Char(string='Mobile',
+                                   compute="_compute_mobile_no_format",
+                                   store=True)
+    fax_no_format = fields.Char(string='Teléfono inquilino',
+                                compute="_compute_fax_no_format",
+                                store=True)
 
     @api.onchange('zip')
     def _onchange_zip(self):
@@ -106,8 +129,19 @@ class CrmLead(models.Model):
 
     @api.multi
     def merge_opportunity(self, user_id=False, team_id=False):
-        return super(CrmLead, self.with_context(merge=True)).\
+        campaign_id = False
+        if self.ids:
+            opportunities = self.sorted(key=lambda o: (o.type == 'opportunity',
+                                                       -o.stage_id.sequence,
+                                                       -o.id), reverse=True)
+            campaign_id = opportunities[1:].campaign_id
+        res = super(CrmLead, self.with_context(merge=True)).\
             merge_opportunity(user_id=user_id, team_id=team_id)
+        three_month_ago = fields.Datetime.now() - relativedelta(months=3)
+        if res['creation_date'] and res['creation_date'] < three_month_ago:
+            res['creation_date'] = fields.Datetime.now()
+            res['campaign_id'] = campaign_id.id or False
+        return res
 
     @api.multi
     def create_opportunity(self):
@@ -126,7 +160,6 @@ class CrmLead(models.Model):
             else:
                 self.managed = True
                 self.phone = number
-                campaign_id = self.campaign_id
                 users_list = self.get_users_list()
                 tomerge = self._get_duplicated_leads_by_phone(
                     self.phone, include_lost=False)
@@ -135,8 +168,6 @@ class CrmLead(models.Model):
                         lambda x: x.active)
                     self = self.action_merge(tomerge)
                     self.managed= True
-                    self.campaign_id = campaign_id
-                    self.creation_date = fields.Datetime.now()
                     if users:
                         # self.allocate_salesman([users[0].id], self.team_id.id)
                         self.user_id = users[0]
