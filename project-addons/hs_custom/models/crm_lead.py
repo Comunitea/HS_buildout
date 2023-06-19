@@ -134,7 +134,7 @@ class CrmLead(models.Model):
             opportunities = self.sorted(key=lambda o: (o.type == 'opportunity',
                                                        -o.stage_id.sequence,
                                                        -o.id), reverse=True)
-            campaign_id = opportunities[1:].campaign_id
+            campaign_id = opportunities[-1].campaign_id
         res = super(CrmLead, self.with_context(merge=True)).\
             merge_opportunity(user_id=user_id, team_id=team_id)
         three_month_ago = fields.Datetime.now() - relativedelta(months=3)
