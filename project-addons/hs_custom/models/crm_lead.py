@@ -168,12 +168,14 @@ class CrmLead(models.Model):
                         lambda x: x.active)
                     self = self.action_merge(tomerge)
                     self.managed= True
+
                     if users:
                         # self.allocate_salesman([users[0].id], self.team_id.id)
                         self.user_id = users[0]
                     elif users_list and self.user_id not in users_list.user_ids:
-                        self.allocate_salesman([self.user_id.id], self.team_id.id)
-                        #  self.user_id = self.get_user(users_list)
+                        self.user_id = self.get_user(users_list)
+                    elif not users_list and not self.user_id.active:
+                        self.user_id = False
                     if self.user_id and self.type == 'opportunity':
                         self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
                 elif users_list and self.user_id in users_list.user_ids:
