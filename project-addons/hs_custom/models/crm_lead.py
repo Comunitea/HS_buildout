@@ -246,6 +246,6 @@ class CrmLead(models.Model):
                     users_list.user_id = lead.user_id
                     users_list.assignment_cycle = 1
         for lead in self:
-            if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False) and not lead.managed:
+            if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False) and not lead.managed and not vals.get('date_action_last'):
                 lead.create_opportunity()
         return res
