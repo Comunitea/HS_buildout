@@ -41,6 +41,6 @@ class ProjectProject(models.Model):
         res = super(ProjectProject, self).write(values)
         if values.get('name'):
             for project in self:
-                if project.analytic_account_id and project.allow_timesheets:
+                if project.analytic_account_id:
                     project.analytic_account_id.write({'name': project.name})
         return res
