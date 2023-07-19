@@ -35,3 +35,12 @@ class ProjectProject(models.Model):
                                    required=True)
     responsible_id = fields.Many2one("res.users", "Responsable de proyecto",
                                      required=True)
+
+    @api.multi
+    def write(self, values):
+        res = super(ProjectProject, self).write(values)
+        if values.get('name'):
+            for project in self:
+                if project.analytic_account_id and project.allow_timesheets:
+                    project.analytic_account_id.write({'name': project.name})
+        return res
