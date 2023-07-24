@@ -2,6 +2,9 @@ from odoo import fields, models, api, _
 from odoo.addons.phone_validation.tools import phone_validation
 from odoo.exceptions import UserError
 from dateutil.relativedelta import relativedelta
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class CrmLead(models.Model):
@@ -90,6 +93,8 @@ class CrmLead(models.Model):
 
     @api.model
     def create(self, vals):
+        if self.env.uid == 289:
+            logger.info(vals)
         res = super(CrmLead,self.with_context(merge=True)).create(vals)
         if res.phone and res.user_id.id != 290:
             res = res.create_opportunity()
@@ -249,3 +254,4 @@ class CrmLead(models.Model):
             if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False) and not lead.managed and not vals.get('date_action_last'):
                 lead.create_opportunity()
         return res
+
