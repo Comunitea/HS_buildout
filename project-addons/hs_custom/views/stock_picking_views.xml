@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_picking_form_inherit" model="ir.ui.view">
+        <field name="name">view.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_picking_move_tree']" position="after">
+                <button type="object" name="action_view_tasks"
+                class="oe_stat_button" icon="fa-tasks"
+                 attrs="{'invisible': [('task_count', '=', 0)]}" groups="project.group_project_user">
+                    <field name="task_count" widget="statinfo" string="Tasks"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

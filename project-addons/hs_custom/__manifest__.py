@@ -16,11 +16,12 @@
         'purchase',
         'project_task_digitized_signature',
         'sale_order_type',
-        'project_task_material_stock',
+        'hs_project_task_material_consume',
         'crm_phone_validation'
     ],
     'data': [
         'security/ir.model.access.csv',
+        'wizard/contract_signature_wzd_view.xml',
         'views/project_view.xml',
         'views/account_invoice_view.xml',
         'views/crm_lead_view.xml',
@@ -31,7 +32,8 @@
         'views/res_partner_view.xml',
         'views/project_task_report.xml',
         'views/user_list_views.xml',
-        'views/res_country_view.xml'],
+        'views/res_country_view.xml',
+        'views/stock_picking_views.xml'],
     'installable': True,
     'auto_install': False,
     'license': 'AGPL-3',

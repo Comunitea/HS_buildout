@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="view_project_task_form_material_inherit" model="ir.ui.view">
+        <field name="name">	project.task.form.material.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_task_material.view_project_task_form_material"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location_dest_id']" position="after">
+                <field name="can_add_materials" invisible="1" />
+            </xpath>
+            <xpath expr="//field[@name='material_ids']" position="attributes">
+                <attribute name="attrs">{'readonly':[('can_add_materials','=',False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_project_task_type" model="ir.ui.view">
+        <field name="name">inherit.project.task.type</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fold']" position="after">
+                <field name="on_route" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_calendar_inherit" model="ir.ui.view">
+        <field name="name">project.task.calendar.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_calendar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//calendar" position="attributes">
+                <attribute name="date_start">date_start</attribute>
+                <attribute name="date_stop">date_end</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record id="edit_project_custom" model="ir.ui.view">
         <field name="name">project.project.form.custom</field>
         <field name="model">project.project</field>
@@ -68,6 +105,9 @@
                 <field name="activity_ids" widget="mail_activity"/>
                 <field name="message_ids" widget="mail_thread"/>
             </field>
+            <xpath expr="//header" position="inside">
+                <button name="%(action_view_contract_signature_wzd)d" string="Contract Sign" type="action" class="button button-primary"/>
+            </xpath>
         </field>
     </record>
 
@@ -90,6 +130,7 @@
             <field name="partner_id" position="after">
                 <field name="type_id"/>
             </field>
+
         </field>
     </record>
 
@@ -104,6 +145,10 @@
             <field name="tag_ids" position="after">
                 <field name="sale_type_id"/>
                 <field name="x_pago_fin"/>
+                <field name="task_cost"/>
+            </field>
+            <field name="planned_hours" position="attributes">
+                <attribute name="required">True</attribute>
             </field>
             <field name="legend_done" position="after">
                 <separator string="Fechas"/>

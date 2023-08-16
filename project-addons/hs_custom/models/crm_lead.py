@@ -93,8 +93,6 @@ class CrmLead(models.Model):
 
     @api.model
     def create(self, vals):
-        if self.env.uid == 289:
-            logger.info(vals)
         res = super(CrmLead,self.with_context(merge=True)).create(vals)
         if res.phone and res.user_id.id != 290:
             res = res.create_opportunity()
@@ -117,6 +115,7 @@ class CrmLead(models.Model):
     @api.model
     def _get_duplicated_leads_by_phone(self, phone,
                                        include_lost=False):
+        import pdb;pdb.set_trace()
         if not phone:
             return self.env['crm.lead']
         domain = [('phone', '=', phone)]
@@ -254,4 +253,3 @@ class CrmLead(models.Model):
             if lead.type == 'lead' and lead.phone and not self.env.context.get('merge', False) and not lead.managed and not vals.get('date_action_last'):
                 lead.create_opportunity()
         return res
-

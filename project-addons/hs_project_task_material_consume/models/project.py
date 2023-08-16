@@ -25,6 +25,13 @@ class ProjectTask(models.Model):
                     task.action_done()
         return res
 
+    @api.onchange('stage_id')
+    def _onchange_stage_id(self):
+        for record in self:
+            if record.stage_id and record.stage_id.consume_material and not record.location_source_id:
+                raise UserError(_('You must set a source location in order to consume materials'))
+
+
     def _change_location(self):
         for record in self:
             if record.stock_move_ids and record.consume_material and not record.closed:

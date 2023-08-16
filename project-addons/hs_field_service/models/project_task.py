@@ -50,6 +50,13 @@ class ProjectTask(models.Model):
             task.sudo().stage_id = closed_state.id
             template.send_mail(task.id)
 
+    @api.onchange('state')
+    def check_state(self):
+        for task in self:
+            if task.state == 'done':
+                for materials in task.material_ids:
+                    materials.product_id.action_view_po()
+
 
 
 class ProjectTaskMaterial(models.Model):

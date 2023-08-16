@@ -36,11 +36,28 @@ class ProjectProject(models.Model):
     responsible_id = fields.Many2one("res.users", "Responsable de proyecto",
                                      required=True)
 
+    contract_signature = fields.Binary(
+        string='Contract acceptance',
+    )
+
     @api.multi
     def write(self, values):
         res = super(ProjectProject, self).write(values)
         if values.get('name'):
             for project in self:
-                if project.analytic_account_id:
+                if project.analytic_account_id and project.allow_timesheets:
                     project.analytic_account_id.write({'name': project.name})
+        self._track_signature(values, 'contract_signature')
+        self._track_signature(values, 'worksheet_signature')
         return res
+
+    @api.model
+    def create(self, values):
+        project = super(ProjectProject, self).create(values)
+        if project.contract_signature:
+            values = {'contract_signature': project.contract_signature}
+            project._track_signature(values, 'contract_signature')
+        if project.worksheet_signature:
+            values = {'worksheet_signature': project.worksheet_signature}
+            project._track_signature(values, 'worksheet_signature')
+        return project

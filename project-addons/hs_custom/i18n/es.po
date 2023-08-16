@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-18 11:26+0000\n"
-"PO-Revision-Date: 2023-05-18 11:26+0000\n"
+"POT-Creation-Date: 2023-08-16 13:49+0000\n"
+"PO-Revision-Date: 2023-08-16 13:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -68,6 +68,11 @@ msgid "<strong>Firma del operario:</strong>"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task__can_add_materials
+msgid "Add Materials"
+msgstr "Añadir materiales"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_account_invoice__comment
 msgid "Additional Information"
 msgstr "Información adicional"
@@ -118,6 +123,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
 msgid "Campaign"
 msgstr "Campaña"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_contract_signature_wzd
+msgid "Cancel"
+msgstr "Cancelar"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__type_id
@@ -174,7 +184,29 @@ msgstr ""
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__contract_id
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Contract Sign"
+msgstr "Firmar contrato"
+
+#. module: hs_custom
+#: model:ir.actions.act_window,name:hs_custom.action_view_contract_signature_wzd
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_contract_signature_wzd
+msgid "Contract Signature"
+msgstr "Firma de contrato"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__contract_signature
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__contract_signature
+msgid "Contract acceptance"
+msgstr "Aceptación de contrato"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_account_invoice__x_project_id2
@@ -213,11 +245,13 @@ msgid "Country state"
 msgstr "Provincia"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__create_uid
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__create_date
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__create_date
 msgid "Created on"
 msgstr "Creado en"
@@ -259,6 +293,7 @@ msgid "Dirección de obra"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__display_name
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
@@ -317,6 +352,11 @@ msgid "Fin de obra"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_stock_move__from_task
+msgid "From Task"
+msgstr "Desde la tarea"
+
+#. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
 msgid "Future Activities"
 msgstr "Actividades futuras"
@@ -332,6 +372,7 @@ msgid "Hoja de información"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__id
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__id
 msgid "ID"
 msgstr ""
@@ -364,7 +405,7 @@ msgid "Instrucciones para el pago fin de obra"
 msgstr ""
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/crm_lead.py:111
+#: code:addons/hs_custom/models/crm_lead.py:162
 #, python-format
 msgid "Invalid phone number "
 msgstr "Número de teléfono erróneo"
@@ -380,16 +421,19 @@ msgid "Invoices with description"
 msgstr "Facturas (descripción)"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard____last_update
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__write_uid
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__write_date
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
@@ -420,6 +464,11 @@ msgid "Logo"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__mobile_no_format
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
 msgid "My Activities"
 msgstr "Mis actividades"
@@ -448,6 +497,11 @@ msgid "Nombre inquilino"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task_type__on_route
+msgid "On route"
+msgstr "En ruta"
+
+#. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_task_chatter_document_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
 msgid "Pago fin de obra:"
@@ -465,6 +519,7 @@ msgid "País"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__phone_no_format
 #: model:ir.model.fields,field_description:hs_custom.field_sale_order_type__phone
 msgid "Phone"
 msgstr "Teléfono"
@@ -521,6 +576,11 @@ msgid "Sales Order Line"
 msgstr "Línea pedido de venta"
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_contract_signature_wzd
+msgid "Save"
+msgstr "Guardar"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_res_users__sequence
 msgid "Sequence"
 msgstr "Secuencia"
@@ -535,6 +595,11 @@ msgstr "Mostrar todos los registros que tienen la próxima fecha de acción ante
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "State"
 msgstr "Estado"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
@@ -569,6 +634,31 @@ msgid "Task"
 msgstr "Tarea"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task__task_cost
+msgid "Task Cost"
+msgstr "Coste de la tarea"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_stock_picking__task_count
+msgid "Task Count"
+msgstr "Nº de tareas"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_project_task_material
+msgid "Task Material Used"
+msgstr "Materiales usados en la tarea"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_project_task_type
+msgid "Task Stage"
+msgstr "Etapa de la tarea"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_picking_form_inherit
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_task_chatter_document_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
 msgid "Teléfono"
@@ -576,6 +666,7 @@ msgstr ""
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__fax
+#: model:ir.model.fields,field_description:hs_custom.field_crm_lead__fax_no_format
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_task_chatter_document_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
 msgid "Teléfono inquilino"
@@ -590,6 +681,11 @@ msgstr "Actividades de Hoy"
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_trabajos
 msgid "Trabajos a realizar"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
 
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_sale_order_type
@@ -636,19 +732,26 @@ msgid "Web"
 msgstr ""
 
 #. module: hs_custom
+#: code:addons/hs_custom/models/stock.py:54
+#, python-format
+msgid "You cannot delete consumptions from a task."
+msgstr "No puede borrar consumos de una tarea."
+
+#. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "ZIP"
 msgstr "C.P."
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_contract_signature_wizard
+msgid "contract.signature.wizard"
+msgstr ""
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "e.g. https://www.odoo.com"
 msgstr "e.j. https://www.odoo.com"
 
-#. module: hs_custom
-#: model:ir.model,name:hs_custom.model_res_partner_list
-msgid "res.partner.list"
-msgstr ""
 
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_users_list

@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#       * hs_field_service
+#	* hs_field_service
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-27 14:03+0000\n"
-"PO-Revision-Date: 2020-01-27 14:03+0000\n"
+"POT-Creation-Date: 2023-08-16 13:34+0000\n"
+"PO-Revision-Date: 2023-08-16 13:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,32 +16,67 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hs_field_service
-#: code:addons/hs_field_service/models/project_task.py:30
+#: code:addons/hs_field_service/models/project_task.py:45
 #, python-format
 msgid "Any stage set as closed stage"
 msgstr "Ninguna etapa marcada como etapa de cierre"
 
 #. module: hs_field_service
 #: model:ir.actions.act_window,name:hs_field_service.action_view_attach_pictures_wzd
+#: model:ir.actions.act_window,name:hs_field_service.action_view_attach_pictures_wzd_project
 msgid "Attach Pictures"
 msgstr "Adjuntar fotografías"
 
 #. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.edit_project_attach_pictures
 #: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd_project
 #: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
 msgid "Attach pictures"
 msgstr "Adjuntar fotografías"
 
 #. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__project_zip
+msgid "C.P-"
+msgstr ""
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "C.P."
+msgstr ""
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__project_street
+msgid "Calle"
+msgstr ""
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__project_street2
+msgid "Calle 2"
+msgstr ""
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Calle..."
+msgstr ""
+
+#. module: hs_field_service
 #: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd_project
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: hs_field_service
-#: code:addons/hs_field_service/models/project_task.py:32
+#: code:addons/hs_field_service/models/project_task.py:47
 #, python-format
 msgid "Cannot exists more than one stage set as closed."
 msgstr "No puede existir más de una etapa establecida como de cierre."
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__project_city
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Ciudad"
+msgstr ""
 
 #. module: hs_field_service
 #: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
@@ -60,11 +95,13 @@ msgstr "Email de contacto"
 
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__create_uid
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__create_date
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures__create_date
 msgid "Created on"
 msgstr "Creado en"
 
@@ -85,7 +122,13 @@ msgid "Description"
 msgstr "Descripción"
 
 #. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Dirección"
+msgstr ""
+
+#. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__display_name
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
@@ -106,6 +149,7 @@ msgstr "Obras"
 
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__id
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures__id
 msgid "ID"
 msgstr ""
 
@@ -117,16 +161,19 @@ msgstr "Instalación"
 
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures____last_update
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__write_uid
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__write_date
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
@@ -160,9 +207,22 @@ msgid "Observations"
 msgstr "Observaciones"
 
 #. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__project_country_id
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "País"
+msgstr ""
+
+#. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_wizard_attach_pictures__image_ids
+#: model:ir.model.fields,field_description:hs_field_service.field_wizard_project_attach_pictures__image_ids
 msgid "Pictures"
 msgstr "Fotografías"
+
+#. module: hs_field_service
+#: model:ir.model.fields,field_description:hs_field_service.field_project_task__project_state_id
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "Provincia"
+msgstr ""
 
 #. module: hs_field_service
 #: model_terms:ir.ui.view,arch_db:hs_field_service.view_task_form2_custom2
@@ -171,6 +231,7 @@ msgstr "Descripción pública"
 
 #. module: hs_field_service
 #: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_attach_pictures_wzd_project
 msgid "Save"
 msgstr "Guardar"
 
@@ -218,7 +279,7 @@ msgstr "Notas técnicas"
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_project_task__worker_id
 msgid "Technician"
-msgstr "Técnico"
+msgstr "Equipo"
 
 #. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_project_task__warranty
@@ -250,3 +311,19 @@ msgstr "Trabajos realizados"
 #: model_terms:ir.ui.view,arch_db:hs_field_service.task_report_field_service
 msgid "Yes"
 msgstr "Sí"
+
+#. module: hs_field_service
+#: model:ir.model,name:hs_field_service.model_wizard_attach_pictures
+msgid "wizard.attach.pictures"
+msgstr ""
+
+#. module: hs_field_service
+#: model:ir.model,name:hs_field_service.model_wizard_project_attach_pictures
+msgid "wizard.project.attach.pictures"
+msgstr ""
+
+#. module: hs_field_service
+#: model_terms:ir.ui.view,arch_db:hs_field_service.view_field_service_form
+msgid "¿Está seguro de cerrar la tarea?"
+msgstr ""
+
