@@ -40,7 +40,7 @@ class ProjectTask(models.Model):
                     if move.state not in ('done', 'cancelled'):
                         if move.state == 'assigned':
                             move._do_unreserve()
-                        if move.state in ('waiting', 'confirmed', 'assigned'):
+                        if move.state in ('draft','waiting', 'confirmed', 'assigned','partially_available'):
                             move.write({'location_id': location})
                 # Descomentar en caso de querer cambiar también la localización del albarán
                 # if record.picking_id:
