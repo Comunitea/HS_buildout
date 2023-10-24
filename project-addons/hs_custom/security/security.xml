@@ -17,35 +17,35 @@
         <record id="crm_rule_zone" model="ir.rule">
             <field name="name">Zone Leads</field>
             <field ref="crm.model_crm_lead" name="model_id"/>
-            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="domain_force">[('user_id','in',user.zone_ids.mapped('user_list_ids').mapped('user_ids').ids)]</field>
             <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
         </record>
 
         <record id="sale_order_zone" model="ir.rule">
             <field name="name">Zone Orders</field>
             <field ref="sale.model_sale_order" name="model_id"/>
-            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+           <field name="domain_force">[('user_id','in',user.zone_ids.mapped('user_list_ids').mapped('user_ids').ids)]</field>
             <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
         </record>
 
         <record id="sale_order_report_see_zone" model="ir.rule">
             <field name="name">Zone Orders Analysis</field>
             <field ref="sale.model_sale_report" name="model_id"/>
-            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="domain_force">[('user_id','in',user.zone_ids.mapped('user_list_ids').mapped('user_ids').ids)]</field>
             <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
         </record>
 
         <record id="sale_order_line_see_zone" model="ir.rule">
             <field name="name">Zone Orders Lines</field>
             <field ref="sale.model_sale_order_line" name="model_id"/>
-            <field name="domain_force">[('salesman_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="domain_force">[('salesman_id','in',user.zone_ids.mapped('user_list_ids').mapped('user_ids').ids)]</field>
             <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
         </record>
 
         <record id="crm_activity_report_rule_all_activities" model="ir.rule">
             <field name="name">All Activities</field>
             <field ref="crm.model_crm_activity_report" name="model_id"/>
-            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="domain_force">[('user_id','in',user.zone_ids.mapped('user_list_ids').mapped('user_ids').ids)]</field>
             <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
         </record>
 

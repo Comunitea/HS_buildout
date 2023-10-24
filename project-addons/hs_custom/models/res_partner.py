@@ -34,6 +34,7 @@ class ResUsers(models.Model):
     assignment_cycle = fields.Integer('Assignment Cycle', default=1)
     zone_ids = fields.Many2many(comodel_name="res.users.zone", string="Zones")
 
+
 class UsersZone(models.Model):
 
     _name="res.users.zone"
@@ -43,6 +44,7 @@ class UsersZone(models.Model):
     user_ids = fields.Many2many(comodel_name="res.users",string="Managers",
                                 domain = lambda self: [('groups_id','in',[self.env.ref('hs_custom.group_sale_salesman_zone_leads').id,self.env.ref('sales_team.group_sale_salesman_all_leads').id ]
                                                         )])
+
 
 class ResUsersList(models.Model):
 

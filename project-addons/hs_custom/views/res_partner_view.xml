@@ -37,7 +37,7 @@
                 <field name="location_source_id"/>
             </group>
             <xpath expr="//notebook" position="inside">
-            <page name="zone" string="Zone" groups="hs_custom.group_sale_salesman_zone_leads, sales_team.group_sale_salesman_all_leads" >
+            <page name="zone" string="Zone">
                 <field name="zone_ids" />
             </page>
 
