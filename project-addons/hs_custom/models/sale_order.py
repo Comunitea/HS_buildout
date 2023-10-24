@@ -45,6 +45,7 @@ class SaleOrderType(models.Model):
     email = fields.Char("Email")
     website = fields.Char("Web")
     phone = fields.Char("Phone")
+    header_name = fields.Char("Header Name")
 
 
 class MailThread(models.AbstractModel):

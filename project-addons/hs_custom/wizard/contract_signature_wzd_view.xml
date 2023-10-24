@@ -6,6 +6,12 @@
         <field name="arch" type="xml">
             <form string="Contract Signature">
                 <group>
+                    <field name="x_vendedor" readonly="1"/>
+                    <field name="x_trabajos" readonly="1"/>
+                    <field name="x_condiciones_pagos" readonly="1"/>
+                    <field name="x_subtotal" readonly="1"/>
+                </group>
+                <group>
                     <field name="contract_signature" widget="signature"/>
                 </group>
                 <footer>
@@ -14,16 +20,6 @@
                 </footer>
             </form>
         </field>
-    </record>
-
-     <record id="action_view_contract_signature_wzd" model="ir.actions.act_window">
-        <field name="name">Contract Signature</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">contract.signature.wizard</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-        <field name="binding_model_id" ref="project.model_project_project"/>
     </record>
 
 </odoo>

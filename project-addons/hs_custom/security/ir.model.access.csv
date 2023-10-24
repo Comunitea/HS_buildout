@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_res_users_list,res.users.list,model_res_users_list,base.group_user,1,1,1,1
+access_res_users_zone,res.users.zone,model_res_users_zone,base.group_user,1,1,1,1

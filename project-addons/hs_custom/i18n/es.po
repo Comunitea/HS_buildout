@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 13:49+0000\n"
-"PO-Revision-Date: 2023-08-16 13:49+0000\n"
+"POT-Creation-Date: 2023-10-24 14:42+0000\n"
+"PO-Revision-Date: 2023-10-24 14:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -66,6 +66,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
 msgid "<strong>Firma del operario:</strong>"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_acc_number
+msgid "Account Number"
+msgstr "Número de cuenta"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_task__can_add_materials
@@ -172,6 +177,7 @@ msgid "Company Name:"
 msgstr "Razón Social: "
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_condiciones_pagos
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_condiciones_pagos
 msgid "Condiciones de Pago"
 msgstr ""
@@ -197,7 +203,6 @@ msgid "Contract Sign"
 msgstr "Firmar contrato"
 
 #. module: hs_custom
-#: model:ir.actions.act_window,name:hs_custom.action_view_contract_signature_wzd
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_contract_signature_wzd
 msgid "Contract Signature"
 msgstr "Firma de contrato"
@@ -231,7 +236,7 @@ msgstr ""
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_crm_lead2opportunity_partner
 msgid "Convert Lead to Opportunity (not in mass)"
-msgstr ""
+msgstr "Convertir Iniciativa en Oportunidad (sin ser en masa)"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
@@ -247,12 +252,14 @@ msgstr "Provincia"
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__create_uid
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__create_uid
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__create_date
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__create_date
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__create_date
 msgid "Created on"
 msgstr "Creado en"
 
@@ -295,6 +302,7 @@ msgstr ""
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__display_name
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__display_name
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
@@ -367,6 +375,11 @@ msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_sale_order_type__header_name
+msgid "Header Name"
+msgstr "Nombre de cabecera"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_info
 msgid "Hoja de información"
 msgstr ""
@@ -374,8 +387,14 @@ msgstr ""
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__id
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__id
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__id
 msgid "ID"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_iva_percentage
+msgid "IVA Percentage"
+msgstr "% IVA"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_iva
@@ -405,7 +424,7 @@ msgid "Instrucciones para el pago fin de obra"
 msgstr ""
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/crm_lead.py:162
+#: code:addons/hs_custom/models/crm_lead.py:159
 #, python-format
 msgid "Invalid phone number "
 msgstr "Número de teléfono erróneo"
@@ -423,18 +442,21 @@ msgstr "Facturas (descripción)"
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard____last_update
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list____last_update
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__write_uid
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__write_uid
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__write_date
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__write_date
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
@@ -454,6 +476,11 @@ msgid "Lead/Opportunity"
 msgstr "Iniciativa/Oportunidad"
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_users_zone_form
+msgid "Lists"
+msgstr "Listas"
+
+#. module: hs_custom
 #: model:ir.model.fields,help:hs_custom.field_res_users__location_source_id
 msgid "Location by default for user's task"
 msgstr "Ubicación por defecto para las tareas del usuario"
@@ -462,6 +489,12 @@ msgstr "Ubicación por defecto para las tareas del usuario"
 #: model:ir.model.fields,field_description:hs_custom.field_sale_order_type__logo
 msgid "Logo"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__user_ids
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_users_zone_form
+msgid "Managers"
+msgstr "Responsables"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__mobile_no_format
@@ -479,7 +512,9 @@ msgid "NIF"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__name
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__name
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -612,6 +647,7 @@ msgid "Street..."
 msgstr "Calle..."
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_subtotal
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_subtotal
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_project_custom
 msgid "Subtotal"
@@ -678,6 +714,7 @@ msgid "Today Activities"
 msgstr "Actividades de Hoy"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_trabajos
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_trabajos
 msgid "Trabajos a realizar"
 msgstr ""
@@ -703,6 +740,11 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_zone__user_list_ids
+msgid "User List"
+msgstr "Lista de usuarios"
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_users
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_users_list_form
 msgid "Users"
@@ -721,6 +763,7 @@ msgid "Users Lists"
 msgstr "Listas de usuarios"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_vendedor
 #: model:ir.model.fields,field_description:hs_custom.field_crm_lead__x_vendedor
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_vendedor
 msgid "Vendedor"
@@ -743,6 +786,23 @@ msgid "ZIP"
 msgstr "C.P."
 
 #. module: hs_custom
+#: model:ir.actions.act_window,name:hs_custom.users_zone_action
+#: model:ir.ui.menu,name:hs_custom.users_zone_menu
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_users_form_add_stock_loc
+msgid "Zone"
+msgstr "Zona"
+
+#. module: hs_custom
+#: model:res.groups,name:hs_custom.group_sale_salesman_zone_leads
+msgid "Zone Documents"
+msgstr "Documentos de zona"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users__zone_ids
+msgid "Zones"
+msgstr "Zonas"
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_contract_signature_wizard
 msgid "contract.signature.wizard"
 msgstr ""
@@ -752,8 +812,18 @@ msgstr ""
 msgid "e.g. https://www.odoo.com"
 msgstr "e.j. https://www.odoo.com"
 
-
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_users_list
 msgid "res.users.list"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_users_zone
+msgid "res.users.zone"
+msgstr ""
+
+#. module: hs_custom
+#: model:res.groups,comment:hs_custom.group_sale_salesman_zone_leads
+msgid "the user will have access to all records of the zone in the sales application."
+msgstr "El usuario tendrá acceso a todos los registros de la zona en la aplicación de ventas."
+

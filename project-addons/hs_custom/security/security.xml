@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="group_sale_salesman_zone_leads" model="res.groups">
+            <field name="name">Zone Documents</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="implied_ids" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="comment">the user will have access to all records of the zone in the sales application.</field>
+        </record>
+
+        <record id="crm_rule_zone_salesteam" model="ir.rule">
+            <field name="name">Zone Salesteam</field>
+            <field ref="sales_team.model_crm_team" name="model_id"/>
+            <field name="domain_force">[('team_type','in', ['sales', 'website'])]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
+        </record>
+
+        <record id="crm_rule_zone" model="ir.rule">
+            <field name="name">Zone Leads</field>
+            <field ref="crm.model_crm_lead" name="model_id"/>
+            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
+        </record>
+
+        <record id="sale_order_zone" model="ir.rule">
+            <field name="name">Zone Orders</field>
+            <field ref="sale.model_sale_order" name="model_id"/>
+            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
+        </record>
+
+        <record id="sale_order_report_see_zone" model="ir.rule">
+            <field name="name">Zone Orders Analysis</field>
+            <field ref="sale.model_sale_report" name="model_id"/>
+            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
+        </record>
+
+        <record id="sale_order_line_see_zone" model="ir.rule">
+            <field name="name">Zone Orders Lines</field>
+            <field ref="sale.model_sale_order_line" name="model_id"/>
+            <field name="domain_force">[('salesman_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
+        </record>
+
+        <record id="crm_activity_report_rule_all_activities" model="ir.rule">
+            <field name="name">All Activities</field>
+            <field ref="crm.model_crm_activity_report" name="model_id"/>
+            <field name="domain_force">[('user_id','in',user.zone_ids.user_list_ids.user_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
+        </record>
+
+
+</odoo>

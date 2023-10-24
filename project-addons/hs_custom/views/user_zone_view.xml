@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_users_zone_form" model="ir.ui.view">
+        <field name="name">view.users.zone.form</field>
+        <field name="model">res.users.zone</field>
+        <field name="type">form</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                </group>
+                <notebook colspan="4">
+                    <page name="managers" string="Managers">
+                        <field name="user_ids" widget="many2many"/>
+                    </page>
+                    <page name="lists" string="Lists">
+                        <field name="user_list_ids" />
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_users_zone_tree" model="ir.ui.view" >
+        <field name="name">Zone</field>
+        <field name="model">res.users.zone</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="users_zone_action" model="ir.actions.act_window">
+        <field name="name">Zone</field>
+        <field name="res_model">res.users.zone</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="users_zone_menu"
+        name="Zone"
+        action="users_zone_action"
+        parent="contacts.menu_localisation"
+        sequence="10"/>
+
+</odoo>

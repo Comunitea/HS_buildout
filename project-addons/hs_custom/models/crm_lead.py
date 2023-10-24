@@ -115,7 +115,6 @@ class CrmLead(models.Model):
     @api.model
     def _get_duplicated_leads_by_phone(self, phone,
                                        include_lost=False):
-        import pdb;pdb.set_trace()
         if not phone:
             return self.env['crm.lead']
         domain = [('phone', '=', phone)]

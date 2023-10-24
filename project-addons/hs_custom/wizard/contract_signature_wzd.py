@@ -9,6 +9,12 @@ class ContractSignatureWizard(models.TransientModel):
     )
     contract_id = fields.Many2one(comodel_name='project.project', string='Contract')
 
+    name = fields.Char('Name')
+    x_trabajos = fields.Text('Trabajos a realizar')
+    x_condiciones_pagos = fields.Text('Condiciones de Pago')
+    x_subtotal = fields.Float('Subtotal')
+    x_vendedor = fields.Char('Vendedor')
+
     @api.model
     def default_get(self, fields):
         res = super(ContractSignatureWizard, self).default_get(fields)
@@ -16,6 +22,10 @@ class ContractSignatureWizard(models.TransientModel):
         res.update({
             'contract_id': contract.id,
             'contract_signature': contract.contract_signature,
+            'x_trabajos': contract.x_trabajos,
+            'x_condiciones_pagos': contract.x_condiciones_pagos,
+            'x_subtotal': contract.x_subtotal,
+            'x_vendedor': contract.x_vendedor,
         })
         return res
 

@@ -1,10 +1,11 @@
 from odoo import api, fields, models
 
-
 class ProjectProject(models.Model):
     _name = "project.project"
     _inherit = ["project.project", 'mail.activity.mixin']
 
+    x_iva_percentage= fields.Float("IVA Percentage", digits=(16, 2))
+    x_acc_number = fields.Char("Account Number")
     x_iva = fields.Boolean("IVA reducido")
     x_iva_doc = fields.Boolean("Documento de IVA")
     x_info = fields.Boolean("Hoja de información")
@@ -27,6 +28,7 @@ class ProjectProject(models.Model):
     x_estado = fields.Char("Estado", readonly=True)
     user_id = fields.Many2one(default=None)
 
+
     type_id = fields.Many2one('account.analytic.group',
                               "Categoría", required=True)
     start_date = fields.Date("Fecha de firma")
@@ -37,8 +39,9 @@ class ProjectProject(models.Model):
                                      required=True)
 
     contract_signature = fields.Binary(
-        string='Contract acceptance',
+        string='Contract acceptance', attachment=True
     )
+
 
     @api.multi
     def write(self, values):
@@ -61,3 +64,12 @@ class ProjectProject(models.Model):
             values = {'worksheet_signature': project.worksheet_signature}
             project._track_signature(values, 'worksheet_signature')
         return project
+
+    def action_show_contract_signatures(self):
+        return {'type': 'ir.actions.act_window',
+                'name': ('Contract Signatures'),
+                'res_model': 'contract.signature.wizard',
+                'target': 'new',
+                'view_id': self.env.ref('hs_custom.view_contract_signature_wzd').id,
+                'view_mode': 'form',
+                }
