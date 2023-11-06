@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_project_filter_inherit" model="ir.ui.view">
+        <field name="name">view.project.filter.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="project_ref" string="REF"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="project_project_form_inherit" model="ir.ui.view">
+        <field name="name">project.project.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_show_worksheet_signatures" string="Worksheet Sign" type="object" class="button button-primary"/>
+                <button name="action_print_contract" string="Imprimir" type="object" class="button button-primary"/>
+            </xpath>
+            <xpath expr="//div[@name='options_active']" position="after">
+                <group >
+                    <field name="contract_type_id"/>
+                    <field name="project_ref" />
+                </group>
+            </xpath>
+            <xpath expr="//page[@name='settings']" position="after">
+                <page name="work_data_sheet" string="Work Data Sheet">
+                    <group>
+                        <field name="pure_silent"/>
+                        <field name="pure_silent_attic" />
+                    </group>
+                    <group string="Housing Configuration" col="4">
+                            <field name="n_floors" />
+                            <field name="surface_area" />
+                            <field name="n_bedrooms"/>
+                            <field name="independent_kitchen"/>
+                    </group>
+                    <group name="bathroom">
+                        <group>
+                            <field name="n_bathrooms"/>
+                        </group>
+                        <group>
+                            <field name="with_windows" />
+                            <field name="with_extractor" />
+                            <field name="with_shunt" />
+                        </group>
+                    </group>
+                    <strong colspan="4" class="text-primary">Clothes Drying Area</strong>
+                    <group name="drying_area">
+                        <field name="inside" />
+                        <field name="outside" />
+                        <field name="closed_terrace" />
+                        <field name="others" />
+                    </group>
+                    <group>
+                        <field name="other_spaces" />
+                    </group>
+                    <group col="4">
+                        <field name="n_occupants" />
+                        <field name="pets" />
+                    </group>
+                    <group string="Facade Typology">
+                        <group colspan="4">
+                            <field name="finish_facade" />
+                        </group>
+                        <group colspan="2" col="4">
+                            <field name="normal_wall_thickness" />
+                            <field name="wall_thickness" />
+                        </group>
+                    </group>
+                    <group string="Windows">
+                        <group>
+                            <field name="n_aluminum" />
+                            <field name="n_wood" />
+                            <field name="n_pvc" />
+                            <field name="n_with_shutter_box" />
+                            <field name="n_with_shutter" />
+                        </group>
+                        <group>
+                            <field name="n_sliding_type" />
+                            <field name="n_tilt_and_turn_type" />
+                            <field name="n_casement_type" />
+                            <field name="n_with_termal_break" />
+                            <field name="other_windows" />
+                        </group>
+                    </group>
+                    <separator string="Type of heating" colspan="4" />
+                    <group col="4">
+                        <field name="water_radiators" />
+                        <field name="electric_radiators" />
+                        <field name="wood_pellet_fireplace" />
+                        <field name="heat_pump" />
+                        <field name="stoves" />
+                    </group>
+
+                    <separator string="Patholigies" colspan="4" />
+                    <strong class="text-primary">MOLDS?</strong>
+                    <group>
+                        <group col="4" colspan="2">
+                            <field name="mold_living_room" />
+                            <field name="mold_bedroom" />
+                            <field name="mold_bathroom" />
+                            <field name="mold_kitchen" />
+                        </group>
+                        <group colspan="4">
+                            <field name="mold_other" />
+                        </group>
+                    </group>
+                    <strong class="text-primary">Steam in Windows?</strong>
+                    <group>
+                        <group col="4" colspan="2">
+                            <field name="steam_living_room" />
+                            <field name="steam_bedroom" />
+                            <field name="steam_bathroom" />
+                            <field name="steam_kitchen" />
+                        </group>
+                        <group colspan="4">
+                            <field name="steam_other" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="musty_smell" />
+                        <field name="humidity_in_enviroment" />
+                    </group>
+                    <separator string="On PureSilent Attic Case" colspan="4" />
+                    <group>
+                        <group colspan="4">
+                            <field name="independent_attic" />
+                        </group>
+                        <group col="4" colspan="2">
+                            <field name="with_access" />
+                            <field name="without_access" />
+                        </group>
+                        <group  colspan="4">
+                            <field name="has_ventilation" />
+                            <field name="current_usage" />
+                        </group>
+                    </group>
+                    <separator string="Observations" colspan="4" />
+                    <field name="observation" />
+                </page>
+                <page name="worksheet" string="Work Sheet">
+                    <group>
+                        <field name="worksheet_img" widget='image' />
+                    </group>
+                    <group>
+                        <field name="worksheet_wall_thickness"/>
+                        <field name="worksheet_wall_type"/>
+                        <field name="has_radiators" />
+                        <field name="radiators_qty" attrs="{'invisible':[('has_radiators','=',False)]}"/>
+                        <field name="has_toilet" />
+                        <field name="toilet_qty" attrs="{'invisible':[('has_toilet','=',False)]}" />
+                        <field name="has_fixed_furnitures" />
+                        <field name="fixed_furnitures_qty" attrs="{'invisible':[('has_fixed_furnitures','=',False)]}" />
+                        <field name="has_plasterboard" />
+                        <field name="plasterboard_qty" attrs="{'invisible':[('has_plasterboard','=',False)]}" />
+                        <field name="has_boiler" />
+                        <field name="boiler_qty" attrs="{'invisible':[('has_boiler','=',False)]}" />
+                        <field name="worksheet_other" />
+                        <field name="has_baseboard" />
+                        <field name="baseboard_qty" attrs="{'invisible':[('has_baseboard','=',False)]}" />
+                        <field name="basboard_type" attrs="{'invisible':[('has_baseboard','=',False)]}" />
+                        <field name="exceptional_conditions" />
+                    </group>
+                    <group>
+                        <field name="worksheet_signature_date" readonly="1"/>
+                        <field name="worksheet_signature" widget="signature" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="edit_project_custom_inherit" model="ir.ui.view">
+        <field name="name">edit.project.custom.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="hs_custom.edit_project_custom"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='x_trabajos']" position="before">
+                <group>
+                    <field name="contracted_distance" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

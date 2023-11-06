@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 14:42+0000\n"
-"PO-Revision-Date: 2023-10-24 14:42+0000\n"
+"POT-Creation-Date: 2023-11-06 16:44+0000\n"
+"PO-Revision-Date: 2023-11-06 16:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,106 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hs_custom
+#: model:mail.template,body_html:hs_custom.email_project_template
+msgid "\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF;\">\n"
+"    <p>Hello ${object.partner_id.name or ''},</p>\n"
+"    <p>Your contract has been signed successfully: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"        &nbsp;&nbsp;<strong>DETAILS</strong><br />\n"
+"        &nbsp;&nbsp;Contract: <strong>${object.name}</strong><br />\n"
+"        &nbsp;&nbsp;Sign Date: ${object.start_date or ''}<br />\n"
+"\n"
+"        % if object.user_id:\n"
+"        &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.user_id.email or ''}?subject=Project%20${object.name}\">${object.user_id.name}</a>\n"
+"        % endif\n"
+"    </p>\n"
+"\n"
+"    <br/>\n"
+"    <p>If you have any questions, please do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.name or 'us'}!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform: uppercase;\">${object.company_id.name}</strong>\n"
+"        </h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"            ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin: 0px; padding: 0px;\">\n"
+"                Phone: ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Website: <a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        % endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"\n"
+"        "
+msgstr "\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF;\">\n"
+"    <p>Hola ${object.partner_id.name or ''},</p>\n"
+"    <p>Su contrato ha sido firmado correctamente: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"        &nbsp;&nbsp;<strong>DETALLES</strong><br />\n"
+"        &nbsp;&nbsp;Contrato: <strong>${object.name}</strong><br />\n"
+"        &nbsp;&nbsp;Fecha de firma: ${object.start_date or ''}<br />\n"
+"\n"
+"        % if object.user_id:\n"
+"        &nbsp;&nbsp;Su contacto: <a href=\"mailto:${object.user_id.email or ''}?subject=Project%20${object.name}\">${object.user_id.name}</a>\n"
+"        % endif\n"
+"    </p>\n"
+"\n"
+"    <br/>\n"
+"    <p>Si tiene alguna pregunta, no dude en contactarnos.</p>\n"
+"    <p>¡Gracias por elegir ${object.company_id.name or 'nosotros'}!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform: uppercase;\">${object.company_id.name}</strong>\n"
+"        </h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"            ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin: 0px; padding: 0px;\">\n"
+"                Teléfono: ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Web: <a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        % endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"\n"
+"        "
+
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_res_partner__project_count
 #: model:ir.model.fields,field_description:hs_custom.field_res_users__project_count
 msgid "# Proyectos"
+msgstr ""
+
+#. module: hs_custom
+#: model:mail.template,subject:hs_custom.email_project_template
+msgid "${object.company_id.name} Contract (Ref ${object.name or 'n/a'})"
 msgstr ""
 
 #. module: hs_custom
@@ -66,6 +163,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
 msgid "<strong>Firma del operario:</strong>"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task__accomodation
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_task_form2_custom
+msgid "Accomodation"
+msgstr "Alojamiento"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task__accomodation_url
+msgid "Accomodation URL"
+msgstr "URL del alojamiento"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_acc_number
@@ -177,6 +285,12 @@ msgid "Company Name:"
 msgstr "Razón Social: "
 
 #. module: hs_custom
+#: code:addons/hs_custom/models/project.py:94
+#, python-format
+msgid "Compose Email"
+msgstr "Redactar correo electrónico"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_condiciones_pagos
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_condiciones_pagos
 msgid "Condiciones de Pago"
@@ -190,7 +304,7 @@ msgstr ""
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_partner
 msgid "Contact"
-msgstr "Contacto"
+msgstr ""
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__contract_id
@@ -206,6 +320,11 @@ msgstr "Firmar contrato"
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_contract_signature_wzd
 msgid "Contract Signature"
 msgstr "Firma de contrato"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_contract_signature_wizard
+msgid "Contract Signature Wizard"
+msgstr "Asistente de firma de contrato"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__contract_signature
@@ -397,11 +516,6 @@ msgid "IVA Percentage"
 msgstr "% IVA"
 
 #. module: hs_custom
-#: model:ir.model.fields,field_description:hs_custom.field_project_project__x_iva
-msgid "IVA reducido"
-msgstr ""
-
-#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_task__incidence
 msgid "Incidencia"
 msgstr ""
@@ -566,6 +680,7 @@ msgstr ""
 
 #. module: hs_custom
 #: model:ir.model,name:hs_custom.model_project_project
+#: model:mail.template,report_name:hs_custom.email_project_template
 msgid "Project"
 msgstr "Proyecto"
 
@@ -587,6 +702,21 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_partner_form_fax_custom
 msgid "Proyectos"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_task_type__required_planned_hours
+msgid "Required planned hours"
+msgstr "Horas planificadas requeridas"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_users_list
+msgid "Res Users List"
+msgstr "Lista de usuarios"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_res_users_zone
+msgid "Res Users Zone"
+msgstr "Zona de usuarios"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__responsible_id
@@ -803,24 +933,9 @@ msgid "Zones"
 msgstr "Zonas"
 
 #. module: hs_custom
-#: model:ir.model,name:hs_custom.model_contract_signature_wizard
-msgid "contract.signature.wizard"
-msgstr ""
-
-#. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "e.g. https://www.odoo.com"
 msgstr "e.j. https://www.odoo.com"
-
-#. module: hs_custom
-#: model:ir.model,name:hs_custom.model_res_users_list
-msgid "res.users.list"
-msgstr ""
-
-#. module: hs_custom
-#: model:ir.model,name:hs_custom.model_res_users_zone
-msgid "res.users.zone"
-msgstr ""
 
 #. module: hs_custom
 #: model:res.groups,comment:hs_custom.group_sale_salesman_zone_leads

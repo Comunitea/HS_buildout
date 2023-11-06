@@ -38,6 +38,7 @@ class ResUsers(models.Model):
 class UsersZone(models.Model):
 
     _name="res.users.zone"
+    _description = "Res Users Zone"
 
     name = fields.Char("Name")
     user_list_ids = fields.Many2many(comodel_name="res.users.list",string="User List")
@@ -49,6 +50,7 @@ class UsersZone(models.Model):
 class ResUsersList(models.Model):
 
     _name = "res.users.list"
+    _description = "Res Users List"
 
     def _get_order_type(self):
         return self.env['sale.order.type'].search([], limit=1)

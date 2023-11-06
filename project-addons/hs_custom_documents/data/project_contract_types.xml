@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="enc" model="project.contract.type">
+            <field name="name">ENC</field>
+            <field name="contract_type">enc</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="ps" model="project.contract.type">
+            <field name="name">PureSilent</field>
+            <field name="contract_type">ps</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="mps" model="project.contract.type">
+            <field name="name">PureSilent Maintenance</field>
+            <field name="contract_type">mps</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="misc" model="project.contract.type">
+            <field name="name">MISC</field>
+            <field name="contract_type">misc</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="rcs" model="project.contract.type">
+            <field name="name">RCS</field>
+            <field name="contract_type">rcs</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="cap" model="project.contract.type">
+            <field name="name">CAP</field>
+            <field name="contract_type">cap</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

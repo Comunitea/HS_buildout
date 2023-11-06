@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_worksheet_signature_wzd" model="ir.ui.view">
+        <field name="name">Worksheet Signature</field>
+        <field name="model">worksheet.signature.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Worksheet Signature">
+                <group>
+                    <field name="x_vendedor" readonly="1"/>
+                    <field name="worksheet_wall_thickness" readonly="1"/>
+                    <field name="worksheet_wall_type" readonly="1"/>
+                    <field name="has_radiators" readonly="1"/>
+                    <field name="radiators_qty" attrs="{'invisible':[('has_radiators','=',False)]}" readonly="1"/>
+                    <field name="has_toilet" readonly="1"/>
+                    <field name="toilet_qty" attrs="{'invisible':[('has_toilet','=',False)]}" readonly="1"/>
+                    <field name="has_fixed_furnitures" readonly="1"/>
+                    <field name="fixed_furnitures_qty" attrs="{'invisible':[('has_fixed_furnitures','=',False)]}" readonly="1"/>
+                    <field name="has_plasterboard" readonly="1"/>
+                    <field name="plasterboard_qty" attrs="{'invisible':[('has_plasterboard','=',False)]}" readonly="1"/>
+                    <field name="has_boiler" readonly="1"/>
+                    <field name="boiler_qty" attrs="{'invisible':[('has_boiler','=',False)]}" readonly="1"/>
+                    <field name="worksheet_other" readonly="1"/>
+                    <field name="has_baseboard" readonly="1"/>
+                    <field name="baseboard_qty" attrs="{'invisible':[('has_baseboard','=',False)]}" readonly="1" />
+                    <field name="basboard_type" attrs="{'invisible':[('has_baseboard','=',False)]}" readonly="1"/>
+                    <field name="exceptional_conditions" readonly="1"/>
+                </group>
+                <group>
+                    <field name="worksheet_signature" widget="signature"/>
+                </group>
+                <footer>
+                    <button name="action_update_worksheet_signature" string="Save" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

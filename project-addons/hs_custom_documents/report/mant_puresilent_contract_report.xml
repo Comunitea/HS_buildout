@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="mant_puresilent_contract_report_document">
+        <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+        <t t-call="hs_custom_documents.external_layout_contract">
+            <div class="page">
+                <style>
+                    @font-face{
+                        font-family:"calibri";
+                        src:local("calibri"), url("/hs_custom_documents/static/src/fonts/calibri") format("truetype");
+                    }
+                    .page{
+                        font-size:9pt;
+                    }
+                    .box{
+                        padding: 10px;
+                        box-shadow: 5px 5px #ff6f00;
+                        border:1px solid #ff6f00;
+                        margin-right:5px;
+                    }
+                    .box-bottom{
+                        padding: 10px;
+                        box-shadow: 0 5px #ff6f00;
+                        border:1px solid #ff6f00;
+                        border-top:none;
+                        border-right:none;
+                    }
+                    .box-bottom .row{
+                        margin-top:4px;
+                    }
+                    .mFont span{
+                        font-size:7.5pt;
+                    }
+                    .imgs td{
+                        border:2px solid #ff6f00;
+                        padding-right:3px;
+                        padding-left:3px;
+                    }
+                    .title{
+                        color:white;
+                        background-color:#ff6f00;
+                        padding:2px;
+                    }
+                    .underline{
+                        border-bottom: solid 1px black;
+                    }
+                    .underline-d{
+                        border-bottom: dotted 1px black;
+                    }
+                    .inv-info{
+                        width:80%;
+                        height:18px;
+                        background-color:#f7caa6;
+                        display:inline-block;
+                        vertical-align:bottom;
+                        padding-right:5px;
+                    }
+                </style>
+                <div class="oe_structure">
+                    <div class="row mx-0">
+                        <div class="col-4 pl-0">
+                            ENTRE la sociedad limitada Hogar Seco® ESPAÑA<br/>
+                            representada por
+                        </div>
+                    </div>
+                    <div class="row mx-0">
+                        <div class="col-6 pl-0">
+                            <div class="row mx-0">
+                                <div class="col-12 pl-0 underline-d">
+                                    <span  t-field="doc.user_id"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-0">
+                        <div class="col-6 h-100 pl-0">
+                            <div class="row mx-0">
+                                <div class="col-3 px-0">
+                                    Y por otra parte
+                                </div>
+                                <div class="col-9 px-0 underline-d">
+                                    <span t-field="doc.partner_id"/>
+                                </div>
+                            </div>
+                            <div class="row mx-0">
+                                <div class="col-3 px-0">
+                                    Con Domicilio
+                                </div>
+                                <div class="col-9 px-0 underline-d">
+                                    <span> <span t-field="doc.partner_id.street"/> <span t-field="doc.partner_id.street2"/> <span t-field="doc.partner_id.city"/></span>
+                                </div>
+                            </div>
+                            <div class="row mx-0">
+                                <div class="col-1 px-0">
+                                    NIF
+                                </div>
+                                <div class="col-11 px-0 underline-d">
+                                    <span t-field="doc.partner_id.vat"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 p-0">
+                            <div class="h-100">
+                                <div class="text-center box pr-0" style="margin-right:5px;">
+                                    <span>Designación del inmueble, objeto de las obras</span><br/>
+                                    <span>(si es diferente del domicilio)</span>
+                                    <br/>
+                                    <t t-if="(doc.x_street and doc.partner_id.street != doc.x_street) or (doc.x_city and doc.partner_id.city != doc.x_city) or (doc.x_street2 and doc.partner_id.street != doc.x_street2)">
+                                        <div class="pr-1 text-left" style="width:98%;">
+                                            <span class="underline-d">
+                                                <span t-field="doc.x_street"/> <span t-field="doc.x_street2"/> <span t-field="doc.x_city"/>
+                                            </span>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="pr-1 text-left underline-d" style="width:98%;">
+                                        </div>
+                                        <br/>
+                                        <div class="pr-1 text-left underline-d" style="width:98%;">
+
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2 mb-1 mx-0" style="padding-bottom:5px;">
+                        <div class="col-1 px-0">
+                            <img t-att-src="'/hs_custom_documents/static/src/img/telephone.png'" style="max-width:15px;max-height:15px;display:inline-block;"/>
+                            particular
+                        </div>
+                        <div class="col-3 px-0">
+                            <span style="width:100%;display:inline-block;padding-left:3px;vertical-align:bottom;" class="underline-d" t-field="doc.partner_id.phone"> </span>
+                        </div>
+                        <div class="col-3 px-0">
+                            <img t-att-src="'/hs_custom_documents/static/src/img/mobile.png'" style="max-width:15px;max-height:15px;display:inline-block;"/>
+                            <span style="width:90%;display:inline-block;vertical-align:bottom;" class="underline-d" t-field="doc.partner_id.mobile"> </span>
+                        </div>
+                        <div class="col-5 px-0">
+                            <img t-att-src="'/hs_custom_documents/static/src/img/telephone.png'" style="max-width:15px;max-height:15px;display:inline-block;"/>
+                            otro<em/>
+                            <span style="width:88%;display:inline-block;vertical-align:bottom;" class="underline-d"></span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="row pt-2">
+                            <div class="col-6"><span>El precio global de los trabajos, IVA no incluido,es de</span></div>
+                            <div class="col-1"></div>
+                            <div class="col-4 text-right"><span class="inv-info"><span t-field="doc.x_subtotal"/></span></div>
+                            <div class="col-1 text-left pl-0"><span>€</span></div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col-6">IVA (al <span t-field="doc.x_iva_percentage"/> %)</div>
+                             <t t-set="iva" t-value="doc.x_subtotal*doc.x_iva_percentage/100"/>
+                            <div class="col-1"></div>
+                            <div class="col-4 text-right"><span class="inv-info"><span t-esc="iva" t-options="{'widget':'float','precision':2}"/></span></div>
+                            <div class="col-1 text-left pl-0"><span>€</span></div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col-6">Precio global (IVA incluido)</div>
+                            <div class="col-1"></div>
+
+                            <div class="col-4 text-right"><span class="inv-info"><span t-field="doc.x_subtotalneto"/></span></div>
+                            <div class="col-1 text-left pl-0"><span>€</span></div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col-2 pr-0">Nº de cuenta</div>
+                            <div class="col-10 text-left pl-0">
+                                <span class="inv-info text-right">
+                                    <span t-if="doc.x_acc_number" t-field="doc.x_acc_number"/>
+                                    <span t-elif="doc.partner_id.bank_ids" t-esc="doc.partner_id.bank_ids[0].acc_number"/>
+                                    <span t-else=""/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="border-right:solid 1px #ff6f00;font-size:9pt;">
+                        <div class="row" style="margin:0 !important;">
+                            <div class="col-4 pl-0 pb-4" style="border-bottom:1px solid #ff6f00;">
+                                <div class="box" style="height:180px;">
+                                    <span>CONDICIONES DE PAGO:</span><br/> <span t-field="doc.x_condiciones_pagos"/>
+                                </div>
+                            </div>
+                            <div class="col-8" style="border:1px solid #ff6f00;border-bottom:none;border-right:none;">
+                                <div class="row ">
+                                    <div class="col-12 text-center mt-3" style="font-size:20pt;">
+                                        <strong>CONTRATO DE MANTENIMIENTO</strong>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row ">
+                                    <div class="col-12 text-center mt-3" style="font-size:20pt;">
+                                        <strong>PureSilent®</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-bottom m-0" >
+                            <br/>
+                            <div class="row">
+                                <div class="col-12 pl-5">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span>El siguiente contrato garantiza que el sistema se mantendrá en óptimas condiciones durante toda su vida útil y que su
+                                                rendimiento no se verá afectado por problemas de mantenimiento. Se incluyen aspectos clave para asegurar la eficacia y
+                                                efectividad del sistema:</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 pr-0">
+                                            1.-
+                                        </div>
+                                        <div class="col-11 pl-0" style="margin-left:-30px;">
+                                            Cambio anual de filtro. El mantenimiento del filtro es esencial para garantizar que el sistema funcione de manera eficiente
+                                            y reducir la cantidad de contaminates en el aire interior de la vivienda.
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-1 pr-0">
+                                                2.-
+                                            </div>
+                                            <div class="col-11 pl-0" style="margin-left:-30px;">
+                                                Reposición de elementos afectados. incluye la reposición de cualquier elemento del sistema que se vea afectado por el
+                                                desgaste o mal funcionamiento. Esto puede incluir motor de ventilación, carcasa aislante, cartuchos, calefactor u otros
+                                                elementos.
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-1 pr-0">
+                                                3.-
+                                            </div>
+                                            <div class="col-11 pl-0" style="margin-left:-30px;">
+                                                Limpieza. Se realizará una limpieza para garantizar que el sistema funcione de una manera óptima.
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-1 pr-0">
+                                                4.-
+                                            </div>
+                                            <div class="col-11 pl-0" style="margin-left:-30px;">
+                                                Configuración del sistema. Revisión de la configuración actual y realización, si procede, de cambios para establecer el
+                                            funcionamiento de manera más eficiente.
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-1 pr-0">
+                                                5.-
+                                            </div>
+                                            <div class="col-11 pl-0" style="margin-left:-30px;">
+                                                Recordatorio del funcionamiento. El cliente será informado sobre cualquier duda acerca del funcionamiento del sistema
+                                                para que se mantenga en óptimas condiciones durante toda su vida útil.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row box" style="margin-left:0 !important;">
+                        <div class="col-12 px-0">
+                            <span style="display:inline-block;width:100%">Firmado en dos ejemplares en <span class="underline-d" style="display:inline-block;width:20%"> </span>  el día <span class="underline-d" style="display:inline-block;width:20%"> </span></span><br/>
+                            <div class="row mt-3">
+                                <div class="col-7 text-center">
+                                    <div class="text-left">Firma del cliente con indicación manuscrita del cliente de la fecha y el lugar</div>
+                                    <div class="mt-3">
+                                        <img
+                                            t-if="doc.contract_signature"
+                                            t-att-src="'data:image/png;base64,%s' % to_text(doc.contract_signature)"
+                                            style="max-width: 75%; max-height: 50px;"/>
+                                    </div>
+                                </div>
+                                <div class="col-5 text-center">
+                                    <div class="text-left">Firma de la sociedad representada por <span t-field="doc.user_id"/></div>
+                                    <div class="mt-3">
+                                        <img
+                                            t-if="doc.user_id.digital_signature"
+                                            t-att-src="'data:image/png;base64,%s' % to_text(doc.user_id.digital_signature)"
+                                            style="max-width: 75%; max-height: 50px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="mant_puresilent_contract_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="hs_custom_documents.mant_puresilent_contract_report_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

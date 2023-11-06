@@ -1,0 +1,316 @@
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
+from PyPDF2 import PdfFileMerger, PdfFileReader, PdfFileWriter
+import tempfile
+import subprocess
+import os
+import base64
+
+class ProjectProject(models.Model):
+
+    _inherit = 'project.project'
+
+    project_ref = fields.Char(string="Ref", readonly=True)
+
+
+    pure_silent = fields.Boolean(string="PureSilent")
+    pure_silent_attic = fields.Boolean(string="PureSilent Attic")
+
+    #CONFIGURACIÓN DE VIVIENDA
+
+    n_floors = fields.Integer(string="Floors Number")
+    surface_area = fields.Float(string="Surface Area per Floor(m2)")
+    n_bedrooms = fields.Integer(string="Bedrooms Number")
+    independent_kitchen = fields.Boolean(string="Independent Kitchen")
+
+    other_spaces = fields.Char(string="Other Spaces conneceted to the house")
+    n_occupants = fields.Integer(string="Number of Occupants")
+    pets = fields.Integer(string="Pets")
+    #BAÑOS?
+    n_bathrooms = fields.Integer(string="Bathrooms Number")
+    with_windows = fields.Boolean(string="With Windows")
+    with_extractor = fields.Boolean(string="With Extractor")
+    with_shunt = fields.Boolean(string="With Shunt(static ventilation)")
+
+    #ZONA DE SECADO
+    drying_area = fields.Boolean(string="Clothes Drying Area")
+    inside = fields.Boolean(string="Inside")
+    outside = fields.Boolean(string="Outside")
+    closed_terrace = fields.Boolean(string="Closed Terrace")
+    others = fields.Boolean(string="Others")
+
+    #TIPOLOGÍA DE FACAHADA
+    finish_facade = fields.Char(string="Exterior Finish Facade")
+    normal_wall_thickness = fields.Float(string="Normal Wall Thickness")
+    wall_thickness = fields.Float(string="Wall Thickness > 40cm")
+
+    #VENTANAS
+
+    n_aluminum = fields.Boolean(string="Of Aluminum")
+    n_wood = fields.Boolean(string="Of Wood")
+    n_pvc = fields.Boolean(string="Of PVC")
+    n_with_shutter_box = fields.Boolean(string="With Shutter Box")
+    n_with_shutter = fields.Boolean(string="With Shutter")
+    n_sliding_type = fields.Boolean(string="Sliding Type")
+    n_tilt_and_turn_type = fields.Boolean(string="Tilt and Turn Type")
+    n_casement_type = fields.Boolean(string="Casement Type")
+    n_with_termal_break = fields.Boolean(string="With Termal Break")
+    other_windows= fields.Boolean(string="Others")
+
+    #TIPO DE CALEFACCIÓN
+    water_radiators = fields.Boolean(string="Water Radiators")
+    electric_radiators = fields.Boolean(string="Electric Radiators")
+    wood_pellet_fireplace = fields.Boolean(string="Wood Fireplace")
+    heat_pump = fields.Boolean(string="Heat Pump")
+    stoves = fields.Boolean(string="Stoves")
+
+    #Patologías
+
+    #MOHO
+    molds = fields.Boolean(string="Molds?")
+    mold_living_room = fields.Boolean(string="Living Room")
+    mold_bedroom = fields.Boolean(string="Bedrooms")
+    mold_bathroom = fields.Boolean(string="Bathroom/s")
+    mold_kitchen = fields.Boolean(string="Kitchen")
+    mold_other = fields.Char(string="Others")
+
+    #VAHOS EN VENTANAS
+    steam_windows = fields.Boolean(string="Steam in Windows?")
+    steam_living_room = fields.Boolean(string="Living Room")
+    steam_bedroom = fields.Boolean(string="Bedrooms")
+    steam_bathroom = fields.Boolean(string="Bathroom/s")
+    steam_kitchen = fields.Boolean(string="Kitchen")
+    steam_other = fields.Char(string="Others")
+
+    musty_smell = fields.Boolean(string="Musty Smell?")
+    humidity_in_enviroment = fields.Boolean(string="Humidity in Enviroment?")
+
+    #EN CASO DE PURESILET ÁTICO
+
+    independent_attic = fields.Boolean(string="Independent Attic?")
+    with_access = fields.Boolean(string="With Access?")
+    without_access = fields.Boolean(string="Without Access?")
+    has_ventilation = fields.Boolean(string="Has outside air intake / ventilation")
+    current_usage = fields.Char(string="Current Usage")
+
+    observation = fields.Text(string="Observation")
+
+    #Hoja de obra
+    worksheet_img = fields.Binary(string="Work Sheet Image", attachment=True)
+    has_radiators = fields.Boolean(string="Radiators")
+    radiators_qty = fields.Integer(string="Radiators Quantity")
+    has_toilet = fields.Boolean(string="Toilet")
+    toilet_qty = fields.Integer(string="Toilets Quantity")
+    has_fixed_furnitures = fields.Boolean(string="Fixed Furnitures")
+    fixed_furnitures_qty = fields.Integer(string="Fixed Furnitures Quantity")
+    has_plasterboard = fields.Boolean(string="Plasterboard")
+    plasterboard_qty = fields.Integer(string="Plasterboard Quantity")
+    has_boiler = fields.Boolean(string="Boiler")
+    boiler_qty = fields.Integer(string="Booiler Quantity")
+    worksheet_other = fields.Char(string="Other")
+    has_baseboard = fields.Boolean(string="Baseboard")
+    baseboard_qty = fields.Integer(string="Baseboard Quantity")
+    basboard_type = fields.Char(string="Type")
+    worksheet_wall_thickness = fields.Float(string="Wall Thickness")
+    worksheet_wall_type = fields.Char(string="Type")
+    exceptional_conditions = fields.Text(string="Exceptional Conditions")
+    worksheet_signature = fields.Binary(
+        string='Worksheet acceptance'
+    )
+    worksheet_signature_date = fields.Date(string="Work Sheet Signature Date")
+
+    contract_type_id = fields.Many2one(comodel_name='project.contract.type', string="Contract Type", required=True)
+    contracted_distance = fields.Float(string="Contracted Distance(m)")
+
+    @api.model
+    def create(self, vals):
+        if vals.get('contract_type_id'):
+            contract_type = self.env['project.contract.type'].browse(vals['contract_type_id'])
+            if contract_type.contract_type == 'mps':
+                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.mps')
+            elif contract_type.contract_type == 'ps':
+                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.ps')
+            elif contract_type.contract_type == 'misc':
+                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.misc')
+            elif contract_type.contract_type == 'enc':
+                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.enc')
+            elif contract_type.contract_type == 'cap':
+                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.cap')
+            elif contract_type.contract_type == 'rcs':
+                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.rcs')
+            else:
+                vals['project_ref'] = '/'
+        return super(ProjectProject, self).create(vals)
+
+    def action_show_worksheet_signatures(self):
+        return {'type': 'ir.actions.act_window',
+                'name': ('Worksheet Signatures'),
+                'res_model': 'worksheet.signature.wizard',
+                'target': 'new',
+                'view_id': self.env.ref('hs_custom_documents.view_worksheet_signature_wzd').id,
+                'view_mode': 'form',
+                }
+
+    @api.onchange('has_radiators')
+    def _onchange_has_radiators(self):
+        for record in self:
+            if not record.has_radiators:
+                record.radiators_qty = 0
+
+    @api.onchange('has_toilet')
+    def _onchange_has_toilet(self):
+        for record in self:
+            if not record.has_toilet:
+                record.toilet_qty = 0
+
+    @api.onchange('has_fixed_furnitures')
+    def _onchange_has_fixed_furnitures(self):
+        for record in self:
+            if not record.has_fixed_furnitures:
+                record.fixed_furnitures_qty = 0
+
+    @api.onchange('has_plasterboard')
+    def _onchange_has_plasterboard(self):
+        for record in self:
+            if not record.has_plasterboard:
+                record.plasterboard_qty = 0
+
+    @api.onchange('has_boiler')
+    def _onchange_has_boiler(self):
+        for record in self:
+            if not record.has_boiler:
+                record.boiler_qty = 0
+
+    @api.onchange('has_baseboard')
+    def _onchange_has_baseboard(self):
+        for record in self:
+            if not record.has_baseboard:
+                record.baseboard_qty = 0
+                record.basboard_type = ''
+
+
+    def action_print_contract(self):
+        for project in self:
+            return {
+                'type': 'ir.actions.act_url',
+                'url': '/project/report/'+str(project.id),
+                'target': 'new',
+            }
+
+
+    @api.multi
+    def action_contract_send(self):
+        res = super(ProjectProject, self).action_contract_send()
+        context = res['context']
+        data = self.generate_project_report()
+        attachments = []
+        if data:
+            pdf = data['pdf']
+            filename = data['filename']
+            contract = self.env['ir.attachment'].create({
+                'name': filename,
+                'type': 'binary',
+                'datas': pdf,
+                'res_model': 'project.project',
+                'res_id': self.id,
+                'mimetype': 'application/pdf',
+            })
+            attachments.append(contract.id)
+        if self.x_iva_doc:
+            report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.reduced_iva_report')
+            iva_doc_report = report.render_qweb_pdf([self.id])[0]
+            iva = self.env['ir.attachment'].create({
+                'name': 'HG-IVA.pdf',
+                'type': 'binary',
+                'datas': base64.b64encode(iva_doc_report),
+                'res_model': 'project.project',
+                'res_id': self.id,
+                'mimetype': 'application/pdf',
+            })
+            attachments.append(iva.id)
+
+        context.update({
+            'default_attachment_ids': [(6, 0, attachments)],
+        })
+        res['context'] = context
+        return res
+
+
+    def generate_project_report(self):
+        self.ensure_one()
+        report_name = ''
+        if self and self.contract_type_id:
+            if self.contract_type_id.contract_type == 'mps':
+                report_name = 'hs_custom_documents.mant_puresilent_contract_report'
+            elif self.contract_type_id.contract_type == 'ps':
+                report_name = 'hs_custom_documents.puresilent_contract_report'
+            elif self.contract_type_id.contract_type == 'misc':
+                report_name = 'hs_custom_documents.misc_contract_report'
+            elif self.contract_type_id.contract_type == 'enc':
+                report_name = 'hs_custom_documents.enc_contract_report'
+            elif self.contract_type_id.contract_type == 'cap':
+                report_name = 'hs_custom_documents.cap_contract_report'
+            elif self.contract_type_id.contract_type == 'rcs':
+                report_name = 'hs_custom_documents.radon_contract_report'
+            else:
+                return False
+
+            report = self.env['ir.actions.report']._get_report_from_name(report_name)
+            report_output = report.render_qweb_pdf([self.id])[0]
+            if self.contract_type_id.contract_conditions:
+                pdf = self.pdf_merge([base64.b64encode(report_output), self.contract_type_id.contract_conditions])
+            else:
+                pdf = base64.b64encode(report_output)
+            filename = report.print_report_name.replace("'","")+'-'+self.name
+            return {'filename': filename, 'pdf': pdf}
+        else:
+            return False
+
+
+
+    def pdf_merge(self, documents_pdf):
+        temp_file = tempfile.NamedTemporaryFile()
+        temp_file_name = temp_file.name
+        merger = PdfFileMerger()
+        rutas=[]
+        for document_pdf in documents_pdf:
+            ft = tempfile.NamedTemporaryFile()
+            nft = ft.name
+            fo = open(nft, "wb")
+            fo.write(base64.b64decode(document_pdf))
+            fo.close()
+            fo = open(nft, "rb")
+            merger.append(fo)
+            rutas.append(fo)
+
+        merger.write(temp_file_name)
+        merger.close()
+        for ruta in rutas:
+            ruta.close()
+
+        pdf = open(temp_file_name,'rb')
+        result = base64.b64encode(pdf.read())
+        pdf.close()
+        return result
+
+
+
+
+class ProjectContractType(models.Model):
+
+    _name = 'project.contract.type'
+    _description = 'Project Contract Type'
+
+    name = fields.Char(string="Name", required=True)
+    active = fields.Boolean(string="Active", default=True)
+    contract_type = fields.Selection(
+        string='Contract Type',
+        selection=[('mps', 'MPS'),
+                   ('ps', 'PS'),
+                   ('misc','MISC'),
+                   ('enc','ENC'),
+                   ('cap','CAP'),
+                   ('rcs', 'RCS')],
+        required=True
+    )
+    contract_conditions = fields.Binary(string="Contract Conditions", attachment=True)

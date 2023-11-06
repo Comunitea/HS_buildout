@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="external_layout_contract">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header first-page" style="font-size:9pt;">
+            <div class="row">
+                <div class="col-4 text-left">
+                    <br/>
+                    <t t-if="o and o.sale_type_id">
+                        <img
+                            t-if="o.sale_type_id.logo"
+                            t-att-src="'data:image/png;base64,%s' % to_text(o.sale_type_id.logo)"
+                            style="max-width:260px;max-height:70px;"/>
+                        <img
+                            t-else="company.logo"
+                            t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                            style="max-width:260px;max-height:70px;"/>
+
+                    </t>
+                    <t t-else="">
+                        <img
+                            t-if="company.logo"
+                            t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                            style="max-width:260px;max-height:70px;"/>
+                    </t>
+                </div>
+                <div class="col-4 text-center">
+                    <br/>
+                    <t t-if="o and o.sale_type_id">
+                        <span t-if="o.sale_type_id.header_name" t-field="o.sale_type_id.header_name"/>
+                        <span t-else="">
+                            <span t-field="company.name"/>
+                            <span>/</span>
+                            <span>CIF: <span t-field="company.vat"/></span>
+                        </span>
+                        <br/>
+                        <span><span t-field="company.street"/><span>·</span><span t-field="company.zip"/> <span t-field="company.state_id"/></span><br/>
+                        <span>
+                            Tel.<span t-if="o.sale_type_id.phone" t-field="o.sale_type_id.phone"/>
+                            <span t-else="">
+                                - Fax <span t-field="company.name"/>
+                            </span>
+                        </span>
+                        <br/>
+                        <span t-if="o.sale_type_id.email or o.sale_type_id.website">
+                            <span t-field="o.sale_type_id.email"/> - <span t-field="o.sale_type_id.website"/>
+                        </span>
+                        <span t-else="">
+                            <strong><span t-field="company.email"/> - <span t-field="company.website"/></strong>
+                        </span>
+                    </t>
+                    <t t-else="">
+                        <span t-field="company.name"/><span>/</span><span>CIF:<span t-field="company.vat"/></span><br/>
+                        <span><span t-field="company.street"/><span>·</span><span t-field="company.zip"/> <span t-field="company.state_id"/></span><br/>
+                        <span>Tel.<span t-field="company.phone"/> - Fax </span><br/>
+                        <strong><span t-field="company.email"/> - <span t-field="company.website"/></strong>
+                    </t>
+                </div>
+                <div class="col-1"/>
+                <div class="col-3">
+                    <br/>
+                    <t t-if="o and o.contract_type_id.contract_type!='rcs'">
+                    <div style="width:100%;background-color:#ff6f00;color:black;font-size:16pt;" class="text-center">
+                        <strong>CONTRATO</strong>
+                    </div>
+                    </t>
+                    <t t-elif="o and o.contract_type_id.contract_type=='rcs'">
+                        <div style="width:100%;background-color:#404454;color:white;font-size:16pt;" class="text-center">
+                            <strong>CONTRATO</strong>
+                        </div>
+                    </t>
+                    <t t-else="">
+                    </t>
+                    <div class="text-left" style="font-size:13pt;">
+                        <t t-set="contract" t-value="o.project_ref.split('/') if o and o.project_ref else []"/>
+                        <t t-if="contract">
+                            <span><span t-esc="contract[0]"/> Nº : <span style="margin-left:10px;color:red;font-size:15pt;" t-esc="contract[1]"/></span>
+                        </t>
+                    </div>
+                    <div class="text-right" style="font-size:7pt;">
+                        <span>Número a indicar en toda correspondencia</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="external_layout_hs_worksheet">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header">
+            <div class="col-12 text-right pl-5">
+                <t t-if="o and o.sale_type_id">
+                    <img
+                        t-if="o.sale_type_id.logo"
+                        t-att-src="'data:image/png;base64,%s' % to_text(o.sale_type_id.logo)"
+                        style="max-width:350px;max-height:85px;"/>
+                    <img
+                        t-else="company.logo"
+                        t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                        style="max-width:350px;max-height:85px;"/>
+
+                </t>
+                <t t-else="">
+                    <img
+                        t-if="company.logo"
+                        t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                        style="max-width:350px;max-height:85px;"/>
+                </t>
+            </div>
+        </div>
+        <div class="article o_external_layout_hs">
+          <t t-raw="0"/>
+        </div>
+        <div class="footer">
+            <div class="col-12 text-center p-0">
+                <img
+                  t-if="company.report_footer_image"
+                  t-att-src="'data:image/png;base64,%s' % to_text(company.report_footer_image)"
+                  style="max-width:840px;max-height:75px;"/>
+            </div>
+        </div>
+
+  </template>
+
+  <template id="external_layout_hs_iva">
+    <t t-if="not o" t-set="o" t-value="doc"/>
+
+    <t t-if="not company">
+        <!-- Multicompany -->
+        <t t-if="company_id">
+            <t t-set="company" t-value="company_id"/>
+        </t>
+        <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+            <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-else="else">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+    </t>
+    <div class="header first-page">
+        <div class="col-12 text-left pl-5">
+            <t t-if="o and o.sale_type_id">
+                <img
+                    t-if="o.sale_type_id.logo"
+                    t-att-src="'data:image/png;base64,%s' % to_text(o.sale_type_id.logo)"
+                    style="max-width:350px;max-height:85px;"/>
+                <img
+                    t-else="company.logo"
+                    t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                    style="max-width:350px;max-height:85px;"/>
+
+            </t>
+            <t t-else="">
+                <img
+                    t-if="company.logo"
+                    t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                    style="max-width:350px;max-height:85px;"/>
+            </t>
+        </div>
+    </div>
+    <div class="article">
+      <t t-raw="0"/>
+    </div>
+    <div class="footer">
+        <div class="text-center" style="font-size:10px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><span t-field="company.name"/></li>
+                <t t-if="company.street">
+                    <li class="list-inline-item"> - </li>
+                    <li class="list-inline-item"><span t-field="company.street"/></li>
+                </t>
+                <t t-if="company.street">
+                    <li class="list-inline-item"> - </li>
+                    <li class="list-inline-item"><span t-field="company.zip"/></li>
+                </t>
+                <li t-if="company.zip_id" class="list-inline-item">
+                    <span> <span t-field="company.zip_id"/></span>
+                </li>
+                <t t-if="company.state_id">
+                    <li class="list-inline-item"> - </li>
+                    <li class="list-inline-item"><span t-field="company.state_id"/></li>
+                </t>
+                <t t-if="company.phone">
+                    <li class="list-inline-item"> - </li>
+                    <li class="list-inline-item"><span t-field="company.phone"/></li>
+                </t>
+                <t t-if="company.website">
+                    <li class="list-inline-item"> - </li>
+                    <li class="list-inline-item"><a href="company.website"><span t-field="company.website"/></a></li>
+                </t>
+                <t t-if="company.email">
+                    <li class="list-inline-item"> - </li>
+                    <li class="list-inline-item"><span t-field="company.email"/></li>
+                </t>
+            </ul>
+        </div>
+    </div>
+</template>
+
+ <template id="external_layout_worksheet_ref">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header first-page" style="font-size:9pt;">
+            <div class="row">
+                <div class="col-4 text-left">
+                    <br/>
+                    <t t-if="o and o.sale_type_id">
+                        <img
+                            t-if="o.sale_type_id.logo"
+                            t-att-src="'data:image/png;base64,%s' % to_text(o.sale_type_id.logo)"
+                            style="max-width:260px;max-height:70px;"/>
+                        <img
+                            t-else="company.logo"
+                            t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                            style="max-width:260px;max-height:70px;"/>
+
+                    </t>
+                    <t t-else="">
+                        <img
+                            t-if="company.logo"
+                            t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                            style="max-width:260px;max-height:70px;"/>
+                    </t>
+                </div>
+                <div class="col-4 text-center">
+                    <br/>
+                    <t t-if="o and o.sale_type_id">
+                        <span t-if="o.sale_type_id.header_name" t-field="o.sale_type_id.header_name"/>
+                        <span t-else="">
+                            <span t-field="company.name"/>
+                            <span>/</span>
+                            <span>CIF: <span t-field="company.vat"/></span>
+                        </span>
+                        <br/>
+                        <span><span t-field="company.street"/><span>·</span><span t-field="company.zip"/> <span t-field="company.state_id"/></span><br/>
+                        <span>
+                            Tel.<span t-if="o.sale_type_id.phone" t-field="o.sale_type_id.phone"/>
+                            <span t-else="">
+                                - Fax <span t-field="company.name"/>
+                            </span>
+                        </span>
+                        <br/>
+                        <span t-if="o.sale_type_id.email or o.sale_type_id.website">
+                            <span t-field="o.sale_type_id.email"/> - <span t-field="o.sale_type_id.website"/>
+                        </span>
+                        <span t-else="">
+                            <strong><span t-field="company.email"/> - <span t-field="company.website"/></strong>
+                        </span>
+                    </t>
+                    <t t-else="">
+                        <span t-field="company.name"/><span>/</span><span>CIF:<span t-field="company.vat"/></span><br/>
+                        <span><span t-field="company.street"/><span>·</span><span t-field="company.zip"/> <span t-field="company.state_id"/></span><br/>
+                        <span>Tel.<span t-field="company.phone"/> - Fax </span><br/>
+                        <strong><span t-field="company.email"/> - <span t-field="company.website"/></strong>
+                    </t>
+                </div>
+                <div class="col-1"/>
+                <div class="col-3">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="text-left" style="font-size:13pt;">
+                        <t t-set="contract" t-value="o.project_ref.split('/') if o and o.project_ref else []"/>
+                        <t t-if="contract">
+                            <span>REFERENCIA Nº : <span style="color:red;font-size:13pt;" t-esc="contract[1]"/></span>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+</odoo>

@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="report_work_data_sheet_document">
+        <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+            <t t-call="hs_custom_documents.external_layout_hs_worksheet">
+
+                <div class="page">
+                    <style>
+                        .table-bordered tbody tr td{
+                            border: 1px solid black !important;
+                            border-collapse:collapse;
+                        }
+                        .table-bordered{
+                            border: 1px solid black !important;;
+                        }
+                        .table td{
+                            vertical-align:middle !important;
+                            padding:7px !important;
+                            margin:0px !important;
+                            word-wrap: break-word !important;
+                            max-width: 150px !important;
+                        }
+                    </style>
+                    <div class="oe_structure">
+                        <div>
+                            <div style="font-size:25px;">
+                               <span>DATOS DE LA VIVIENDA</span>
+                            </div>
+                            <div class="text-right mb-2 mr-3">
+                                <span>PureSilent [ <span t-if="doc.pure_silent">X</span> ]</span>
+                                <span style="margin-left:10px;"> PureSilent Ático [ <span t-if="doc.pure_silent_attic">X</span> ]</span>
+                            </div>
+                            <div>
+                                <table class="w-100 table table-bordered ">
+                                    <tbody>
+                                        <!--Configuración de la vivienda -->
+                                        <tr>
+                                            <td rowspan="9">
+                                                <span>Configuración<br/>de la<br/>vivienda</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Nº de plantas [ <span t-field="doc.n_floors"/> ]</span>
+                                            </td>
+                                            <td colspan="4">
+                                                <span>Superficie por planta (m2) [ <span t-field="doc.surface_area"/> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>Nº de dormitorios [ <span t-field="doc.n_bedrooms"/> ]</span>
+                                            </td>
+                                            <td colspan="4">
+                                                <span>Cocina independiente [ <span t-if="doc.independent_kitchen">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3" colspan="2">
+                                                <span>Nº de baños [ <span t-field="doc.n_bathrooms"/> ]</span>
+                                            </td>
+                                            <td colspan="4">
+                                                <span>Con ventana [ <span t-if="doc.with_windows">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <span>Con extractor [ <span t-if="doc.with_extractor">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <span>Con shunt (ventilación estática) [ <span t-if="doc.with_shunt">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" colspan="2">
+                                                <span>Zona de tendedero / secado<br/>de ropa</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Interior [ <span t-if="doc.inside">X</span> ]</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Terraza cerrada [ <span t-if="doc.closed_terrace">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>Exterior [ <span t-if="doc.outside">X</span> ]</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Otros [ <span t-if="doc.others">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span>Otros espacios comunicados con la vivienda : <span t-field="doc.other_spaces"/></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span>Número de ocupantes [ <span t-field="doc.n_occupants"/> ]</span>
+                                                <span style="margin-left:10px;">Mascotas [ <span t-field="doc.pets"/> ]</span>
+                                            </td>
+                                        </tr>
+                                        <!--Tipología de fachada-->
+                                        <tr>
+                                            <td rowspan="2">
+                                               <span>Tipología<br/>de<br/>fachada</span>
+                                            </td>
+                                            <td colspan="6">
+                                                <span>Acabado exterior fachada: <span t-field="doc.finish_facade"/></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>Grosor muro normal</span>
+                                            </td>
+                                            <td colspan="4">
+                                                <span>Grosor muro > 40 cm</span>
+                                            </td>
+                                        </tr>
+                                        <!--Ventanas -->
+                                        <tr>
+                                            <td rowspan="5">
+                                                <span>Ventanas</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>De aluminio [ <span t-if="doc.n_aluminum">X</span> ]</span>
+                                            </td>
+                                            <td  colspan="4">
+                                                <span>Tipo corredera [ <span t-if="doc.n_sliding_type">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>De madera [ <span t-if="doc.n_wood">X</span> ]</span>
+                                            </td>
+                                            <td  colspan="4">
+                                                <span>Tipo oscilobatiente [ <span t-if="doc.n_tilt_and_turn_type">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>De PVC [ <span t-if="doc.n_pvc">X</span>]</span>
+                                            </td>
+                                            <td  colspan="4">
+                                                <span>Tipo abatible [ <span t-if="doc.n_casement_type">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>Con caja de persiana [ <span t-if="doc.n_with_shutter_box">X</span> ]</span>
+                                            </td>
+                                            <td  colspan="4">
+                                                <span>Con rotura puente térmico [ <span t-if="doc.n_with_termal_break">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>Con contraventana [ <span t-if="doc.n_with_shutter">X</span> ]</span>
+                                            </td>
+                                            <td  colspan="4">
+                                                <span>Otros [ <span t-if="doc.other_windows">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <!--Tipo de calefacción-->
+                                        <tr>
+                                            <td rowspan="3">
+                                                <span>Tipo<br/> de <br/>calefacción</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Radiadores de agua [ <span t-if="doc.water_radiators">X</span> ]</span>
+                                            </td>
+                                            <td colspan="4">
+                                                <span>Radiadores eléctricos [ <span t-if="doc.electric_radiators">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>Chimenea leña / pellets [ <span t-if="doc.wood_pellet_fireplace">X</span> ]</span>
+                                            </td>
+                                            <td colspan="4">
+                                                <span>Bomba de calor [ <span t-if="doc.heat_pump">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span>Estufas de butano/queroseno/parafina [ <span t-if="doc.stoves">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <!--Patologías 1-->
+                                        <tr>
+                                            <td rowspan="6">
+                                               <span>Patologías</span>
+                                            </td>
+                                            <td rowspan="3" colspan="2">
+                                                <span>¿Mohos?</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Salón [ <span t-if="doc.mold_living_room" >X</span> ]</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Dormitorios [ <span t-if="doc.mold_bedroom">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                               <span>Baño/s [ <span t-if="doc.mold_bathroom">X</span> ]</span>
+                                           </td>
+                                           <td colspan="2">
+                                               <span>Cocina [ <span t-if="doc.mold_kitchen">X</span> ]</span>
+                                           </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <span>Otros: <span t-field="doc.mold_other"/></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3" colspan="2">
+                                                <span>¿Vahos en ventanas? </span>
+                                            </td>
+                                            <td colspan="2">
+
+                                                <span>Salón [ <span t-if="doc.steam_living_room">X</span> ]</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Dormitorios [ <span t-if="doc.steam_bedroom">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                               <span>Baño/s [ <span t-if="doc.steam_bathroom">X</span> ]</span>
+                                           </td>
+                                           <td colspan="2">
+                                               <span>Cocina [ <span t-if="doc.steam_kitchen">X</span> ]</span>
+                                           </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <span>Otros: <span t-field="doc.steam_other"/></span>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div >
+                                <table class="w-100 table table-bordered ">
+                                    <tbody>
+                                          <!--Patologías 2-->
+                                          <tr>
+                                            <td rowspan="2">
+                                                <span>Patologías</span>
+                                            </td>
+                                            <td colspan="6">
+                                                <span>Olor a humedad [ <span t-if="doc.musty_smell">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span>Humedad en el ambiente [ <span t-if="doc.humidity_in_enviroment">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <!--En caso de PureSilent Ático -->
+                                        <tr>
+                                            <td rowspan="4">
+                                                <span>
+                                                    En caso<br/>de<br/>PureSilent<br/>Ático
+                                                </span>
+                                            </td>
+                                            <td colspan="6">
+                                                 <!-- <span>[<span t-field="doc."/>]</span> -->
+                                                 <span>Desván independiente del resto de la vivienda [ <span t-if="doc.independent_attic">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <span>Con acceso [ <span t-if="doc.with_access">X</span> ]</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <span>Sin acceso [ <span t-if="doc.without_access">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span>Dispone de entrada de aire exterior / ventilación [ <span t-if="doc.has_ventilation">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span>Uso actual [ <span t-if="doc.current_usage">X</span> ]</span>
+                                            </td>
+                                        </tr>
+                                        <!--Observaciones -->
+                                        <tr >
+                                            <td colspan="7" style="vertical-align:top !important">
+                                                <span>Observaciones: <span t-field="doc.observation"/></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+    </template>
+
+
+
+    <template id="report_work_data_sheet">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="hs_custom_documents.report_work_data_sheet_document" t-lang="doc.partner_id.lang"/>
+            </t>
+
+        </t>
+    </template>
+</odoo>

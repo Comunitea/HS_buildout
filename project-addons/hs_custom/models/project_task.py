@@ -32,6 +32,8 @@ class ProjectTask(models.Model):
 
     task_cost = fields.Float('Task Cost',default=0.0, compute='_compute_task_cost')
     can_add_materials = fields.Boolean('Add Materials', default=True, compute='_compute_can_add_materials')
+    accomodation = fields.Text(string='Accomodation')
+    accomodation_url = fields.Char(string='Accomodation URL')
 
     @api.onchange('user_id')
     def _onchange_user(self):
@@ -48,16 +50,18 @@ class ProjectTask(models.Model):
             self.partner_id = self.project_id.partner_id.id
         return res
 
-    @api.constrains('planned_hours')
-    def _check_planned_hours(self):
-        for record in self:
-            if record.planned_hours <=0:
-                raise ValidationError("Planned hours must be greater than 0")
+    # @api.constrains('planned_hours')
+    # def _check_planned_hours(self):
+    #     for record in self:
+    #         if record.planned_hours <=0:
+    #             raise ValidationError("Planned hours must be greater than 0")
 
     @api.onchange('stage_id')
     def _onchange_stage_id(self):
         for record in self:
-            if record.stage_id and record.stage_id.on_route and (not record.timesheet_ids or record.effective_hours==0):
+            if record.stage_id and record.stage_id.required_planned_hours and record.planned_hours<=0:
+                raise ValidationError("Planned hours must be greater than 0")
+            elif record.stage_id and record.stage_id.on_route and (not record.timesheet_ids):
                 raise ValidationError("You must add timesheet lines to this task")
             else:
                 super()._onchange_stage_id()
@@ -68,17 +72,17 @@ class ProjectTask(models.Model):
     #      'Planned hours must be greater than 0'),
     # ]
 
-    @api.model
-    def create(self, vals):
-        if 'planned_hours' not in vals.keys():
-            raise ValidationError("Planned hours must be greater than 0")
-        return super(ProjectTask, self).create(vals)
+    # @api.model
+    # def create(self, vals):
+    #     if 'planned_hours' not in vals.keys():
+    #         raise ValidationError("Planned hours must be greater than 0")
+    #     return super(ProjectTask, self).create(vals)
 
     @api.multi
     def write(self, values):
         res = super(ProjectTask, self).write(values)
         for record in self:
-            if record.planned_hours<=0:
+            if record.planned_hours<=0 and record.stage_id and record.stage_id.required_planned_hours:
                 raise ValidationError("Planned hours must be greater than 0")
         return res
 
@@ -88,6 +92,7 @@ class ProjectTaskType(models.Model):
     _inherit = "project.task.type"
 
     on_route = fields.Boolean('On route', default=False)
+    required_planned_hours = fields.Boolean('Required planned hours', default=False)
 
 class ProjectTaskMaterial(models.Model):
 

@@ -1,0 +1,1607 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hs_custom_documents
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-31 15:33+0000\n"
+"PO-Revision-Date: 2023-10-31 15:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_worksheet_ref
+msgid "- Fax"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<br/>\n"
+"                            <span>Como especialistas en tratamientos contra la humedad, Hogar Seco no realiza la instalación de los elementos retirados que obstaculicen el acceso a la\n"
+"                                zona a tratar (calderas de gas, equipos de aire acondicionado, revestimientos, zócalos, etc.)Del mismo modo no nos responsabilizamos de los daños que\n"
+"                                se pudiesen producir por manipulación de equipos, instalaciones y otros elementos que impidan la ejecución de los tratamientos contratados.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<br/>\n"
+"                    <span>Retirada a cargo del cliente:</span>\n"
+"                    <br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span style=\"display:inline-block\">Si el tratamiento es de CAP indicar: Grosor de muro</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span style=\"display:inline-block;margin-left:15px;\"> Tipo de muro</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span style=\"display:inline-block;width:100%\">Firmado en dos ejemplares en <span class=\"underline-d\" style=\"display:inline-block;width:20%\"> </span>  el día <span class=\"underline-d\" style=\"display:inline-block;width:20%\"> </span></span><br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span style=\"display:inline-block;width:15%;\">Otros</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>\n"
+"                                                    En caso<br/>de<br/>PureSilent<br/>Ático\n"
+"                                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+msgid "<span>A) El cliente contrata a Hogar Seco la ejecución de los trabajos indicados.</span><br/>\n"
+"                        <span>B) El cliente declara haber entendido el tratamiento a realizar por Hogar Seco y la documentación relativa a dicho documento.</span><br/>\n"
+"                        <span>C) El cliente manifiesta haberse enterado de las condiciones al dorso de este contrato y manifiesta aceptarlas.</span><br/>\n"
+"                        <span>D) La garantía Hogar Seco cubre únicamente las superficies tratadas directamente salvo indicación contraria mencionada en las condiciones especiales de este contrato. Hogar\n"
+"                            Seco no podría ser responsable de la reaparición de la humedad como consecuencia de grietas, fisuras, resquebrajaduras o desfasamientos del revestimiento colocado,\n"
+"                            debidos a movimientos del suelo, de la albañilería o a fenómenos naturales, así como a cualquier perforación o empotrado realizado por el cliente.\n"
+"                        </span><br/>\n"
+"                        <span>E) El precio del servicio comprende material, mano de obra y medios auxiliares, no obstante las mediciones unitarias que figuran en el presupuesto económico servirán\n"
+"                            para valorar los aumentos o disminuciones del precio, ya que aun no se han realizado las mediciones finales.\n"
+"                        </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+msgid "<span>A) El cliente contrata a Hogar Seco la ejecución de los trabajos indicados.</span><br/>\n"
+"                        <span>B) El cliente declara haber entendido el tratamiento a realizar por Hogar Seco y la documentación relativa a dicho tratamiento.</span><br/>\n"
+"                        <span>C) El cliente manifiesta haberse enterado de las condiciones al dorso de este contrato y manifiesta aceptarlas.</span><br/>\n"
+"                        <span>D)Hogar Seco se compromete a tratar los elementos contratados especificados en la Hoja de obra a fin de reducir la humedad ascendente, de manera que el porcentaje de\n"
+"                            humedad por encima de la barrera anti-capilaridad ejecutada sea inferior al 6%. La medición del % de humedad se hará exclusivamente según el método de la bomba de\n"
+"                            carburo, consistente en una toma de polvos a 10 cm. de profundidad y su reacción al carburo de calcio, no teniéndose en cuenta los revestimientos de superficie, los cuales\n"
+"                            quedan excluidos. No se admitirá otro método de control.\n"
+"                        </span><br/>\n"
+"                        <span>E) El precio del servicio comprende material, mano de obra y medios auxiliares, no obstante las mediciones unitarias que figuran en el presupuesto económico servirán\n"
+"                            para valorar los aumentos o disminuciones del precio, ya que aun no se han realizado las mediciones finales.\n"
+"                        </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "<span>A) El cliente pide a la sociedad proceda a la instalación de un sistema Hogar Seco (el producto).</span><br/>\n"
+"                        <span>B) La sociedad se compromete a efectuar los trabajos descritos en el apartado de observaciones que figura más abajo a condición de que el informe técnico no haga aparecer\n"
+"                            ninguna dificultad técnica que modifique el equilibrio del contrato.</span><br/>\n"
+"                        <span>C) El cliente manifiesta haberse enterado de las Condiciones generales al dorso de este contrato y manifiesta aceptarlas.</span><br/>\n"
+"                        <span>D) El precio del servicio comprende material, mano de obra y medios auxiliares, no obstante las mediciones unitarias que figuran en el presupuesto económico servirán para valorar los\n"
+"                            aumentos o disminuciones del precio, ya que aun no se han realizado las mediciones finales\n"
+"                        </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>CONDICIONES DE PAGO:</span><br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span>Cantidad</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Configuración<br/>de la<br/>vivienda</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>DATOS DE LA VIVIENDA</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "<span>DESCRIPCIÓN DEL TRABAJO:</span>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "<span>Designación del inmueble, objeto de las obras</span><br/>\n"
+"                                    <span>(si es diferente del domicilio)</span>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>El precio global de los trabajos, IVA no incluido,es de</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "<span>El siguiente contrato garantiza que el sistema se mantendrá en óptimas condiciones durante toda su vida útil y que su\n"
+"                                                rendimiento no se verá afectado por problemas de mantenimiento. Se incluyen aspectos clave para asegurar la eficacia y\n"
+"                                                efectividad del sistema:</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Grosor muro &gt; 40 cm</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Grosor muro normal</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span>Hay</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "<span>La base imponible de los trabajos (IVA no incluido) es de</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span>No hay</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
+msgid "<span>Número a indicar en toda correspondencia</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Patologías</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span>Pladur, trasdosados, falso techo, etc </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® ayuda a la eliminación de los olores, renovando permanentemente el volumen de aire interior.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® evacúa el exceso de humedad del ambiente en los períodos de funcionamiento de la calefacción.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® evita o elimina los mohos, barriendo las paredes con aire más seco.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® evita o elimina los vahos barriendo los cristales con aire más seco.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® favorece la extracción por las ventilaciones altas y mejora el tiro de las chimeneas.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® funciona automáticamente después del reglaje del fluido y de su instalación</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® permite ahorros notables en su factura de calefacción.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® permite reducir las corrientes de aire frío.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® purifica el ambiente filtrando el aire nuevo insuflado.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® se opone al confinamiento del ambiente y a los elementos que causan alergia en la estancia</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<span>PureSilent® tiene una garantía total de 5 años en piezas y 3 años en mano de obra.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span>Sanitario</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<span>Tipo</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Tipo<br/> de <br/>calefacción</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Tipología<br/>de<br/>fachada</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "<span>Una vez firmado este contrato y pagado el anticipo previsto, las operaciones se desarrollarán de la forma siguiente:</span><br/>\n"
+"                            <span>1) Ejecución por parte del cliente de los trabajos previos necesarios que permitan la aplicación de los tratamientos de Hogar Seco.</span><br/>\n"
+"                            <span>2) Determinación de las fechas de inicio y duración de los trabajos a realizar.</span><br/>\n"
+"                            <span>3) Ejecución de los tratamientos contratados.</span><br/>\n"
+"                            <span>4) Firma del documento de fin de obra y entrega del justificante de pago restante al jefe de equipo.</span><br/>\n"
+"                            <span>5) Envío al cliente de la documentación de los tratamientos realizados.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+msgid "<span>Una vez firmado este contrato y pagado el anticipo previsto, las operaciones se desarrollarán de la forma siguiente:</span><br/>\n"
+"                            <span>1) Ejecución por parte del cliente de los trabajos previos necesarios que permitan la aplicación de los tratamientos de Hogar Seco.</span><br/>\n"
+"                            <span>2) Determinación de las fechas de inicio y duración de los trabajos a realizar.</span><br/>\n"
+"                            <span>3) Ejecución de los tratamientos contratados.</span><br/>\n"
+"                            <span>4) Firma del documento de fin de obra y entrega del justificante de pago restante al jefe de equipo.</span><br/>\n"
+"                            <span>5) Envío al cliente del Certificado de Garantía de los tratamientos realizados.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "<span>Una vez firmado este contrato y pagado el anticipo previsto, las operaciones se desarrollarán de la forma siguiente:</span><br/>\n"
+"                            <span>1) Ejecución por parte del cliente de los trabajos previos necesarios que permitan la aplicación de los tratamientos de Radón Control Services®.</span><br/>\n"
+"                            <span>2) Determinación de las fechas de inicio y duración de los trabajos a realizar.</span><br/>\n"
+"                            <span>3) Ejecución de los trabajos contratados.</span><br/>\n"
+"                            <span>4) Firma del documento de Fin de Obra y entrega del justificante de pago restante.</span><br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Ventanas</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>Zona de tendedero / secado<br/>de ropa</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>¿Mohos?</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "<span>¿Vahos en ventanas? </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "<strong class=\"text-primary\">MOLDS?</strong>"
+msgstr "<strong class=\"text-primary\">¿MOHOS?</strong>"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "<strong class=\"text-primary\">Steam in Windows?</strong>"
+msgstr "<strong class=\"text-primary\">¿Vaho en ventanas?</strong>"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<strong class=\"title\" sytle=\"font-size:15pt;\">LOS BENEFICIOS DE PureSilent®</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<strong class=\"title\">DESCRIPCIÓN DEL TRABAJO</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "<strong colspan=\"4\" class=\"text-primary\">Clothes Drying Area</strong>"
+msgstr "<strong colspan=\"4\" class=\"text-primary\">Zona de tendedero / secado de ropa</strong>"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "<strong style=\"font-size:15pt;\">HOJA DE OBRA</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "<strong>CALENDARIO DE LOS TRABAJOS</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "<strong>CALENDARIO DE TRABAJOS</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "<strong>CONTRATO DE MANTENIMIENTO</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
+msgid "<strong>CONTRATO</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<strong>OK</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "<strong>PureSilent®</strong>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "<strong>Suministro, instalación y puesta en marcha del sistema PureSilent® de Hogar Seco®</strong><br/>\n"
+"                                        <span>El sistema PureSilent® permite suplir las insuficiencias de la ventilación natural.\n"
+"                                             Es una solución eficaz y económica a los problemas de humedad en las viviendas nuevas, antiguas o rehabilitadas.\n"
+"                                             Asegura después del reglaje del flujo por el instalador, una renovación de aire global continua en la vivienda.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Acabado exterior fachada:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_baseboard
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_baseboard
+msgid "Baseboard"
+msgstr "Zócalo"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__baseboard_qty
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__baseboard_qty
+msgid "Baseboard Quantity"
+msgstr "Cantidad de zócalos"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__mold_bathroom
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_bathroom
+msgid "Bathroom/s"
+msgstr "Baño/s"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_bathrooms
+msgid "Bathrooms Number"
+msgstr "Número de baños"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Baño/s ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__mold_bedroom
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_bedroom
+msgid "Bedrooms"
+msgstr "Dormitorio"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_bedrooms
+msgid "Bedrooms Number"
+msgstr "Número de dormitorios"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_boiler
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_boiler
+msgid "Boiler"
+msgstr "Caldera"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Bomba de calor ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__boiler_qty
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__boiler_qty
+msgid "Booiler Quantity"
+msgstr "Cantidad de calderas"
+
+#. module: hs_custom_documents
+#: selection:project.contract.type,contract_type:0
+msgid "CAP"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_cap_contract
+msgid "CAP Contract"
+msgstr "Contrato CAP"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_worksheet_ref
+msgid "CIF:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "CONDICIONES DE PAGO:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "CONDICIONES DE PAGO:<br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Caldera"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "Cambio anual de filtro. El mantenimiento del filtro es esencial para garantizar que el sistema funcione de manera eficiente\n"
+"                                            y reducir la cantidad de contaminates en el aire interior de la vivienda."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_worksheet_signature_wzd
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_casement_type
+msgid "Casement Type"
+msgstr "Tipo abatible"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Chimenea leña / pellets ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "Cliente"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__closed_terrace
+msgid "Closed Terrace"
+msgstr "Terraza cerrada"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__drying_area
+msgid "Clothes Drying Area"
+msgstr "Zona de tendedero / secado de ropa"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Cocina ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Cocina independiente ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model,name:hs_custom_documents.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "Con Domicilio"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Con acceso ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Con caja de persiana ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Con contraventana ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Con extractor ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Con rotura puente térmico ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Con shunt (ventilación estática) ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Con ventana ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Condiciones excepcionales:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model,name:hs_custom_documents.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuración"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "Configuración del sistema. Revisión de la configuración actual y realización, si procede, de cambios para establecer el\n"
+"                                            funcionamiento de manera más eficiente."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__contract_conditions
+msgid "Contract Conditions"
+msgstr "Condiciones del contrato"
+
+#. module: hs_custom_documents
+#: model:ir.actions.act_window,name:hs_custom_documents.project_contract_type_action
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__contract_type
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__contract_type_id
+#: model:ir.ui.menu,name:hs_custom_documents.menu_project_contract_type
+msgid "Contract Type"
+msgstr "Tipo de contrato"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__contracted_distance
+msgid "Contracted Distance(m)"
+msgstr "Distancia contratada (m)"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__create_uid
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__create_date
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__current_usage
+msgid "Current Usage"
+msgstr "Uso actual"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "D/Dña"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "DISTANCIA CONTRATADA:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "De PVC ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "De aluminio ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "De madera ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Desván independiente del resto de la vivienda ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__display_name
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Dispone de entrada de aire exterior / ventilación ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "Don"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Dormitorios ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: selection:project.contract.type,contract_type:0
+msgid "ENC"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_enc_contract
+msgid "ENC Contract"
+msgstr "Contrato ENC"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "ENTRE Radón Control Services®<br/>\n"
+"                            representada por"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "ENTRE la sociedad limitada Hogar Seco ESPAÑA<br/>\n"
+"                            representada por"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "ENTRE la sociedad limitada Hogar Seco® ESPAÑA<br/>\n"
+"                            representada por"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__electric_radiators
+msgid "Electric Radiators"
+msgstr "Radiadores eléctricos"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "En"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Estufas de butano/queroseno/parafina ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__exceptional_conditions
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__exceptional_conditions
+msgid "Exceptional Conditions"
+msgstr "Condiciones excepcionales"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__finish_facade
+msgid "Exterior Finish Facade"
+msgstr "Acabado exterior de fachada"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Exterior ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Facade Typology"
+msgstr "Tipología de fachada"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "Firma de la sociedad representada por"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Firma de la sociedad representada por D."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Firma del Cliente"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "Firma del cliente con indicación manuscrita del cliente de la fecha y el lugar"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Firmado en dos ejemplares en"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_fixed_furnitures
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_fixed_furnitures
+msgid "Fixed Furnitures"
+msgstr "Muebles fijos"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__fixed_furnitures_qty
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__fixed_furnitures_qty
+msgid "Fixed Furnitures Quantity"
+msgstr "Cantidad de muebles fijos"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_floors
+msgid "Floors Number"
+msgstr "Nº de plantas"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_ventilation
+msgid "Has outside air intake / ventilation"
+msgstr "Dispone de toma de aire exterior / ventilación "
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__heat_pump
+msgid "Heat Pump"
+msgstr "Bomba de calor"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "Hogar Seco, S.L."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Housing Configuration"
+msgstr "Configuración de la vivienda"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Humedad en el ambiente ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__humidity_in_enviroment
+msgid "Humidity in Enviroment?"
+msgstr "Humedad en el ambiente"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__id
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "IVA (al"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Imprimir"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__independent_attic
+msgid "Independent Attic?"
+msgstr "Desván independiente"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__independent_kitchen
+msgid "Independent Kitchen"
+msgstr "Cocina independiente"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__inside
+msgid "Inside"
+msgstr "Interior"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Interior ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__mold_kitchen
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_kitchen
+msgid "Kitchen"
+msgstr "Cocina"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "La construcción o rehabilitación de la vivienda citada anteriormente ha finalizado al menos de 2 años antes de la fecha actual"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type____last_update
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__write_uid
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__write_date
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "Limpieza. Se realizará una limpieza para garantizar que el sistema funcione de una manera óptima."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__mold_living_room
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_living_room
+msgid "Living Room"
+msgstr "Salón"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "MANIFIESTA"
+msgstr ""
+
+#. module: hs_custom_documents
+#: selection:project.contract.type,contract_type:0
+msgid "MISC"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_misc_contract
+msgid "MISC Contract"
+msgstr "Contrato MISC"
+
+#. module: hs_custom_documents
+#: selection:project.contract.type,contract_type:0
+msgid "MPS"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Mascotas ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__molds
+msgid "Molds?"
+msgstr "¿Mohos?"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Muebles fijos"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__musty_smell
+msgid "Musty Smell?"
+msgstr "Olor a humedad"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "NIF"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__name
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__normal_wall_thickness
+msgid "Normal Wall Thickness"
+msgstr "Grosor muro normal"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_occupants
+msgid "Number of Occupants"
+msgstr "Número de ocupantes"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
+msgid "Nº :"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Nº de baños ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "Nº de cuenta"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Nº de dormitorios ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Nº de plantas ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Número de ocupantes ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "OBSERVACIONES:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Observaciones:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__observation
+msgid "Observation"
+msgstr "Observación"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_aluminum
+msgid "Of Aluminum"
+msgstr "De aluminio"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_pvc
+msgid "Of PVC"
+msgstr "De PVC"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_wood
+msgid "Of Wood"
+msgstr "De madera"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Olor a humedad ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "On PureSilent Attic Case"
+msgstr "En caso de PureSilent Ático"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_other
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_other
+msgid "Other"
+msgstr "Otro"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__other_spaces
+msgid "Other Spaces conneceted to the house"
+msgstr "Otros espacios conectados con la vivienda"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__mold_other
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__other_windows
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__others
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_other
+msgid "Others"
+msgstr "Otros"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Otros ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Otros espacios comunicados con la vivienda :"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Otros:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__outside
+msgid "Outside"
+msgstr "Exterior"
+
+#. module: hs_custom_documents
+#: selection:project.contract.type,contract_type:0
+msgid "PS"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Patholigies"
+msgstr "Patologías"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__pets
+msgid "Pets"
+msgstr "Mascotas"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_plasterboard
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_plasterboard
+msgid "Plasterboard"
+msgstr "Pladur, trasdosados, falso techo, etc."
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__plasterboard_qty
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__plasterboard_qty
+msgid "Plasterboard Quantity"
+msgstr "Cantidad de Pladur, trasdosados, falso techo, etc."
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "Por lo citado anteriormente, ala factura por realización de la obra se aplicará el tipo de Iva reducido del 10% en virtud del Real Decreto, Ley 6/2010"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+msgid "Precio global (IVA incluido)"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "Precio global del contrato (IVA incluido)"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "Precio global del contrato(IVA incluido)"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model,name:hs_custom_documents.model_project_project
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: hs_custom_documents
+#: model:ir.model,name:hs_custom_documents.model_project_contract_type
+msgid "Project Contract Type"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__pure_silent
+msgid "PureSilent"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__pure_silent_attic
+msgid "PureSilent Attic"
+msgstr "PureSilent Ático"
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_puresilent_contract
+msgid "PureSilent Contract"
+msgstr "Contrato PureSilent"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "PureSilent ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "PureSilent Ático ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_mant_puresilent_contract
+msgid "Puresilent Maintenance Contract"
+msgstr "Contrato de mantenimiento PureSilent"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "Que la obra realizada se va a destinar a uso particular, no a una actividad empresarial o profesional"
+msgstr ""
+
+#. module: hs_custom_documents
+#: selection:project.contract.type,contract_type:0
+msgid "RCS"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_project_filter_inherit
+msgid "REF"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_worksheet_ref
+msgid "REFERENCIA Nº :"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Radiadores"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Radiadores de agua ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Radiadores eléctricos ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_radiators
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_radiators
+msgid "Radiators"
+msgstr "Radiadores"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__radiators_qty
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__radiators_qty
+msgid "Radiators Quantity"
+msgstr "Cantidad de radiadores"
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_radon_contract
+msgid "Radon Contract"
+msgstr "Contrato Radón"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "Recordatorio del funcionamiento. El cliente será informado sobre cualquier duda acerca del funcionamiento del sistema\n"
+"                                                para que se mantenga en óptimas condiciones durante toda su vida útil."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_reduced_iva
+msgid "Reduced IVA"
+msgstr "IVA reducido"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__project_ref
+msgid "Ref"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_res_company__report_footer_image
+#: model:ir.model.fields,field_description:hs_custom_documents.field_res_config_settings__report_footer_image
+msgid "Report Footer Image"
+msgstr "Imagen del pie de página del informe"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+msgid "Reposición de elementos afectados. incluye la reposición de cualquier elemento del sistema que se vea afectado por el\n"
+"                                                desgaste o mal funcionamiento. Esto puede incluir motor de ventilación, carcasa aislante, cartuchos, calefactor u otros\n"
+"                                                elementos."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Salón ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_worksheet_signature_wzd
+msgid "Save"
+msgstr "Guardar"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+msgid "Se entrega pago o justificante del mismo según condiciones de pago al responsable de la ejecución de los trabajos el día mismo en que éstos se terminen."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "Si desea realizar el pago mediante transferencia bancaria podrá hacerlo a la siguiente cuenta"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Sin acceso ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_sliding_type
+msgid "Sliding Type"
+msgstr "Tipo corredera"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_windows
+msgid "Steam in Windows?"
+msgstr "¿Vahos en ventanas?"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__stoves
+msgid "Stoves"
+msgstr "Estufas"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Superficie por planta (m2) ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__surface_area
+msgid "Surface Area per Floor(m2)"
+msgstr "Superficie por planta (m2)"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_worksheet_ref
+msgid "Tel."
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Terraza cerrada ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,help:hs_custom_documents.field_res_company__report_footer_image
+#: model:ir.model.fields,help:hs_custom_documents.field_res_config_settings__report_footer_image
+msgid "This field holds the image used in the report footer."
+msgstr "Este campo contiene la imagen utilizada en el pie de página del informe."
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_tilt_and_turn_type
+msgid "Tilt and Turn Type"
+msgstr "Tipo oscilobatiente"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Tipo abatible ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Tipo corredera ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Tipo oscilobatiente ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_toilet
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_toilet
+msgid "Toilet"
+msgstr "Sanitario"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__toilet_qty
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__toilet_qty
+msgid "Toilets Quantity"
+msgstr "Cantidad de sanitarios"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__basboard_type
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_wall_type
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__basboard_type
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_wall_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Type of heating"
+msgstr "Tipo de calefacción"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+msgid "Uso actual ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__x_vendedor
+msgid "Vendedor"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_wall_thickness
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_wall_thickness
+msgid "Wall Thickness"
+msgstr "Grosor muro"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__wall_thickness
+msgid "Wall Thickness > 40cm"
+msgstr "Grosor muro > 40cm"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__water_radiators
+msgid "Water Radiators"
+msgstr "Radiadores de agua"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Windows"
+msgstr "Ventanas"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__with_access
+msgid "With Access?"
+msgstr "Con acceso"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__with_extractor
+msgid "With Extractor"
+msgstr "Con extractor"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__with_shunt
+msgid "With Shunt(static ventilation)"
+msgstr "Con shunt (ventilación estática)"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_with_shutter
+msgid "With Shutter"
+msgstr "Con contraventana"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_with_shutter_box
+msgid "With Shutter Box"
+msgstr "Con caja de persiana"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_with_termal_break
+msgid "With Termal Break"
+msgstr "Con rotura puente térmico"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__with_windows
+msgid "With Windows"
+msgstr "Con ventanas"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__without_access
+msgid "Without Access?"
+msgstr "Sin acceso"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__wood_pellet_fireplace
+msgid "Wood Fireplace"
+msgstr "Chimenea leña"
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_work_data_sheet
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Work Data Sheet"
+msgstr "Hoja de datos de obra"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Work Sheet"
+msgstr "Hoja de obra"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_img
+msgid "Work Sheet Image"
+msgstr "Imagen de la hoja de obra"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_signature_date
+msgid "Work Sheet Signature Date"
+msgstr "Fecha de firma de la hoja de obra"
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_worksheet
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_id
+msgid "Worksheet"
+msgstr "Hoja de obra"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_img
+msgid "Worksheet Image"
+msgstr "Imagen de la hoja de obra"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+msgid "Worksheet Sign"
+msgstr "Firma hoja de obra"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_worksheet_signature_wzd
+msgid "Worksheet Signature"
+msgstr "Firma de la hoja de obra"
+
+#. module: hs_custom_documents
+#: model:ir.model,name:hs_custom_documents.model_worksheet_signature_wizard
+msgid "Worksheet Signature Wizard"
+msgstr "Asistente de firma de la hoja de obra"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_signature
+#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_signature
+msgid "Worksheet acceptance"
+msgstr "Aceptación de la hoja de obra"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "Y por otra parte"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+msgid "Y por otra parte, Don"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "Zócalos"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "con NIF"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
+msgid "el día"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "en calidad de cliente de la empresa\n"
+"                            Hogar Seco, S.L con CIF B/70264494 ha contratado la obra de"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "en la vivienda\n"
+"                            situada en"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "otro<em/>\n"
+"                            <span style=\"width:88%;display:inline-block;vertical-align:bottom;\" class=\"underline-d\"/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
+msgid "particular"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+msgid "y domicilio en"
+msgstr ""
+

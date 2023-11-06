@@ -23,6 +23,7 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'wizard/contract_signature_wzd_view.xml',
+        'data/send_contract.xml',
         'views/project_view.xml',
         'views/account_invoice_view.xml',
         'views/crm_lead_view.xml',

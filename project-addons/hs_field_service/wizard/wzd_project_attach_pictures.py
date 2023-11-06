@@ -3,6 +3,7 @@ from odoo import api, models, fields, _
 
 class WizardPorjectAttachPictures(models.TransientModel):
     _name="wizard.project.attach.pictures"
+    _description="Wizard Project Attach Pictures"
 
     image_ids = fields.Many2many('ir.attachment', string="Pictures",
                                     required=True)

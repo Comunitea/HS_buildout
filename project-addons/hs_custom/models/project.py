@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 class ProjectProject(models.Model):
     _name = "project.project"
@@ -6,7 +6,7 @@ class ProjectProject(models.Model):
 
     x_iva_percentage= fields.Float("IVA Percentage", digits=(16, 2))
     x_acc_number = fields.Char("Account Number")
-    x_iva = fields.Boolean("IVA reducido")
+    # x_iva = fields.Boolean("IVA reducido")
     x_iva_doc = fields.Boolean("Documento de IVA")
     x_info = fields.Boolean("Hoja de información")
     x_plano = fields.Boolean("Plano disponible")
@@ -73,3 +73,31 @@ class ProjectProject(models.Model):
                 'view_id': self.env.ref('hs_custom.view_contract_signature_wzd').id,
                 'view_mode': 'form',
                 }
+
+    @api.multi
+    def action_contract_send(self):
+        self.ensure_one()
+        template = self.env.ref(
+            'hs_custom.email_project_template',
+            False,
+        )
+        compose_form = self.env.ref('mail.email_compose_message_wizard_form',
+                                    False)
+        ctx = dict(
+            default_model='project.project',
+            default_res_id=self.id,
+            default_use_template=bool(template),
+            default_template_id=template and template.id or False,
+            default_composition_mode='comment',
+            )
+        return {
+            'name': _('Compose Email'),
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'mail.compose.message',
+            'views': [(compose_form.id, 'form')],
+            'view_id': compose_form.id,
+            'target': 'new',
+            'context': ctx,
+        }

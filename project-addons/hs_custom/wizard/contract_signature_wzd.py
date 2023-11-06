@@ -2,7 +2,7 @@ from odoo import api, fields, models, _
 
 class ContractSignatureWizard(models.TransientModel):
     _name='contract.signature.wizard'
-
+    _description = 'Contract Signature Wizard'
 
     contract_signature = fields.Binary(
         string='Contract acceptance',
@@ -30,9 +30,10 @@ class ContractSignatureWizard(models.TransientModel):
         return res
 
     def action_update_contract_signature(self):
-        if self.contract_id.contract_signature != self.contract_signature:
+        if self.contract_signature and self.contract_id.contract_signature != self.contract_signature:
             self.contract_id.write({
                 'contract_signature': self.contract_signature,
                 'start_date': fields.Date.today(),
             })
+            return self.contract_id.action_contract_send()
         return True

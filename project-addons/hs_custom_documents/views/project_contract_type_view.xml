@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="project_contract_type_action" model="ir.actions.act_window">
+        <field name="name">Contract Type</field>
+        <field name="res_model">project.contract.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_project_contract_type_tree" model="ir.ui.view">
+        <field name="name">view.project.contract.type.tree</field>
+        <field name="model">project.contract.type</field>
+        <field name="type">tree</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <tree decoration-muted="not active">
+                <field name="name"/>
+                <field name="contract_type" />
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_project_contract_type_form" model="ir.ui.view">
+        <field name="name">view.project.contract.type.form</field>
+        <field name="model">project.contract.type</field>
+        <field name="type">form</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="contract_type" />
+                        <field name="contract_conditions"/>
+                        <field name="active" widget="boolean_toggle"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem name="Contract Type"
+    id="menu_project_contract_type"
+    groups="project.group_project_manager"
+    parent="project.menu_project_config"
+    action="hs_custom_documents.project_contract_type_action"
+    sequence="100"/>
+
+</odoo>

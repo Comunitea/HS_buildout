@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="mps_contract" model="ir.sequence">
+            <field name="name">MPS Contract</field>
+            <field name="code">project.project.mps</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">MPS/</field>
+        </record>
+
+        <record id="ps_contract" model="ir.sequence">
+            <field name="name">PS Contract</field>
+            <field name="code">project.project.ps</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">PS/</field>
+        </record>
+
+
+        <record id="misc_contract" model="ir.sequence">
+            <field name="name">MISC Contract</field>
+            <field name="code">project.project.misc</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">MISC/</field>
+        </record>
+
+        <record id="enc_contract" model="ir.sequence">
+            <field name="name">ENC Contract</field>
+            <field name="code">project.project.enc</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">ENC/</field>
+        </record>
+
+        <record id="cap_contract" model="ir.sequence">
+            <field name="name">CAP Contract</field>
+            <field name="code">project.project.cap</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">CAP/</field>
+        </record>
+
+        <record id="rcs_contract" model="ir.sequence">
+            <field name="name">RCS Contract</field>
+            <field name="code">project.project.rcs</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">RCS/</field>
+        </record>
+
+
+    </data>
+</odoo>

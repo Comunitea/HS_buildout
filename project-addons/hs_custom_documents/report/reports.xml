@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="action_report_work_data_sheet"
+        string="Work Data Sheet"
+        model="project.project"
+        report_type="qweb-pdf"
+        name="hs_custom_documents.report_work_data_sheet"
+        file="hs_custom_documents.report_work_data_sheet"
+        print_report_name="'Work Data Sheet - %s' % (object.name)"
+        paperformat="hs_custom_documents.a4_work_data_sheet"/>
+
+
+    <report
+        id="action_report_reduced_iva"
+        string="Reduced IVA"
+        model="project.project"
+        report_type="qweb-pdf"
+        name="hs_custom_documents.reduced_iva_report"
+        file="hs_custom_documents.reduced_iva_report"
+        print_report_name="'HG-IVA'"
+        paperformat="base.paperformat_euro"
+    />
+
+    <report
+        id="action_report_puresilent_contract"
+        string="PureSilent Contract"
+        model="project.project"
+        report_type="qweb-pdf"
+        menu='False'
+        name="hs_custom_documents.puresilent_contract_report"
+        file="hs_custom_documents.puresilent_contract_report"
+        print_report_name="'PureSilent Contract'"
+        paperformat="hs_custom_documents.a4_contracts"
+    />
+
+    <report
+        id="action_report_enc_contract"
+        string="ENC Contract"
+        model="project.project"
+        report_type="qweb-pdf"
+        menu='False'
+        name="hs_custom_documents.enc_contract_report"
+        file="hs_custom_documents.enc_contract_report"
+        print_report_name="'ENC Contract'"
+        paperformat="hs_custom_documents.a4_contracts"
+    />
+
+        <report
+        id="action_report_cap_contract"
+        string="CAP Contract"
+        model="project.project"
+        report_type="qweb-pdf"
+        menu='False'
+        name="hs_custom_documents.cap_contract_report"
+        file="hs_custom_documents.cap_contract_report"
+        print_report_name="'CAP Contract'"
+        paperformat="hs_custom_documents.a4_contracts"
+    />
+
+    <report
+        id="action_report_radon_contract"
+        string="Radon Contract"
+        model="project.project"
+        report_type="qweb-pdf"
+        menu='False'
+        name="hs_custom_documents.radon_contract_report"
+        file="hs_custom_documents.radon_contract_report"
+        print_report_name="'Radon Contract'"
+        paperformat="hs_custom_documents.a4_contracts"
+    />
+
+    <report
+        id="action_report_misc_contract"
+        string="MISC Contract"
+        model="project.project"
+        report_type="qweb-pdf"
+        menu='False'
+        name="hs_custom_documents.misc_contract_report"
+        file="hs_custom_documents.misc_contract_report"
+        print_report_name="'MISC Contract'"
+        paperformat="hs_custom_documents.a4_contracts"
+    />
+
+    <report
+        id="action_report_mant_puresilent_contract"
+        string="Puresilent Maintenance Contract"
+        model="project.project"
+        report_type="qweb-pdf"
+        menu='False'
+        name="hs_custom_documents.mant_puresilent_contract_report"
+        file="hs_custom_documents.mant_puresilent_contract_report"
+        print_report_name="'Puresilent Maintenance Contract'"
+        paperformat="hs_custom_documents.a4_contracts"
+    />
+
+    <report
+        id="action_report_worksheet"
+        string="Worksheet"
+        model="project.project"
+        report_type="qweb-pdf"
+        name="hs_custom_documents.worksheet_report"
+        file="hs_custom_documents.worksheet_report"
+        print_report_name="'Worksheet'"
+        paperformat="base.paperformat_euro"
+    />
+</odoo>

@@ -169,4 +169,15 @@
         </field>
     </record>
 
+    <record id="view_task_calendar_inherit" model="ir.ui.view">
+        <field name="name">project.task.calendar.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_calendar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//calendar" position="attributes">
+                <attribute name="color">worker_id</attribute>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

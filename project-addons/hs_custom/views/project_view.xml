@@ -22,6 +22,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='fold']" position="after">
                 <field name="on_route" />
+                <field name="required_planned_hours"/>
             </xpath>
         </field>
     </record>
@@ -34,6 +35,9 @@
             <xpath expr="//calendar" position="attributes">
                 <attribute name="date_start">date_start</attribute>
                 <attribute name="date_stop">date_end</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="accomodation"/>
             </xpath>
         </field>
     </record>
@@ -52,7 +56,6 @@
                 <group>
                     <group>
                        <group colspan="1">
-                          <field name="x_iva"/>
                           <field name="x_iva_doc"/>
                           <field name="x_info"/>
                        </group>
@@ -89,6 +92,9 @@
                 </group>
                 <label for="x_trabajos"/>
                 <field name="x_trabajos" colspan="2" placeholder="Descripción de los servicios contratados"/>
+                <group invisible="1">
+                    <field name="contract_signature" widget="signature"/>
+                </group>
             </xpath>
             <page name="settings" position="before">
                 <page name="invoicing" string="Datos de facturación">
@@ -157,6 +163,12 @@
                 <field name="date_start"/>
                 <field name="date_end"/>
             </field>
+            <xpath expr="//page[@name='extra_info']/group" position="inside">
+                <group name="accomodation" string="Accomodation">
+                    <field name="accomodation"/>
+                    <field name="accomodation_url"/>
+                </group>
+            </xpath>
         </field>
     </record>
 
@@ -214,7 +226,6 @@
             <filter name="Manager" position="after">
                 <filter string="Comercial" name="comercial" context="{'group_by':'user_id'}"/>
             </filter>
-
             <xpath expr="//search" position="inside">
                 <filter string="My Activities" name="activities_my"
                         domain="[('activity_ids.user_id', '=', uid)]"/>
@@ -247,5 +258,17 @@
 
     <menuitem name="Incidencias" id="menu_incidences" parent="project.menu_main_pm"
             action="action_view_incidences" sequence="3" groups="base.group_no_one,project.group_project_user"/>
+
+
+    <record id="view_project_kanban_inherit" model="ir.ui.view">
+        <field name="name">view_.project.kanban.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="on_create"></attribute>
+            </xpath>
+        </field>
+    </record>
 
 </odoo>

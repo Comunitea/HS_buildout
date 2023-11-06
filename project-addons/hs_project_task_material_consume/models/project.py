@@ -28,8 +28,11 @@ class ProjectTask(models.Model):
     @api.onchange('stage_id')
     def _onchange_stage_id(self):
         for record in self:
-            if record.stage_id and record.stage_id.consume_material and not record.location_source_id:
-                raise UserError(_('You must set a source location in order to consume materials'))
+            if record.stage_id and record.stage_id.consume_material:
+                if not(record.material_ids):
+                    raise UserError(_('You must add materials in order to consume them'))
+                elif not (record.location_source_id and record.location_dest_id):
+                    raise UserError(_('You must set a source and destination location in order to consume materials'))
 
 
     def _change_location(self):

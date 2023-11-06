@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 13:34+0000\n"
-"PO-Revision-Date: 2023-08-16 13:34+0000\n"
+"POT-Creation-Date: 2023-10-31 15:37+0000\n"
+"PO-Revision-Date: 2023-10-31 15:37+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -292,6 +292,11 @@ msgid "Warranty assistance"
 msgstr "Asistencia garantía"
 
 #. module: hs_field_service
+#: model:ir.model,name:hs_field_service.model_wizard_project_attach_pictures
+msgid "Wizard Project Attach Pictures"
+msgstr "Asistente para adjuntar fotografías a la obra"
+
+#. module: hs_field_service
 #: model:ir.model.fields,field_description:hs_field_service.field_project_task__work_description
 msgid "Work Description"
 msgstr "Descripción del trabajo"
@@ -315,11 +320,6 @@ msgstr "Sí"
 #. module: hs_field_service
 #: model:ir.model,name:hs_field_service.model_wizard_attach_pictures
 msgid "wizard.attach.pictures"
-msgstr ""
-
-#. module: hs_field_service
-#: model:ir.model,name:hs_field_service.model_wizard_project_attach_pictures
-msgid "wizard.project.attach.pictures"
 msgstr ""
 
 #. module: hs_field_service
