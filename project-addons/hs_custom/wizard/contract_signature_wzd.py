@@ -35,5 +35,5 @@ class ContractSignatureWizard(models.TransientModel):
                 'contract_signature': self.contract_signature,
                 'start_date': fields.Date.today(),
             })
-            return self.contract_id.action_contract_send()
+            return self.sudo().contract_id.action_contract_send()
         return True

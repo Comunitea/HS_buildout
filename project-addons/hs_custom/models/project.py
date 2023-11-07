@@ -51,7 +51,6 @@ class ProjectProject(models.Model):
                 if project.analytic_account_id and project.allow_timesheets:
                     project.analytic_account_id.write({'name': project.name})
         self._track_signature(values, 'contract_signature')
-        self._track_signature(values, 'worksheet_signature')
         return res
 
     @api.model
@@ -60,9 +59,6 @@ class ProjectProject(models.Model):
         if project.contract_signature:
             values = {'contract_signature': project.contract_signature}
             project._track_signature(values, 'contract_signature')
-        if project.worksheet_signature:
-            values = {'worksheet_signature': project.worksheet_signature}
-            project._track_signature(values, 'worksheet_signature')
         return project
 
     def action_show_contract_signatures(self):

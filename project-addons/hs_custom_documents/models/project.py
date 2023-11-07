@@ -140,7 +140,17 @@ class ProjectProject(models.Model):
                 vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.rcs')
             else:
                 vals['project_ref'] = '/'
-        return super(ProjectProject, self).create(vals)
+        project = super(ProjectProject, self).create(values)
+        if project.worksheet_signature:
+            values = {'worksheet_signature': project.worksheet_signature}
+            project._track_signature(values, 'worksheet_signature')
+
+        return project
+
+    @api.multi
+    def write(self, values):
+        self._track_signature(values, 'worksheet_signature')
+        return super(ProjectProject, self).write(values)
 
     def action_show_worksheet_signatures(self):
         return {'type': 'ir.actions.act_window',
@@ -207,7 +217,7 @@ class ProjectProject(models.Model):
         if data:
             pdf = data['pdf']
             filename = data['filename']
-            contract = self.env['ir.attachment'].create({
+            contract = self.sudo().env['ir.attachment'].create({
                 'name': filename,
                 'type': 'binary',
                 'datas': pdf,
@@ -219,7 +229,7 @@ class ProjectProject(models.Model):
         if self.x_iva_doc:
             report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.reduced_iva_report')
             iva_doc_report = report.render_qweb_pdf([self.id])[0]
-            iva = self.env['ir.attachment'].create({
+            iva = self.sudo().env['ir.attachment'].create({
                 'name': 'HG-IVA.pdf',
                 'type': 'binary',
                 'datas': base64.b64encode(iva_doc_report),
@@ -228,7 +238,6 @@ class ProjectProject(models.Model):
                 'mimetype': 'application/pdf',
             })
             attachments.append(iva.id)
-
         context.update({
             'default_attachment_ids': [(6, 0, attachments)],
         })
