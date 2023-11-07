@@ -140,10 +140,10 @@ class ProjectProject(models.Model):
                 vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.rcs')
             else:
                 vals['project_ref'] = '/'
-        project = super(ProjectProject, self).create(values)
+        project = super(ProjectProject, self).create(vals)
         if project.worksheet_signature:
             values = {'worksheet_signature': project.worksheet_signature}
-            project._track_signature(values, 'worksheet_signature')
+            project._track_signature(vals, 'worksheet_signature')
 
         return project
 
