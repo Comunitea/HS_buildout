@@ -161,7 +161,7 @@
                             <div class="col-6">Precio global del contrato(IVA incluido)</div>
                             <div class="col-1"></div>
 
-                            <div class="col-4 text-right"><span class="inv-info"><span t-field="doc.x_subtotalneto"/></span></div>
+                            <div class="col-4 text-right"><span class="inv-info"><span t-field="doc.total"/></span></div>
                             <div class="col-1 text-left pl-0"><span>€</span></div>
                         </div>
                         <div class="row pt-2">

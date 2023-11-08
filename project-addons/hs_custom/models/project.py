@@ -4,6 +4,11 @@ class ProjectProject(models.Model):
     _name = "project.project"
     _inherit = ["project.project", 'mail.activity.mixin']
 
+    @api.depends('x_subtotal', 'x_iva_percentage')
+    def _compute_total(self):
+        for project in self:
+            project.total = project.x_subtotal * (1 + project.x_iva_percentage / 100)
+
     x_iva_percentage= fields.Float("IVA Percentage", digits=(16, 2))
     x_acc_number = fields.Char("Account Number")
     # x_iva = fields.Boolean("IVA reducido")
@@ -41,7 +46,7 @@ class ProjectProject(models.Model):
     contract_signature = fields.Binary(
         string='Contract acceptance', attachment=True
     )
-
+    total = fields.Float("Total", digits=(16, 2), compute="_compute_total")
 
     @api.multi
     def write(self, values):

@@ -31,8 +31,8 @@ class ProjectTask(models.Model):
             if record.stage_id and record.stage_id.consume_material:
                 if not(record.material_ids):
                     raise UserError(_('You must add materials in order to consume them'))
-                elif not (record.location_source_id and record.location_dest_id):
-                    raise UserError(_('You must set a source and destination location in order to consume materials'))
+                # elif not (record.location_source_id and record.location_dest_id):
+                #     raise UserError(_('You must set a source and destination location in order to consume materials'))
 
 
     def _change_location(self):

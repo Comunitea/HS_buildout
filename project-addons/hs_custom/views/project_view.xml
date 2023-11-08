@@ -103,6 +103,7 @@
                        <field name="x_subtotal"/>
                        <field name="x_subtotalneto"/>
                        <field name="x_iva_percentage"/>
+                       <field name="total" />
                        <field name="x_vendedor"/>
                        <field name="x_nif"/>
                        <field name="x_estado"/>

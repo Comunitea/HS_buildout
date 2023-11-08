@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 13:17+0000\n"
-"PO-Revision-Date: 2023-08-16 13:17+0000\n"
+"POT-Creation-Date: 2023-11-08 15:05+0000\n"
+"PO-Revision-Date: 2023-11-08 15:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgid "You cannot validate a transfer if no quantites are reserved nor done."
 msgstr "No puede validar una transferencia si no hay cantidades reservadas ni realizadas."
 
 #. module: hs_project_task_material_consume
-#: code:addons/hs_project_task_material_consume/models/project.py:32
+#: code:addons/hs_project_task_material_consume/models/project.py:33
 #, python-format
-msgid "You must set a source location in order to consume materials"
-msgstr "Debe establecer una ubicación de origen para consumir materiales"
+msgid "You must add materials in order to consume them"
+msgstr "Debe añadir materiales para poder consumirlos"
 

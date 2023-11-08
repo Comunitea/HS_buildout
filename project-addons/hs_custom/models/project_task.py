@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 
 class ProjectTask(models.Model):
@@ -60,11 +60,13 @@ class ProjectTask(models.Model):
     def _onchange_stage_id(self):
         for record in self:
             if record.stage_id and record.stage_id.required_planned_hours and record.planned_hours<=0:
-                raise ValidationError("Planned hours must be greater than 0")
-            elif record.stage_id and record.stage_id.on_route and (not record.timesheet_ids):
-                raise ValidationError("You must add timesheet lines to this task")
-            else:
-                super()._onchange_stage_id()
+                raise ValidationError(_("Planned hours must be greater than 0"))
+            if record.stage_id and record.stage_id.on_route:
+                if not (record.location_source_id and record.location_dest_id):
+                    raise ValidationError(_('You must set a source and destination location'))
+                if not record.timesheet_ids:
+                    raise ValidationError(_("You must add timesheet lines to this task"))
+            super()._onchange_stage_id()
 
     # _sql_constraints = [
     #     ('planned_hours_not_zero',
@@ -83,7 +85,7 @@ class ProjectTask(models.Model):
         res = super(ProjectTask, self).write(values)
         for record in self:
             if record.planned_hours<=0 and record.stage_id and record.stage_id.required_planned_hours:
-                raise ValidationError("Planned hours must be greater than 0")
+                raise ValidationError(_("Planned hours must be greater than 0"))
         return res
 
 

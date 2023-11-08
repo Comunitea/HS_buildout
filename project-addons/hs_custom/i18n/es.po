@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-06 16:44+0000\n"
-"PO-Revision-Date: 2023-11-06 16:44+0000\n"
+"POT-Creation-Date: 2023-11-08 14:59+0000\n"
+"PO-Revision-Date: 2023-11-08 14:59+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -105,7 +105,6 @@ msgstr "\n"
 "</div>\n"
 "\n"
 "        "
-
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_res_partner__project_count
@@ -285,7 +284,7 @@ msgid "Company Name:"
 msgstr "Razón Social: "
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/project.py:94
+#: code:addons/hs_custom/models/project.py:95
 #, python-format
 msgid "Compose Email"
 msgstr "Redactar correo electrónico"
@@ -674,6 +673,13 @@ msgid "Phone"
 msgstr "Teléfono"
 
 #. module: hs_custom
+#: code:addons/hs_custom/models/project_task.py:63
+#: code:addons/hs_custom/models/project_task.py:88
+#, python-format
+msgid "Planned hours must be greater than 0"
+msgstr "Las horas planificadas deben ser mayores que 0"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_plano
 msgid "Plano disponible"
 msgstr ""
@@ -844,6 +850,11 @@ msgid "Today Activities"
 msgstr "Actividades de Hoy"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__total
+msgid "Total"
+msgstr "Total"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_trabajos
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_trabajos
 msgid "Trabajos a realizar"
@@ -909,6 +920,18 @@ msgstr ""
 #, python-format
 msgid "You cannot delete consumptions from a task."
 msgstr "No puede borrar consumos de una tarea."
+
+#. module: hs_custom
+#: code:addons/hs_custom/models/project_task.py:68
+#, python-format
+msgid "You must add timesheet lines to this task"
+msgstr "Debe añadir partes de horas a esta tarea"
+
+#. module: hs_custom
+#: code:addons/hs_custom/models/project_task.py:66
+#, python-format
+msgid "You must set a source and destination location"
+msgstr "Debe establecer una ubicación de origen y destino"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
