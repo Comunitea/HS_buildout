@@ -15,15 +15,13 @@ class ProjectTask(models.Model):
                 cost += line.product_id.standard_price * line.quantity_done
             record.task_cost = cost
 
-    @api.depends('stock_move_ids')
+    @api.depends('stock_state')
     def _compute_can_add_materials(self):
         for record in self:
-            if record.stock_move_ids:
+            if record.stock_state == 'done':
                 record.can_add_materials = False
             else:
                 record.can_add_materials = True
-
-
 
     x_pago_fin = fields.Text("Instrucciones para el pago fin de obra")
     sale_type_id = fields.Many2one("sale.order.type", "División",

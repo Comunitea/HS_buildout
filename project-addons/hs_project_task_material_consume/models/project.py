@@ -19,8 +19,13 @@ class ProjectTask(models.Model):
                     task.action_assign()
                     if task.stock_state == 'assigned':
                         task.action_done()
+                    elif task.stock_state == 'confirmed':
+                        if all([x.state == 'assigned' or x.quantity_done == x.product_uom_qty for x in task.stock_move_ids.filtered(lambda m: m.state not in ('done', 'cancel'))]):
+                            task.action_done()
+                        else:
+                            raise UserError(_('You cannot validate a transfer if no quantites are reserved nor done. To force the transfer, switch in edit more and encode the done quantities.'))
                     else:
-                         raise UserError(_('You cannot validate a transfer if no quantites are reserved nor done.'))
+                         raise UserError(_('You cannot validate a transfer if no quantites are reserved nor done. To force the transfer, switch in edit more and encode the done quantities.'))
                 elif task.consume_material and task.stock_move_ids and task.stock_state == 'assigned':
                     task.action_done()
         return res
