@@ -113,11 +113,13 @@ class CrmLead(models.Model):
         )
 
     @api.model
-    def _get_duplicated_leads_by_phone(self, phone,
+    def _get_duplicated_leads_by_phone(self, phone,sale_type_id=False,
                                        include_lost=False):
         if not phone:
             return self.env['crm.lead']
-        domain = [('phone', '=', phone)]
+        if not sale_type_id:
+            sale_type_id = self.env['sale.order.type'].search([], limit=1)
+        domain = [('phone', '=', phone),('sale_type_id','=',sale_type_id.id)]
         if not include_lost:
             domain += ['&', ('active', '=', True), ('probability', '<', 100)]
         else:
@@ -165,7 +167,7 @@ class CrmLead(models.Model):
                 self.phone = number
                 users_list = self.get_users_list()
                 tomerge = self._get_duplicated_leads_by_phone(
-                    self.phone, include_lost=False)
+                    self.phone,self.sale_type_id,include_lost=False)
                 if len(tomerge) >= 2:
                     users = tomerge.filtered(lambda x: x.id != self.id).mapped('user_id').filtered(
                         lambda x: x.active)

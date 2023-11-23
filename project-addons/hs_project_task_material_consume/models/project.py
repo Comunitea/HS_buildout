@@ -53,3 +53,48 @@ class ProjectTask(models.Model):
                 # Descomentar en caso de querer cambiar también la localización del albarán
                 # if record.picking_id:
                 #     record.picking_id.write({'location_id': location})
+
+    @api.multi
+    def action_assign(self):
+        super(ProjectTask, self).action_assign()
+        if self.env.context.get('do_unreserve', False):
+            for move in self.mapped('stock_move_ids').filtered(lambda x: x.state == 'confirmed'):
+                quants = self.env['stock.quant'].search([('product_id', '=', move.product_id.id), ('location_id', '=', move.location_id.id),('quantity', '>', 0)])
+                quantity = sum(quants.mapped('quantity'))
+                if quantity >= move.product_uom_qty:
+                    moves = self.env['stock.move'].search([('product_id','=',move.product_id.id),('location_id','=',move.location_id.id),
+                                                            ('state','not in',['done','cancel']),
+                                                            ('id','!=',move.id),
+                                                            ('picking_id','!=',move.picking_id.id)])
+                    same_quantity = moves.filtered(lambda x: x.reserved_availability == move.product_uom_qty)
+                    less_quantity = moves.filtered(lambda x: x.reserved_availability < move.product_uom_qty)
+                    more_quantity = moves.filtered(lambda x: x.reserved_availability > move.product_uom_qty).sorted(key=lambda x: x.reserved_availability)
+                    if same_quantity:
+                        same_quantity[0]._do_unreserve()
+                    else:
+                        if less_quantity and sum(less_quantity.mapped('reserved_availability')) >= move.product_uom_qty:
+                            if sum(less_quantity.mapped('reserved_availability')) == move.product_uom_qty:
+                                less_quantity._do_unreserve()
+                            else:
+                                qty = 0
+                                for x in less_quantity:
+                                    if qty < move.product_uom_qty:
+                                        qty += x.reserved_availability
+                                        x._do_unreserve()
+                                    else:
+                                        break
+                        elif more_quantity:
+                            more_quantity[0]._do_unreserve()
+            if self.stock_move_ids.filtered(lambda x: x.state in ['confirmed']):
+                self.with_context(do_unreserve=False).action_assign()
+
+class ProjectTaskMaterial(models.Model):
+
+    _inherit = 'project.task.material'
+
+    stock_state = fields.Selection(related='stock_move_id.state', string='State', readonly=True)
+
+    def action_move_cancel(self):
+        for record in self:
+            if record.stock_move_id:
+                record.stock_move_id._action_cancel()

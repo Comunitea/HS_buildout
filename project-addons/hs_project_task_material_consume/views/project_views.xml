@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_project_task_material_consume_form" model="ir.ui.view">
+        <field name="name">view.project.task.material.consume.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_task_material_stock.view_project_task_form_material_stock"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_assign']" position="attributes">
+                <attribute name="context">{'do_unreserve':True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_uom_id']" position="after">
+                <field name="stock_state" invisible="1"/>
+                <button name="action_move_cancel" icon="fa-times" type="object" attrs="{'invisible':['|',('stock_state','=',False),('stock_state','in',('cancel','done'))]}"/>
+            </xpath>
+            <xpath expr="//page[@name='products']/field[@name='material_ids']/tree" position="attributes">
+                <attribute name="decoration-muted">stock_state == 'cancel' </attribute>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

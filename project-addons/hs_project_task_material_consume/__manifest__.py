@@ -9,6 +9,7 @@
         'project_task_material_stock'
     ],
     'data': [
+        'views/project_views.xml'
     ],
     'installable': True,
     'auto_install': False,

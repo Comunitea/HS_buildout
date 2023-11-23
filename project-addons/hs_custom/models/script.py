@@ -1,4 +1,5 @@
 fields = {
+    'De':'contact_name',
     'name': 'contact_name',
     'Nombre': 'contact_name',
     'phone': 'phone',
@@ -10,7 +11,8 @@ fields = {
     'Email': 'email_from',
     'E-mail': 'email_from',
     'notes': 'description',
-    'Código Postal': 'zip'
+    'Código Postal': 'zip',
+    'C.P.': 'zip'
 }
 sale_types = {
     'radoncontrol.es': 'Radon Control'
@@ -52,7 +54,9 @@ for message in record.message_ids.filtered(lambda m: m.message_type == 'email'):
                     _dict['campaign_id'] = 21
                 else:
                     _dict['campaign_id'] = 19
+        _dict['medium_id'] = 1
         record.write(_dict)
+
 
 
 
