@@ -43,7 +43,7 @@ class CrmLead(models.Model):
     x_estado = fields.Char("Estado")
     x_vendedor = fields.Char("Vendedor")
     creation_date = fields.Datetime('Creation Date', index=True,
-                                    default=fields.Datetime.now)
+                                    default=fields.Datetime.now, readonly=True)
     sale_type_id = fields.Many2one(
         comodel_name='sale.order.type',
         string='Sale Type',
