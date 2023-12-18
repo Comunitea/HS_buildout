@@ -6,7 +6,7 @@
             <div class="page">
                 <style>
                     .page{
-                        font-size:9pt;
+                        font-size:8pt;
                     }
                     .box{
                         padding: 10px;

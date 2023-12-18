@@ -10,7 +10,7 @@
                         src:local("calibri"), url("/hs_custom_documents/static/src/fonts/calibri") format("truetype");
                     }
                     .page{
-                        font-size:9pt;
+                        font-size:8pt;
                     }
                     .box{
                         padding: 10px;

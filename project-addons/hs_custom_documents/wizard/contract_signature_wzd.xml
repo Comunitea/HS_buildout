@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+   <record id="view_contract_signature_wzd_inherit" model="ir.ui.view">
+        <field name="name">view.contract.signature.wzd.inherit</field>
+        <field name="model">contract.signature.wizard</field>
+        <field name="inherit_id" ref="hs_custom.view_contract_signature_wzd"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+               <page name="worksheet" string="Work Sheet">
+                    <group>
+                        <field name="x_vendedor" readonly="1"/>
+                        <field name="worksheet_wall_thickness" readonly="1"/>
+                        <field name="worksheet_wall_type" readonly="1"/>
+                        <field name="has_radiators" readonly="1"/>
+                        <field name="radiators_qty" attrs="{'invisible':[('has_radiators','=',False)]}" readonly="1"/>
+                        <field name="has_toilet" readonly="1"/>
+                        <field name="toilet_qty" attrs="{'invisible':[('has_toilet','=',False)]}" readonly="1"/>
+                        <field name="has_fixed_furnitures" readonly="1"/>
+                        <field name="fixed_furnitures_qty" attrs="{'invisible':[('has_fixed_furnitures','=',False)]}" readonly="1"/>
+                        <field name="has_plasterboard" readonly="1"/>
+                        <field name="plasterboard_qty" attrs="{'invisible':[('has_plasterboard','=',False)]}" readonly="1"/>
+                        <field name="has_boiler" readonly="1"/>
+                        <field name="boiler_qty" attrs="{'invisible':[('has_boiler','=',False)]}" readonly="1"/>
+                        <field name="worksheet_other" readonly="1"/>
+                        <field name="has_baseboard" readonly="1"/>
+                        <field name="baseboard_qty" attrs="{'invisible':[('has_baseboard','=',False)]}" readonly="1" />
+                        <field name="basboard_type" attrs="{'invisible':[('has_baseboard','=',False)]}" readonly="1"/>
+                        <field name="exceptional_conditions" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="worksheet_signature" widget="signature"/>
+                    </group>
+                </page>
+                <page name="rcs_work_data_sheet" string="Radon Work Data Sheet" attrs="{'invisible':[('is_rcs','=',False)]}">
+                    <field name="is_rcs"  invisible="1"/>
+                    <group string="Housing Configuration" col="4">
+                            <field name="rcs_n_floors" readonly="1"/>
+                            <field name="rcs_surface_area" readonly="1"/>
+                            <field name="rcs_communication_facade" readonly="1"/>
+                    </group>
+                    <strong colspan="4" class="text-primary">Underground Zone</strong>
+                    <group name="underground_zone" col="4">
+                        <field name="rcs_underground_zone" readonly="1"/>
+                        <field name="rcs_garage" readonly="1"/>
+                        <field name="rec_pantry" readonly="1"/>
+                        <field name="rcs_play_area" readonly="1"/>
+                        <field name="rcs_gym" readonly="1"/>
+                        <field name="rcs_laundry" readonly="1"/>
+                        <field name="rcs_other_underground" readonly="1"/>
+                    </group>
+                    <group string="Facade Typology">
+                        <group colspan="4">
+                            <field name="rcs_finish_facade" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Windows">
+                        <group col="4" colspan="2">
+                            <field name="rcs_n_aluminum" readonly="1"/>
+                            <field name="rcs_n_wood" readonly="1"/>
+                            <field name="rcs_n_pvc" readonly="1"/>
+                            <field name="rcs_windows_other" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Images">
+                        <group>
+                            <field name="rcs_potential_environment" readonly="1"/>
+                            <field name="rcs_underground_zone_img" readonly="1"/>
+                            <field name="rcs_facade" readonly="1"/>
+                        </group>
+                    </group>
+                    <separator string="Observations"/>
+                    <field name="rcs_observation" readonly="1"/>
+                    <group string="Signature">
+                        <field name="rcs_signature" widget="signature"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+   </record>
+
+
+</odoo>

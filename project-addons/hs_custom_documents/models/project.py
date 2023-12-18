@@ -39,7 +39,7 @@ class ProjectProject(models.Model):
     closed_terrace = fields.Boolean(string="Closed Terrace")
     others = fields.Boolean(string="Others")
 
-    #TIPOLOGÍA DE FACAHADA
+    #TIPOLOGÍA DE FACHADA
     finish_facade = fields.Char(string="Exterior Finish Facade")
     normal_wall_thickness = fields.Float(string="Normal Wall Thickness")
     wall_thickness = fields.Float(string="Wall Thickness > 40cm")
@@ -122,6 +122,68 @@ class ProjectProject(models.Model):
     contract_type_id = fields.Many2one(comodel_name='project.contract.type', string="Contract Type", required=True)
     contracted_distance = fields.Float(string="Contracted Distance(m)")
 
+    #RADÓN
+    #Configuracion de vivienda
+    rcs_n_floors = fields.Integer(string="Floors Number")
+    rcs_surface_area = fields.Float(string="Surface Area per Floor(m2)")
+    rcs_underground_zone = fields.Boolean(string="Underground Zone")
+    rcs_garage = fields.Boolean(string="Garage")
+    rec_pantry = fields.Boolean(string="Pantry")
+    rcs_play_area = fields.Boolean(string="Play Area")
+    rcs_gym = fields.Boolean(string="Gym")
+    rcs_laundry = fields.Boolean(string="Laundry")
+    rcs_other_underground = fields.Char(string="Other Underground Zone Spaces")
+    rcs_communication_facade = fields.Boolean(string="Communicaton with the facade")
+
+    #Tipologia de fachada
+    rcs_finish_facade = fields.Selection(string="Exterior Facade Finish",
+                                         selection=[('standard', 'Standard'), ('grather_than_40cm', 'Grather than 40cm')])
+
+    #Ventanas
+    rcs_n_aluminum = fields.Boolean(string="Of Aluminum")
+    rcs_n_wood = fields.Boolean(string="Of Wood")
+    rcs_n_pvc = fields.Boolean(string="Of PVC")
+    rcs_windows_other = fields.Char(string="Others")
+
+    #Mediciones previas
+    rcs_meter_type = fields.Selection(string="Meter Type",
+                                      selection=[('airthings', 'Airthings'),('radoneye','RadonEye'),('other', 'Other')])
+    rcs_average_values = fields.Float(string="Average Values")
+    rcs_monthly = fields.Boolean(string="Monthly")
+    rcs_quarterly = fields.Boolean(string="Quarterly")
+
+    #imágenes
+    rcs_potential_environment = fields.Boolean(string="Potential Environment")
+    rcs_underground_zone_img = fields.Boolean(string="Underground Zone")
+    rcs_facade = fields.Boolean(string="Facade")
+
+    rcs_observation = fields.Text(string="Observation")
+
+    rcs_signature = fields.Binary( string='RCS acceptance')
+
+    rcs_signature_date = fields.Date(string="RCS Signature Date")
+
+    is_rcs = fields.Boolean(string="Is RCS?" , compute='_compute_is_rcs')
+
+    with_guarantee = fields.Boolean(string="With Guarantee")
+
+    guarantee_type = fields.Selection(string="Guarantee Type",
+                                      selection=[('cap', 'CAP'), ('misc_deck', 'MISC Deck'), ('enc', 'ENC'),('misc_facade','MISC Facade'),('misc_terrace','MISC Terrace'),('ps','PS')])
+
+    @api.depends('contract_type_id')
+    def _compute_is_rcs(self):
+        for record in self:
+            if record.contract_type_id.contract_type == 'rcs':
+                record.is_rcs = True
+            else:
+                record.is_rcs = False
+
+    @api.onchange('with_guarantee')
+    def _onchange_with_guarantee(self):
+        for record in self:
+            if not record.with_guarantee:
+                record.guarantee_type = ''
+
     @api.model
     def create(self, vals):
         if vals.get('contract_type_id'):
@@ -144,12 +206,15 @@ class ProjectProject(models.Model):
         if project.worksheet_signature:
             values = {'worksheet_signature': project.worksheet_signature}
             project._track_signature(vals, 'worksheet_signature')
-
+        if project.rcs_signature:
+            values = {'rcs_signature': project.rcs_signature}
+            project._track_signature(vals, 'rcs_signature')
         return project
 
     @api.multi
     def write(self, values):
         self._track_signature(values, 'worksheet_signature')
+        self._track_signature(values, 'rcs_signature')
         return super(ProjectProject, self).write(values)
 
     def action_show_worksheet_signatures(self):
@@ -228,16 +293,64 @@ class ProjectProject(models.Model):
             attachments.append(contract.id)
         if self.x_iva_doc:
             report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.reduced_iva_report')
-            iva_doc_report = report.render_qweb_pdf([self.id])[0]
-            iva = self.sudo().env['ir.attachment'].create({
+            doc = report.render_qweb_pdf([self.id])[0]
+            att_doc = self.sudo().env['ir.attachment'].create({
                 'name': 'HG-IVA.pdf',
                 'type': 'binary',
-                'datas': base64.b64encode(iva_doc_report),
+                'datas': base64.b64encode(doc),
                 'res_model': 'project.project',
                 'res_id': self.id,
                 'mimetype': 'application/pdf',
             })
-            attachments.append(iva.id)
+            attachments.append(att_doc.id)
+        if self.is_rcs and self.rcs_signature:
+            report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.report_work_data_sheet_rcs')
+            doc = report.render_qweb_pdf([self.id])[0]
+            att_doc = self.sudo().env['ir.attachment'].create({
+                'name': 'RCS-WorkDataSheet.pdf',
+                'type': 'binary',
+                'datas': base64.b64encode(doc),
+                'res_model': 'project.project',
+                'res_id': self.id,
+                'mimetype': 'application/pdf',
+            })
+            attachments.append(rcs_worksheet.id)
+        if self.worksheet_signature:
+            report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.worksheet_report')
+            doc = report.render_qweb_pdf([self.id])[0]
+            att_doc = self.sudo().env['ir.attachment'].create({
+                'name': 'WorkSheet.pdf',
+                'type': 'binary',
+                'datas': base64.b64encode(doc),
+                'res_model': 'project.project',
+                'res_id': self.id,
+                'mimetype': 'application/pdf',
+            })
+            attachments.append(att_doc.id)
+        if self.contract_type_id and self.contract_type_id.contract_type == 'ps':
+            report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.report_work_data_sheet')
+            doc = report.render_qweb_pdf([self.id])[0]
+            att_doc = self.sudo().env['ir.attachment'].create({
+                'name': 'WorkDataSheet.pdf',
+                'type': 'binary',
+                'datas': base64.b64encode(doc),
+                'res_model': 'project.project',
+                'res_id': self.id,
+                'mimetype': 'application/pdf',
+            })
+            attachments.append(att_doc.id)
+        if self.with_guarantee:
+            report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.report_common_guarantee')
+            doc = report.render_qweb_pdf([self.id])[0]
+            att_doc = self.sudo().env['ir.attachment'].create({
+                'name': 'Guarantee.pdf',
+                'type': 'binary',
+                'datas': base64.b64encode(doc),
+                'res_model': 'project.project',
+                'res_id': self.id,
+                'mimetype': 'application/pdf',
+            })
+            attachments.append(att_doc.id)
         context.update({
             'default_attachment_ids': [(6, 0, attachments)],
         })

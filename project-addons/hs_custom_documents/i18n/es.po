@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-31 15:33+0000\n"
-"PO-Revision-Date: 2023-10-31 15:33+0000\n"
+"POT-Creation-Date: 2023-12-12 11:48+0000\n"
+"PO-Revision-Date: 2023-12-12 11:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_worksheet_ref
 msgid "- Fax"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<br/>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Importante: Esta garantñia tendrá validez mientras que el cliente siga las recomendaciones de uso del sistema, incluye las acciones razonables para evitar la producción excesiva de vapor de\n"
+"                                    agua(no utilizar estufas de butano, no tender ropa en el interior, etc.).\n"
+"                                </span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -58,10 +68,185 @@ msgid "<span style=\"display:inline-block;width:15%;\">Otros</span>"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span style=\"font-size:75pt;font-weight:bold;\">Certificado</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span style=\"font-weight:bold;\">SISTEMA DE DESPRESURIZACIÓN</span>"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
 msgid "<span>\n"
 "                                                    En caso<br/>de<br/>PureSilent<br/>Ático\n"
 "                                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>\n"
+"                                                    Imágenes\n"
+"                                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>\n"
+"                                                    Mediciones Previas\n"
+"                                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>\n"
+"                                                    Tipología de fachada\n"
+"                                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>\n"
+"                                                    Ventanas\n"
+"                                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                    Cuando después de la expiración del plazo previsto en el informe técnico, el porcentaje de humedad por encima de la barrera de hermeticidad sea superior al 15% y a condición de que esta\n"
+"                                    humedad sea una humedad por filtración, la garantía surtirá sus efectos y HOGAR SECO podrá optar, o bien por la ejecución de trabajos complementarios que garanticen las desecación de los\n"
+"                                    muros,o bien por la devolución del precio contractual en proporción a los trabajos que no han dado el resultado esperado. Esta opción dependerá de la apreciación del equipo técnico de HOGAR\n"
+"                                    SECO.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                    En caso de reventa del edificio que ha sido objeto del tratamiento, HOGAR SECO se comprometerá a acordar su garantía al nuevo propietario por el período que quede por cubrir hasta la\n"
+"                                    expiración de dicha garantía.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                    La garantía acordada por HOGAR SECO no podrá surtir sus efectos más bajo las condiciones siguientes:\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                <span>a) El cliente deberá presentar este certificado y los documentos contractuales</span>\n"
+"                                <br/>\n"
+"                                <span>b) HOGAR SECO deberá tener acceso a los locales durante las horas habituales de trabajo, previa cita fijada en común acuerdo con el cliente, para inspeccionar los muros tratados, medir el\n"
+"                                porcentaje de humedad y determinar los eventuales trabajos complementarios a efectuar o la eventual devolución del precio.</span>\n"
+"                                <br/>\n"
+"                                <span>c) Toda reparación de humedad en los muros tratados deberán ser señalados sin pérdida de tiempo a HOGAR SECO a fin de permitir a esta última efectuar sin retraso o una nueva intervención.</span>\n"
+"                                <br/>\n"
+"                                <span>d) Todos los trabajos efectuados por terceros duarante el período de garantía en los locales tratados deberá haber sido efectuados conforme a las reglas del oficio y a las prácticas de\n"
+"                                construcción racionales. Los locales tratados serán objeto del mantenimiento y de las reparaciones necesarias.</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                    Previo a la ejecución de esta garantía, HOGAR SECO tendrá la opción de realizar los ajustes o instalaciones adicionales que estime necesarios para solucionar el incorrecto funcionamiento\n"
+"                                    del sistema de tratamiento de aire así como la retirada del sistema de aire.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                    hasta el día\n"
+"                                    </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                   Cuando el producto haya sido usado fuera de capacidad, maltratado, golpeado, impregnado por algún líquido o substancia corrosiva, así como por cualquier otra falta atribuible al cliente.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                Cuando el fallo sea originado por el desgaste normal de los materiales debido al uso.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                Cuando el producto haya sido modificado o reparado por personas no autoriadas por HOGAR SECO.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                Cuando el uso, cuidado y operación del producto no haya sido el adecuado con uso normal.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                Esta garantía no cubre la humedad presente en los enyesados que hayan sido dañados por humedad antes de la ejecución de los trabajos.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                La garantía de HOGAR SECO tendrá efecto solamente mientras los sistemas de tratamiento de aire sigan en funcionamiento, sin interrupción y sin ningún tipo de manipulación por personal\n"
+"                                externo a HOGAR SECO.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                                Por razones fuera del control de HOGAR SECO por ejemplo movimientos estructurales o fallos en construcción original.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>\n"
+"                            Esta garantía tendrá validez una vez efectuado el pago total del contrato.\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            <span>\n"
+"                            DEFINICIONES\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                             <br/>\n"
+"                            <span>\n"
+"                            El contrato designa el contrato cuyas características vienen definidas en el encabezamiento del presente documento.\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                             <br/>\n"
+"                            <span>\n"
+"                            El cliente designa la persona cuyo nombre y dirección figuran en cabeza de este documento.\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                             <br/>\n"
+"                            <span>\n"
+"                            La dirección de la obra se refiere a la ubicación en la que se va a realizar el tratamiento, descrita en los documentos contractuales.\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                            <span>\n"
+"                            Los \"trabajos garantizados\" designan los trabajos descritos en los documentos contractuales por el precio en ellos fijado, ejecutados por HOGAR SECO en la dirección de obra.\n"
+"                            </span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span> Cuando esta póliza manifestara claros signos de haber sido alterada en los datos originales consignados en ella.</span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -105,6 +290,16 @@ msgid "<span>A) El cliente pide a la sociedad proceda a la instalación de un si
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>Acabado exterior fachada:</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>Bq/m3</span>"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
 msgid "<span>CONDICIONES DE PAGO:</span><br/>"
@@ -116,12 +311,18 @@ msgid "<span>Cantidad</span>"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>Configuración de la vivienda</span>"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
 msgid "<span>Configuración<br/>de la<br/>vivienda</span>"
 msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "<span>DATOS DE LA VIVIENDA</span>"
 msgstr ""
 
@@ -129,6 +330,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
 msgid "<span>DESCRIPCIÓN DEL TRABAJO:</span>\n"
 "                                <br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>Definimos las consecuencias de humedad por condensación como:</span>\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                <span>a)Crecimiento de moho</span>\n"
+"                                <br/>\n"
+"                                <span>b)Presencia excesiva de agua por condensación en las superficies de la vivienda</span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -147,6 +358,24 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.puresilent_contract_report_document
 msgid "<span>El precio global de los trabajos, IVA no incluido,es de</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>El presente certificado está emitido por HOGAR SECO de conformidad con las disposiciones del contrato relativo a los trabajos garantizados.</span>\n"
+"                        <br/>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>El presente certificado está emitido por HOGAR SECO de conformidad con las disposiciones del contrato relativo a los trabajos garantizados.</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>HOGAR SECO garantiza por 10 años a partir de la fecha de compra el cumplimiento de esta obra contra defecto en los materiales y mano de obra empleados para su ejecución.</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>Esta garantía <strong> no será válida</strong> bajo las siguientes condiciones:</span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -177,6 +406,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.misc_contract_report_document
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
 msgid "<span>La base imponible de los trabajos (IVA no incluido) es de</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>La garantía cubre exclusivamente los muros tratados contra la filtración lateral</span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -260,6 +494,11 @@ msgid "<span>Sanitario</span>"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>Tipo de medidor</span>"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
 msgid "<span>Tipo</span>"
 msgstr ""
@@ -272,6 +511,11 @@ msgstr ""
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
 msgid "<span>Tipología<br/>de<br/>fachada</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>Trabajo garantizado desde el día: </span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -305,6 +549,11 @@ msgid "<span>Una vez firmado este contrato y pagado el anticipo previsto, las op
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "<span>Valores promedio</span><br/>"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
 msgid "<span>Ventanas</span>"
 msgstr ""
@@ -312,6 +561,17 @@ msgstr ""
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
 msgid "<span>Zona de tendedero / secado<br/>de ropa</span>"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "<span>¡Enhorabuena! ya tiene su Sistema PureSilent® de HOGAR SECO instalado y en funcionamiento</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>HOGAR SECO garantiza que la vivienda objeto del contrato de tratamiento de humedades por condensación no sufrirá lasa consecuencias de la humedad por condensación.</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>El contrato se firma con las siguientes condiciones:</span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -348,6 +608,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
 msgid "<strong colspan=\"4\" class=\"text-primary\">Clothes Drying Area</strong>"
 msgstr "<strong colspan=\"4\" class=\"text-primary\">Zona de tendedero / secado de ropa</strong>"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
+msgid "<strong colspan=\"4\" class=\"text-primary\">Underground Zone</strong>"
+msgstr "<strong colspan=\"4\" class=\"text-primary\">Zona soterrada</strong>"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
@@ -405,14 +671,36 @@ msgid "Active"
 msgstr "Activo"
 
 #. module: hs_custom_documents
+#: selection:contract.signature.wizard,rcs_meter_type:0
+#: selection:project.project,rcs_meter_type:0
+msgid "Airthings"
+msgstr "Airthings"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Airthings ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Ambiente posible (Ubicación) ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_average_values
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_average_values
+msgid "Average Values"
+msgstr "Valores promedio"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__has_baseboard
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_baseboard
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_baseboard
 msgid "Baseboard"
 msgstr "Zócalo"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__baseboard_qty
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__baseboard_qty
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__baseboard_qty
 msgid "Baseboard Quantity"
 msgstr "Cantidad de zócalos"
 
@@ -444,8 +732,8 @@ msgid "Bedrooms Number"
 msgstr "Número de dormitorios"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__has_boiler
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_boiler
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_boiler
 msgid "Boiler"
 msgstr "Caldera"
 
@@ -455,13 +743,14 @@ msgid "Bomba de calor ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__boiler_qty
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__boiler_qty
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__boiler_qty
 msgid "Booiler Quantity"
 msgstr "Cantidad de calderas"
 
 #. module: hs_custom_documents
 #: selection:project.contract.type,contract_type:0
+#: selection:project.project,guarantee_type:0
 msgid "CAP"
 msgstr ""
 
@@ -500,11 +789,6 @@ msgid "Cambio anual de filtro. El mantenimiento del filtro es esencial para gara
 msgstr ""
 
 #. module: hs_custom_documents
-#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_worksheet_signature_wzd
-msgid "Cancel"
-msgstr "Cancelar"
-
-#. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_casement_type
 msgid "Casement Type"
 msgstr "Tipo abatible"
@@ -515,7 +799,9 @@ msgid "Chimenea leña / pellets ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "Cliente"
 msgstr ""
 
@@ -540,9 +826,20 @@ msgid "Cocina independiente ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_communication_facade
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_communication_facade
+msgid "Communicaton with the facade"
+msgstr "Comunicación con fachada"
+
+#. module: hs_custom_documents
 #: model:ir.model,name:hs_custom_documents.model_res_company
 msgid "Companies"
 msgstr "Compañías"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Comunicación con fachada Si["
+msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
@@ -611,6 +908,11 @@ msgid "Contract Conditions"
 msgstr "Condiciones del contrato"
 
 #. module: hs_custom_documents
+#: model:ir.model,name:hs_custom_documents.model_contract_signature_wizard
+msgid "Contract Signature Wizard"
+msgstr "Asistente de firma de contrato"
+
+#. module: hs_custom_documents
 #: model:ir.actions.act_window,name:hs_custom_documents.project_contract_type_action
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__contract_type
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__contract_type_id
@@ -624,14 +926,17 @@ msgid "Contracted Distance(m)"
 msgstr "Distancia contratada (m)"
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Contrato"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__create_uid
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__create_date
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__create_date
 msgid "Created on"
 msgstr "Creado en"
 
@@ -641,7 +946,7 @@ msgid "Current Usage"
 msgstr "Uso actual"
 
 #. module: hs_custom_documents
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__partner_id
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__partner_id
 msgid "Customer"
 msgstr "Cliente"
 
@@ -658,18 +963,46 @@ msgid "DISTANCIA CONTRATADA:"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "De Garantía"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "De Garantía por 10 años"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "De Garantía por 15 Años"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "De Garantía por 30 años"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "De PVC ["
 msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "De aluminio ["
 msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "De madera ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Despensa ["
 msgstr ""
 
 #. module: hs_custom_documents
@@ -678,8 +1011,17 @@ msgid "Desván independiente del resto de la vivienda ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Dirección de la obra:"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Dirección:"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__display_name
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
@@ -702,6 +1044,7 @@ msgstr ""
 
 #. module: hs_custom_documents
 #: selection:project.contract.type,contract_type:0
+#: selection:project.project,guarantee_type:0
 msgid "ENC"
 msgstr ""
 
@@ -747,10 +1090,16 @@ msgid "Estufas de butano/queroseno/parafina ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__exceptional_conditions
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__exceptional_conditions
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__exceptional_conditions
 msgid "Exceptional Conditions"
 msgstr "Condiciones excepcionales"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_finish_facade
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_finish_facade
+msgid "Exterior Facade Finish"
+msgstr "Acabado exterior fachada"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__finish_facade
@@ -763,9 +1112,26 @@ msgid "Exterior ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_facade
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_facade
+msgid "Facade"
+msgstr "Fachada"
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
 msgid "Facade Typology"
 msgstr "Tipología de fachada"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Fachada exterior (Posible salida del sistema) ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Fecha de finalización de la obra:"
+msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
@@ -807,21 +1173,71 @@ msgid "Firmado en dos ejemplares en"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__has_fixed_furnitures
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_fixed_furnitures
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_fixed_furnitures
 msgid "Fixed Furnitures"
 msgstr "Muebles fijos"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__fixed_furnitures_qty
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__fixed_furnitures_qty
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__fixed_furnitures_qty
 msgid "Fixed Furnitures Quantity"
 msgstr "Cantidad de muebles fijos"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_n_floors
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_floors
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_n_floors
 msgid "Floors Number"
 msgstr "Nº de plantas"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_garage
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_garage
+msgid "Garage"
+msgstr "Garaje"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Garaje ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Gimnasio ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: selection:contract.signature.wizard,rcs_finish_facade:0
+#: selection:project.project,rcs_finish_facade:0
+msgid "Grather than 40cm"
+msgstr "> 40cm"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Grosor muro &gt; 40cm ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Grosor muro normal ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_common_guarantee
+msgid "Guarantee"
+msgstr "Garantía"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__guarantee_type
+msgid "Guarantee Type"
+msgstr "Tipo de garantía"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_gym
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_gym
+msgid "Gym"
+msgstr "Gimnasio"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_ventilation
@@ -834,12 +1250,14 @@ msgid "Heat Pump"
 msgstr "Bomba de calor"
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
 msgid "Hogar Seco, S.L."
 msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
 msgid "Housing Configuration"
 msgstr "Configuración de la vivienda"
 
@@ -855,7 +1273,6 @@ msgstr "Humedad en el ambiente"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__id
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__id
 msgid "ID"
 msgstr ""
 
@@ -868,6 +1285,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.radon_contract_report_document
 msgid "IVA (al"
 msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
+msgid "Images"
+msgstr "Imágenes"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
@@ -895,6 +1318,11 @@ msgid "Interior ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__is_rcs
+msgid "Is RCS?"
+msgstr "¿Es RCS?"
+
+#. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__mold_kitchen
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_kitchen
 msgid "Kitchen"
@@ -907,21 +1335,29 @@ msgstr ""
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type____last_update
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__write_uid
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__write_date
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_laundry
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_laundry
+msgid "Laundry"
+msgstr "Lavandería"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Lavandería ["
+msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
@@ -950,6 +1386,21 @@ msgid "MISC Contract"
 msgstr "Contrato MISC"
 
 #. module: hs_custom_documents
+#: selection:project.project,guarantee_type:0
+msgid "MISC Deck"
+msgstr "MISC Cubierta"
+
+#. module: hs_custom_documents
+#: selection:project.project,guarantee_type:0
+msgid "MISC Facade"
+msgstr "MISC Fachada"
+
+#. module: hs_custom_documents
+#: selection:project.project,guarantee_type:0
+msgid "MISC Terrace"
+msgstr "MISC Terraza"
+
+#. module: hs_custom_documents
 #: selection:project.contract.type,contract_type:0
 msgid "MPS"
 msgstr ""
@@ -960,9 +1411,26 @@ msgid "Mascotas ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Mensual ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_meter_type
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_meter_type
+msgid "Meter Type"
+msgstr "Tipo de medidor"
+
+#. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__molds
 msgid "Molds?"
 msgstr "¿Mohos?"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_monthly
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_monthly
+msgid "Monthly"
+msgstr "Mensual"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
@@ -985,10 +1453,15 @@ msgid "NIF"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__name
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_contract_type__name
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__name
 msgid "Name"
 msgstr "Nombre"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Nombre:"
+msgstr ""
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__normal_wall_thickness
@@ -999,6 +1472,11 @@ msgstr "Grosor muro normal"
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_occupants
 msgid "Number of Occupants"
 msgstr "Número de ocupantes"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Nº"
+msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.external_layout_contract
@@ -1027,6 +1505,7 @@ msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "Nº de plantas ["
 msgstr ""
 
@@ -1044,31 +1523,41 @@ msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "Observaciones:"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_observation
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__observation
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_observation
 msgid "Observation"
 msgstr "Observación"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
 msgid "Observations"
 msgstr "Observaciones"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_n_aluminum
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_aluminum
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_n_aluminum
 msgid "Of Aluminum"
 msgstr "De aluminio"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_n_pvc
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_pvc
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_n_pvc
 msgid "Of PVC"
 msgstr "De PVC"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_n_wood
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_wood
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_n_wood
 msgid "Of Wood"
 msgstr "De madera"
 
@@ -1083,8 +1572,10 @@ msgid "On PureSilent Attic Case"
 msgstr "En caso de PureSilent Ático"
 
 #. module: hs_custom_documents
+#: selection:contract.signature.wizard,rcs_meter_type:0
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__worksheet_other
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_other
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_other
+#: selection:project.project,rcs_meter_type:0
 msgid "Other"
 msgstr "Otro"
 
@@ -1094,9 +1585,17 @@ msgid "Other Spaces conneceted to the house"
 msgstr "Otros espacios conectados con la vivienda"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_other_underground
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_other_underground
+msgid "Other Underground Zone Spaces"
+msgstr "Otros espacios en zona soterrada"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_windows_other
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__mold_other
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__other_windows
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__others
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_windows_other
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_other
 msgid "Others"
 msgstr "Otros"
@@ -1112,7 +1611,13 @@ msgid "Otros espacios comunicados con la vivienda :"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Otros espacios en zona soterrada:"
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "Otros:"
 msgstr ""
 
@@ -1123,8 +1628,15 @@ msgstr "Exterior"
 
 #. module: hs_custom_documents
 #: selection:project.contract.type,contract_type:0
+#: selection:project.project,guarantee_type:0
 msgid "PS"
 msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rec_pantry
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rec_pantry
+msgid "Pantry"
+msgstr "Despensa"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
@@ -1137,21 +1649,33 @@ msgid "Pets"
 msgstr "Mascotas"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__has_plasterboard
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_plasterboard
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_plasterboard
 msgid "Plasterboard"
 msgstr "Pladur, trasdosados, falso techo, etc."
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__plasterboard_qty
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__plasterboard_qty
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__plasterboard_qty
 msgid "Plasterboard Quantity"
 msgstr "Cantidad de Pladur, trasdosados, falso techo, etc."
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_play_area
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_play_area
+msgid "Play Area"
+msgstr "Zona de juegos"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
 msgid "Por lo citado anteriormente, ala factura por realización de la obra se aplicará el tipo de Iva reducido del 10% en virtud del Real Decreto, Ley 6/2010"
 msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_potential_environment
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_potential_environment
+msgid "Potential Environment"
+msgstr "Ambiente posible"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
@@ -1212,14 +1736,39 @@ msgid "Puresilent Maintenance Contract"
 msgstr "Contrato de mantenimiento PureSilent"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_quarterly
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_quarterly
+msgid "Quarterly"
+msgstr "Trimestral"
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
 msgid "Que la obra realizada se va a destinar a uso particular, no a una actividad empresarial o profesional"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__is_rcs
 #: selection:project.contract.type,contract_type:0
 msgid "RCS"
 msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_reduced_iva_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "RCS - Radón Control Services®"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_signature_date
+msgid "RCS Signature Date"
+msgstr "Fecha de firma RCS"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_signature
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_signature
+msgid "RCS acceptance"
+msgstr "Aceptación RCS"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_project_filter_inherit
@@ -1247,14 +1796,14 @@ msgid "Radiadores eléctricos ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__has_radiators
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_radiators
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_radiators
 msgid "Radiators"
 msgstr "Radiadores"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__radiators_qty
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__radiators_qty
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__radiators_qty
 msgid "Radiators Quantity"
 msgstr "Cantidad de radiadores"
 
@@ -1262,6 +1811,18 @@ msgstr "Cantidad de radiadores"
 #: model:ir.actions.report,name:hs_custom_documents.action_report_radon_contract
 msgid "Radon Contract"
 msgstr "Contrato Radón"
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
+msgid "Radon Work Data Sheet"
+msgstr "Hoja de datos de obra Radón"
+
+#. module: hs_custom_documents
+#: selection:contract.signature.wizard,rcs_meter_type:0
+#: selection:project.project,rcs_meter_type:0
+msgid "RadonEye"
+msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.mant_puresilent_contract_report_document
@@ -1277,6 +1838,21 @@ msgstr "IVA reducido"
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__project_ref
 msgid "Ref"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Rehabilitación de cubierta"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Rehabilitación de fachada"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Rehabilitación de terraza"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -1298,11 +1874,6 @@ msgid "Salón ["
 msgstr ""
 
 #. module: hs_custom_documents
-#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_worksheet_signature_wzd
-msgid "Save"
-msgstr "Guardar"
-
-#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.cap_contract_report_document
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.enc_contract_report_document
 msgid "Se entrega pago o justificante del mismo según condiciones de pago al responsable de la ejecución de los trabajos el día mismo en que éstos se terminen."
@@ -1314,6 +1885,12 @@ msgid "Si desea realizar el pago mediante transferencia bancaria podrá hacerlo 
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
+msgid "Signature"
+msgstr "Firma"
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
 msgid "Sin acceso ["
 msgstr ""
@@ -1322,6 +1899,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__n_sliding_type
 msgid "Sliding Type"
 msgstr "Tipo corredera"
+
+#. module: hs_custom_documents
+#: selection:contract.signature.wizard,rcs_finish_facade:0
+#: selection:project.project,rcs_finish_facade:0
+msgid "Standard"
+msgstr "Normal"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__steam_windows
@@ -1335,10 +1918,13 @@ msgstr "Estufas"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
 msgid "Superficie por planta (m2) ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_surface_area
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_surface_area
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__surface_area
 msgid "Surface Area per Floor(m2)"
 msgstr "Superficie por planta (m2)"
@@ -1381,22 +1967,37 @@ msgid "Tipo oscilobatiente ["
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__has_toilet
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__has_toilet
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__has_toilet
 msgid "Toilet"
 msgstr "Sanitario"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__toilet_qty
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__toilet_qty
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__toilet_qty
 msgid "Toilets Quantity"
 msgstr "Cantidad de sanitarios"
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Tratamiento anti condensación"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Tratamiento de capilaridad"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "Tratamiento de filtración"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__basboard_type
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__worksheet_wall_type
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__basboard_type
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_wall_type
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__basboard_type
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_wall_type
 msgid "Type"
 msgstr "Tipo"
 
@@ -1406,18 +2007,26 @@ msgid "Type of heating"
 msgstr "Tipo de calefacción"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_underground_zone
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__rcs_underground_zone_img
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_underground_zone
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__rcs_underground_zone_img
+msgid "Underground Zone"
+msgstr "Zona soterrada"
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document
 msgid "Uso actual ["
 msgstr ""
 
 #. module: hs_custom_documents
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__x_vendedor
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__x_vendedor
 msgid "Vendedor"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__worksheet_wall_thickness
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_wall_thickness
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_wall_thickness
 msgid "Wall Thickness"
 msgstr "Grosor muro"
 
@@ -1433,6 +2042,7 @@ msgstr "Radiadores de agua"
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
 msgid "Windows"
 msgstr "Ventanas"
 
@@ -1445,6 +2055,11 @@ msgstr "Con acceso"
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__with_extractor
 msgid "With Extractor"
 msgstr "Con extractor"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__with_guarantee
+msgid "With Guarantee"
+msgstr "Con garantía"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__with_shunt
@@ -1488,7 +2103,13 @@ msgid "Work Data Sheet"
 msgstr "Hoja de datos de obra"
 
 #. module: hs_custom_documents
+#: model:ir.actions.report,name:hs_custom_documents.action_report_work_data_sheet_rcs
+msgid "Work Data Sheet RCS"
+msgstr "Hoja de datos de obra RCS"
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_contract_signature_wzd_inherit
 msgid "Work Sheet"
 msgstr "Hoja de obra"
 
@@ -1504,24 +2125,9 @@ msgstr "Fecha de firma de la hoja de obra"
 
 #. module: hs_custom_documents
 #: model:ir.actions.report,name:hs_custom_documents.action_report_worksheet
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_id
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__worksheet_id
 msgid "Worksheet"
 msgstr "Hoja de obra"
-
-#. module: hs_custom_documents
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_img
-msgid "Worksheet Image"
-msgstr "Imagen de la hoja de obra"
-
-#. module: hs_custom_documents
-#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
-msgid "Worksheet Sign"
-msgstr "Firma hoja de obra"
-
-#. module: hs_custom_documents
-#: model_terms:ir.ui.view,arch_db:hs_custom_documents.view_worksheet_signature_wzd
-msgid "Worksheet Signature"
-msgstr "Firma de la hoja de obra"
 
 #. module: hs_custom_documents
 #: model:ir.model,name:hs_custom_documents.model_worksheet_signature_wizard
@@ -1529,8 +2135,8 @@ msgid "Worksheet Signature Wizard"
 msgstr "Asistente de firma de la hoja de obra"
 
 #. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_contract_signature_wizard__worksheet_signature
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_signature
-#: model:ir.model.fields,field_description:hs_custom_documents.field_worksheet_signature_wizard__worksheet_signature
 msgid "Worksheet acceptance"
 msgstr "Aceptación de la hoja de obra"
 
@@ -1549,8 +2155,73 @@ msgid "Y por otra parte, Don"
 msgstr ""
 
 #. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Zona de juegos ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Zona soterrada ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "Zonas soterradas ["
+msgstr ""
+
+#. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.worksheet_report_document
 msgid "Zócalos"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "] No["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "] Otros ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "] RadonEye ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
+msgid "] Trimestral ["
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "_1"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "_2"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "_3"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "_4"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "_5"
+msgstr ""
+
+#. module: hs_custom_documents
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
+msgid "_6"
 msgstr ""
 
 #. module: hs_custom_documents

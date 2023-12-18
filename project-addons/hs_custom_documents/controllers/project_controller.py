@@ -29,7 +29,6 @@ class ProjectController(http.Controller):
                     report_name = 'hs_custom_documents.radon_contract_report'
                 else:
                     return False
-
                 report = request.env['ir.actions.report']._get_report_from_name(report_name)
                 report_output = report.render_qweb_pdf([project.id])[0]
                 if project.contract_type_id.contract_conditions:

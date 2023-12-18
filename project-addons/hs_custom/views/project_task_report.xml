@@ -30,6 +30,10 @@
                 <th>Teléfono</th>
                 <td><span t-field="o.project_id.partner_id.phone"/></td>
             </tr>
+            <tr t-if="o.project_id.partner_id.mobile">
+                <th>Móvil</th>
+                <td><span t-field="o.project_id.partner_id.mobile"/></td>
+            </tr>
             <tr t-if="o.project_id.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>
                 <td><span t-field="o.project_id.partner_id.x_tenant_name"/></td>
@@ -87,6 +91,10 @@
             <tr t-if="o.project_id.partner_id.phone">
                 <th>Teléfono</th>
                 <td><span t-field="o.project_id.partner_id.phone"/></td>
+            </tr>
+            <tr t-if="o.project_id.partner_id.mobile">
+                <th>Móvil</th>
+                <td><span t-field="o.project_id.partner_id.mobile"/></td>
             </tr>
             <tr t-if="o.project_id.partner_id.x_tenant_name">
                 <th>Nombre inquilino</th>

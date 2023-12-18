@@ -18,6 +18,7 @@
         'sale_order_type',
         'hs_project_task_material_consume',
         'crm_phone_validation',
+        'account_analytic_parent'
     ],
     'data': [
         'security/security.xml',
@@ -36,7 +37,8 @@
         'views/user_list_views.xml',
         'views/res_country_view.xml',
         'views/user_zone_view.xml',
-        'views/stock_picking_views.xml'],
+        'views/stock_picking_views.xml',
+        'views/hr_timesheet_view.xml',],
     'installable': True,
     'auto_install': False,
     'license': 'AGPL-3',

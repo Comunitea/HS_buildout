@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 14:59+0000\n"
-"PO-Revision-Date: 2023-11-08 14:59+0000\n"
+"POT-Creation-Date: 2023-12-13 14:15+0000\n"
+"PO-Revision-Date: 2023-12-13 14:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,93 +18,93 @@ msgstr ""
 #. module: hs_custom
 #: model:mail.template,body_html:hs_custom.email_project_template
 msgid "\n"
-"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF;\">\n"
-"    <p>Hello ${object.partner_id.name or ''},</p>\n"
-"    <p>Your contract has been signed successfully: </p>\n"
+"    <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF;\">\n"
+"        <p>Hello ${object.partner_id.name or ''},</p>\n"
+"        <p>Your contract has been signed successfully: </p>\n"
 "\n"
-"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
-"        &nbsp;&nbsp;<strong>DETAILS</strong><br />\n"
-"        &nbsp;&nbsp;Contract: <strong>${object.name}</strong><br />\n"
-"        &nbsp;&nbsp;Sign Date: ${object.start_date or ''}<br />\n"
+"        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"            &nbsp;&nbsp;<strong>DETAILS</strong><br />\n"
+"            &nbsp;&nbsp;Contract: <strong>${object.name}</strong><br />\n"
+"            &nbsp;&nbsp;Sign Date: ${object.start_date or ''}<br />\n"
 "\n"
-"        % if object.user_id:\n"
-"        &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.user_id.email or ''}?subject=Project%20${object.name}\">${object.user_id.name}</a>\n"
-"        % endif\n"
-"    </p>\n"
+"            % if object.user_id:\n"
+"            &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.user_id.email or ''}?subject=Project%20${object.name}\">${object.user_id.name}</a>\n"
+"            % endif\n"
+"        </p>\n"
 "\n"
-"    <br/>\n"
-"    <p>If you have any questions, please do not hesitate to contact us.</p>\n"
-"    <p>Thank you for choosing ${object.company_id.name or 'us'}!</p>\n"
-"    <br/>\n"
-"    <br/>\n"
-"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
-"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
-"            <strong style=\"text-transform: uppercase;\">${object.company_id.name}</strong>\n"
-"        </h3>\n"
+"        <br/>\n"
+"        <p>If you have any questions, please do not hesitate to contact us.</p>\n"
+"        <p>Thank you for choosing ${object.company_id.name or 'us'}!</p>\n"
+"        <br/>\n"
+"        <br/>\n"
+"        <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"            <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                <strong style=\"text-transform: uppercase;\">${object.company_id.name}</strong>\n"
+"            </h3>\n"
+"        </div>\n"
+"        <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"            <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"            </span>\n"
+"            % if object.company_id.phone:\n"
+"                <div style=\"margin: 0px; padding: 0px;\">\n"
+"                    Phone: ${object.company_id.phone}\n"
+"                </div>\n"
+"            % endif\n"
+"            % if object.company_id.website:\n"
+"                <div>\n"
+"                    Website: <a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"                </div>\n"
+"            % endif\n"
+"            <p></p>\n"
+"        </div>\n"
 "    </div>\n"
-"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
-"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
-"            ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
-"        </span>\n"
-"        % if object.company_id.phone:\n"
-"            <div style=\"margin: 0px; padding: 0px;\">\n"
-"                Phone: ${object.company_id.phone}\n"
-"            </div>\n"
-"        % endif\n"
-"        % if object.company_id.website:\n"
-"            <div>\n"
-"                Website: <a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
-"            </div>\n"
-"        % endif\n"
-"        <p></p>\n"
-"    </div>\n"
-"</div>\n"
 "\n"
-"        "
+"            "
 msgstr "\n"
-"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF;\">\n"
-"    <p>Hola ${object.partner_id.name or ''},</p>\n"
-"    <p>Su contrato ha sido firmado correctamente: </p>\n"
+"    <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF;\">\n"
+"        <p>Hola ${object.partner_id.name or ''},</p>\n"
+"        <p>Su contrato ha sido firmado correctamente: </p>\n"
 "\n"
-"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
-"        &nbsp;&nbsp;<strong>DETALLES</strong><br />\n"
-"        &nbsp;&nbsp;Contrato: <strong>${object.name}</strong><br />\n"
-"        &nbsp;&nbsp;Fecha de firma: ${object.start_date or ''}<br />\n"
+"        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"            &nbsp;&nbsp;<strong>DETALLES</strong><br />\n"
+"            &nbsp;&nbsp;Contrato: <strong>${object.name}</strong><br />\n"
+"            &nbsp;&nbsp;Fecha de firma: ${object.start_date or ''}<br />\n"
 "\n"
-"        % if object.user_id:\n"
-"        &nbsp;&nbsp;Su contacto: <a href=\"mailto:${object.user_id.email or ''}?subject=Project%20${object.name}\">${object.user_id.name}</a>\n"
-"        % endif\n"
-"    </p>\n"
+"            % if object.user_id:\n"
+"            &nbsp;&nbsp;Su contrato: <a href=\"mailto:${object.user_id.email or ''}?subject=Project%20${object.name}\">${object.user_id.name}</a>\n"
+"            % endif\n"
+"        </p>\n"
 "\n"
-"    <br/>\n"
-"    <p>Si tiene alguna pregunta, no dude en contactarnos.</p>\n"
-"    <p>¡Gracias por elegir ${object.company_id.name or 'nosotros'}!</p>\n"
-"    <br/>\n"
-"    <br/>\n"
-"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
-"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
-"            <strong style=\"text-transform: uppercase;\">${object.company_id.name}</strong>\n"
-"        </h3>\n"
+"        <br/>\n"
+"        <p>Si tiene alguna pregunta, no dude en contactarnos.</p>\n"
+"        <p>Gracias por elegir ${object.company_id.name}!</p>\n"
+"        <br/>\n"
+"        <br/>\n"
+"        <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"            <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                <strong style=\"text-transform: uppercase;\">${object.company_id.name}</strong>\n"
+"            </h3>\n"
+"        </div>\n"
+"        <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"            <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"            </span>\n"
+"            % if object.company_id.phone:\n"
+"                <div style=\"margin: 0px; padding: 0px;\">\n"
+"                    Teléfono: ${object.company_id.phone}\n"
+"                </div>\n"
+"            % endif\n"
+"            % if object.company_id.website:\n"
+"                <div>\n"
+"                    Web: <a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"                </div>\n"
+"            % endif\n"
+"            <p></p>\n"
+"        </div>\n"
 "    </div>\n"
-"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
-"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
-"            ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
-"        </span>\n"
-"        % if object.company_id.phone:\n"
-"            <div style=\"margin: 0px; padding: 0px;\">\n"
-"                Teléfono: ${object.company_id.phone}\n"
-"            </div>\n"
-"        % endif\n"
-"        % if object.company_id.website:\n"
-"            <div>\n"
-"                Web: <a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
-"            </div>\n"
-"        % endif\n"
-"        <p></p>\n"
-"    </div>\n"
-"</div>\n"
 "\n"
-"        "
+"            "
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_res_partner__project_count
@@ -115,7 +115,7 @@ msgstr ""
 #. module: hs_custom
 #: model:mail.template,subject:hs_custom.email_project_template
 msgid "${object.company_id.name} Contract (Ref ${object.name or 'n/a'})"
-msgstr ""
+msgstr "${object.company_id.name} Contrato (Ref ${object.name or 'n/a'})"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.invoice_form_add_custom
@@ -193,6 +193,11 @@ msgstr "Información adicional"
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "Address"
 msgstr "Dirección"
+
+#. module: hs_custom
+#: model:ir.model,name:hs_custom.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_res_users__assignment_cycle
@@ -284,7 +289,7 @@ msgid "Company Name:"
 msgstr "Razón Social: "
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/project.py:95
+#: code:addons/hs_custom/models/project.py:99
 #, python-format
 msgid "Compose Email"
 msgstr "Redactar correo electrónico"
@@ -301,12 +306,18 @@ msgid "Condiciones de pago"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_analytic_line__consumed_materials
+msgid "Consumed Materials %"
+msgstr "% Materiales consumidos"
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__contract_id
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_contract_signature_wzd
 msgid "Contract"
 msgstr "Contrato"
 
@@ -355,6 +366,11 @@ msgstr ""
 #: model:ir.model,name:hs_custom.model_crm_lead2opportunity_partner
 msgid "Convert Lead to Opportunity (not in mass)"
 msgstr "Convertir Iniciativa en Oportunidad (sin ser en masa)"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_analytic_line__correct_completation
+msgid "Correct Completation %"
+msgstr "% Finalización correcta"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
@@ -452,6 +468,11 @@ msgid "Estado"
 msgstr ""
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_analytic_line__execution_time
+msgid "Execution Time %"
+msgstr "% Tiempo de ejecución"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__start_date
 msgid "Fecha de firma"
 msgstr ""
@@ -537,7 +558,7 @@ msgid "Instrucciones para el pago fin de obra"
 msgstr ""
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/crm_lead.py:159
+#: code:addons/hs_custom/models/crm_lead.py:161
 #, python-format
 msgid "Invalid phone number "
 msgstr "Número de teléfono erróneo"
@@ -620,6 +641,12 @@ msgid "My Activities"
 msgstr "Mis actividades"
 
 #. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_task_chatter_document_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.report_taskorder_document_custom
+msgid "Móvil"
+msgstr ""
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_nif
 msgid "NIF"
 msgstr ""
@@ -673,8 +700,13 @@ msgid "Phone"
 msgstr "Teléfono"
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/project_task.py:63
-#: code:addons/hs_custom/models/project_task.py:88
+#: model:ir.model.fields,field_description:hs_custom.field_account_analytic_line__photo_report
+msgid "Photo Report %"
+msgstr "% Reportaje fotográfico"
+
+#. module: hs_custom
+#: code:addons/hs_custom/models/project_task.py:56
+#: code:addons/hs_custom/models/project_task.py:70
 #, python-format
 msgid "Planned hours must be greater than 0"
 msgstr "Las horas planificadas deben ser mayores que 0"
@@ -760,6 +792,11 @@ msgstr "Secuencia"
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
 msgid "Show all records which has next action date is before today"
 msgstr "Mostrar todos los registros que tienen la próxima fecha de acción antes de hoy"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_analytic_line__timesheet_signed
+msgid "Signed Timesheet %"
+msgstr "% Parte de obra firmado"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__state_id
@@ -852,7 +889,12 @@ msgstr "Actividades de Hoy"
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__total
 msgid "Total"
-msgstr "Total"
+msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_account_analytic_line__timesheet_total
+msgid "Total %"
+msgstr "% Total"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_trabajos
@@ -922,13 +964,13 @@ msgid "You cannot delete consumptions from a task."
 msgstr "No puede borrar consumos de una tarea."
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/project_task.py:68
+#: code:addons/hs_custom/models/project_task.py:61
 #, python-format
 msgid "You must add timesheet lines to this task"
 msgstr "Debe añadir partes de horas a esta tarea"
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/project_task.py:66
+#: code:addons/hs_custom/models/project_task.py:59
 #, python-format
 msgid "You must set a source and destination location"
 msgstr "Debe establecer una ubicación de origen y destino"

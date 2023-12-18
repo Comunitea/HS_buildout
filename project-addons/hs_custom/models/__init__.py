@@ -6,3 +6,4 @@ from . import account_invoice
 from . import res_partner
 from . import res_country
 from . import stock
+from . import hr_timesheet

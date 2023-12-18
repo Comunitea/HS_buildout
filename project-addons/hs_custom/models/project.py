@@ -47,14 +47,20 @@ class ProjectProject(models.Model):
         string='Contract acceptance', attachment=True
     )
     total = fields.Float("Total", digits=(16, 2), compute="_compute_total")
+    analytic_parent_id = fields.Many2one('account.analytic.account',
+                                         'Account Analytic parent')
 
     @api.multi
     def write(self, values):
         res = super(ProjectProject, self).write(values)
-        if values.get('name'):
+        if values.get('name') or values.get('analytic_parent_id'):
             for project in self:
-                if project.analytic_account_id and project.allow_timesheets:
-                    project.analytic_account_id.write({'name': project.name})
+                _data={}
+                if project.analytic_account_id:
+                    _data['name'] = project.name
+                    if project.analytic_parent_id:
+                        _data['parent_id'] = project.analytic_parent_id.id
+                    project.analytic_account_id.write(_data)
         self._track_signature(values, 'contract_signature')
         return res
 

@@ -74,7 +74,7 @@
                     </group>
                     <group>
                         <field name="partner_id" required="True"/>
-
+                        <field name="analytic_parent_id" required="True"/>
                         <field name="user_id" string="Comercial" required="True"/>
                         <field name="x_acc_number"/>
                         <label for="street" string="Dirección"/>
@@ -170,6 +170,22 @@
         </field>
     </record>
 
+    <record id="view_task_timesheet_form2_custom" model="ir.ui.view">
+        <field name="name">project.task.timesheet.form.custom</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='name']" position="after">
+                <field name="correct_completation" />
+                <field name="execution_time" />
+                <field name="consumed_materials" />
+                <field name="photo_report" />
+                <field name="timesheet_signed" />
+                <field name="timesheet_total" />
+            </xpath>
+        </field>
+    </record>
+
     <record id="view_task_tree2_inherited_add_custom" model="ir.ui.view">
         <field name="name">project.task.tree.inherited.add_custom</field>
         <field name="model">project.task</field>
@@ -188,6 +204,7 @@
                 <field name="date_start"/>
                 <field name="date_end"/>
             </field>
+
         </field>
     </record>
 

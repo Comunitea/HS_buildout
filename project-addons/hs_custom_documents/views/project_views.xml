@@ -17,17 +17,19 @@
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
-                <button name="action_show_worksheet_signatures" string="Worksheet Sign" type="object" class="button button-primary"/>
                 <button name="action_print_contract" string="Imprimir" type="object" class="button button-primary"/>
             </xpath>
             <xpath expr="//div[@name='options_active']" position="after">
                 <group >
                     <field name="contract_type_id"/>
                     <field name="project_ref" />
+                    <field name="with_guarantee"/>
+                    <field name="guarantee_type" attrs="{'invisible':[('with_guarantee','=',False)],'required':[('with_guarantee','=',True)]}"/>
+                    <field name="is_rcs" invisible="1"/>
                 </group>
             </xpath>
             <xpath expr="//page[@name='settings']" position="after">
-                <page name="work_data_sheet" string="Work Data Sheet">
+                <page name="work_data_sheet" string="Work Data Sheet" attrs="{'invisible':[('is_rcs','=',True)]}">
                     <group>
                         <field name="pure_silent"/>
                         <field name="pure_silent_attic" />
@@ -141,6 +143,49 @@
                     </group>
                     <separator string="Observations" colspan="4" />
                     <field name="observation" />
+                </page>
+                <page name="rcs_work_data_sheet" string="Radon Work Data Sheet" attrs="{'invisible':[('is_rcs','=',False)]}">
+                    <group string="Housing Configuration" col="4">
+                            <field name="rcs_n_floors" />
+                            <field name="rcs_surface_area" />
+                            <field name="rcs_communication_facade" />
+                    </group>
+                    <strong colspan="4" class="text-primary">Underground Zone</strong>
+                    <group name="underground_zone" col="4">
+                        <field name="rcs_underground_zone" />
+                        <field name="rcs_garage" />
+                        <field name="rec_pantry" />
+                        <field name="rcs_play_area" />
+                        <field name="rcs_gym" />
+                        <field name="rcs_laundry" />
+                        <field name="rcs_other_underground" />
+                    </group>
+                    <group string="Facade Typology">
+                        <group colspan="4">
+                            <field name="rcs_finish_facade" />
+                        </group>
+                    </group>
+                    <group string="Windows">
+                        <group col="4" colspan="2">
+                            <field name="rcs_n_aluminum" />
+                            <field name="rcs_n_wood" />
+                            <field name="rcs_n_pvc" />
+                            <field name="rcs_windows_other" />
+                        </group>
+                    </group>
+                    <group string="Images">
+                        <group>
+                            <field name="rcs_potential_environment" />
+                            <field name="rcs_underground_zone_img" />
+                            <field name="rcs_facade" />
+                        </group>
+                    </group>
+                    <separator string="Observations"/>
+                    <field name="rcs_observation" />
+                    <group string="Signature">
+                        <field name="rcs_signature_date" readonly="1"/>
+                        <field name="rcs_signature" widget="signature" readonly="1"/>
+                    </group>
                 </page>
                 <page name="worksheet" string="Work Sheet">
                     <group>

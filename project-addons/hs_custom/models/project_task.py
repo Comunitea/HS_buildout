@@ -48,11 +48,6 @@ class ProjectTask(models.Model):
             self.partner_id = self.project_id.partner_id.id
         return res
 
-    # @api.constrains('planned_hours')
-    # def _check_planned_hours(self):
-    #     for record in self:
-    #         if record.planned_hours <=0:
-    #             raise ValidationError("Planned hours must be greater than 0")
 
     @api.onchange('stage_id')
     def _onchange_stage_id(self):
@@ -66,17 +61,6 @@ class ProjectTask(models.Model):
                     raise ValidationError(_("You must add timesheet lines to this task"))
             super()._onchange_stage_id()
 
-    # _sql_constraints = [
-    #     ('planned_hours_not_zero',
-    #      'CHECK (planned_hours > 0)',
-    #      'Planned hours must be greater than 0'),
-    # ]
-
-    # @api.model
-    # def create(self, vals):
-    #     if 'planned_hours' not in vals.keys():
-    #         raise ValidationError("Planned hours must be greater than 0")
-    #     return super(ProjectTask, self).create(vals)
 
     @api.multi
     def write(self, values):
@@ -108,19 +92,3 @@ class ProjectTaskMaterial(models.Model):
                 stock_move.write({'from_task': True})
         return res
 
-        # task = self[0].task_id
-        # pick_type = task.picking_type_id or self.env.ref(
-        #     'project_task_material_stock.project_task_material_picking_type')
-        # picking_id = task.picking_id or self.env['stock.picking'].create({
-        #     'origin': "{}/{}".format(task.project_id.name, task.name),
-        #     'partner_id': task.partner_id.id,
-        #     'picking_type_id': pick_type.id,
-        #     'location_id': pick_type.default_location_src_id.id,
-        #     'location_dest_id': pick_type.default_location_dest_id.id,
-        # })
-        # for line in self:
-        #     if not line.stock_move_id:
-        #         move_vals = line._prepare_stock_move()
-        #         move_vals.update({'picking_id': picking_id.id or False})
-        #         move_id = self.env['stock.move'].create(move_vals)
-        #         line.stock_move_id = move_id.id

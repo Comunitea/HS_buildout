@@ -104,4 +104,24 @@
         print_report_name="'Worksheet'"
         paperformat="base.paperformat_euro"
     />
+
+    <report
+        id="action_report_work_data_sheet_rcs"
+        string="Work Data Sheet RCS"
+        model="project.project"
+        report_type="qweb-pdf"
+        name="hs_custom_documents.report_work_data_sheet_rcs"
+        file="hs_custom_documents.report_work_data_sheet_rcs"
+        print_report_name="'Work Data Sheet RCS - %s' % (object.name)"
+        paperformat="hs_custom_documents.a4_contracts"/>
+
+     <report
+        id="action_report_common_guarantee"
+        string="Guarantee"
+        model="project.project"
+        report_type="qweb-pdf"
+        name="hs_custom_documents.report_common_guarantee"
+        file="hs_custom_documents.report_common_guarantee"
+        print_report_name="'Guarantee- %s' % (object.name)"
+        paperformat="hs_custom_documents.a4_landscape_guarantee"/>
 </odoo>
