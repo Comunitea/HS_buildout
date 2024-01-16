@@ -70,6 +70,8 @@ class ProjectProject(models.Model):
         if project.contract_signature:
             values = {'contract_signature': project.contract_signature}
             project._track_signature(values, 'contract_signature')
+        if project.analytic_account_id and project.analytic_parent_id:
+            project.analytic_account_id.write({'parent_id': project.analytic_parent_id.id})
         return project
 
     def action_show_contract_signatures(self):
