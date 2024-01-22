@@ -7,7 +7,7 @@
                 <div class="oe_structure">
                 <br/>
                     <div class="text-center mt-5">
-                        <span style="font-size:75pt;font-weight:bold;">Certificado</span>
+                        <span style="font-size:70pt;font-weight:bold;">Certificado</span>
                     </div>
                     <div class="text-center" style="font-size:30pt;font-weight:bold;">
                         <span t-if="doc.guarantee_type == 'cap'">
@@ -24,22 +24,22 @@
                         </span>
                     </div>
                     <div class="text-center mt-3">
-                        <span t-if="doc.guarantee_type == 'cap'" style="color:#18647c;font-size:35pt;font-weight:bold;">
+                        <span t-if="doc.guarantee_type == 'cap'" style="color:#18647c;font-size:30pt;font-weight:bold;">
                             Tratamiento de capilaridad
                         </span>
-                        <span t-elif="doc.guarantee_type == 'misc_deck'" style="color:#18647c;font-size:35pt;font-weight:bold;">
+                        <span t-elif="doc.guarantee_type == 'misc_deck'" style="color:#18647c;font-size:30pt;font-weight:bold;">
                             Rehabilitación de cubierta
                         </span>
-                        <span t-elif="doc.guarantee_type == 'enc'" style="color:#18647c;font-size:35pt;font-weight:bold;">
+                        <span t-elif="doc.guarantee_type == 'enc'" style="color:#18647c;font-size:30pt;font-weight:bold;">
                             Tratamiento de filtración
                         </span>
-                        <span t-elif="doc.guarantee_type == 'misc_facade'" style="color:#18647c;font-size:35pt;font-weight:bold;">
+                        <span t-elif="doc.guarantee_type == 'misc_facade'" style="color:#18647c;font-size:30pt;font-weight:bold;">
                             Rehabilitación de fachada
                         </span>
-                        <span t-elif="doc.guarantee_type == 'misc_terrace'" style="color:#18647c;font-size:35pt;font-weight:bold;">
+                        <span t-elif="doc.guarantee_type == 'misc_terrace'" style="color:#18647c;font-size:30pt;font-weight:bold;">
                             Rehabilitación de terraza
                         </span>
-                        <span t-elif="doc.guarantee_type == 'ps'" style="color:#18647c;font-size:35pt;font-weight:bold;">
+                        <span t-elif="doc.guarantee_type == 'ps'" style="color:#18647c;font-size:30pt;font-weight:bold;">
                             Tratamiento anti condensación
                         </span>
                         <span t-else=""></span>
@@ -49,7 +49,7 @@
                         <span style="font-weight:bold;font-size:20pt;">Contrato <span t-esc="contract[0]" /> Nº <span style="margin-left:10px;color:red;" t-esc="contract[1]"/></span>
                     </div>
                     <div class="mt-4">
-                        <table style="margin:auto;font-size:15pt;">
+                        <table style="margin:auto;font-size:13pt;">
                             <tr>
                                 <td class="pt-1">Nombre:</td>
                                 <td class="pt-1" style="border-bottom:dashed 2px black;padding-left:5px;"><span t-field="doc.partner_id"/></td>
@@ -76,7 +76,7 @@
                             </tr>
                         </table>
 
-                        <table t-if="doc.guarantee_type in ['cap','misc_deck','enc','misc_facade','misc_terrace']" style="margin-left:180px;font-size:15pt;margin-top:20px;">
+                        <table t-if="doc.guarantee_type in ['cap','misc_deck','enc','misc_facade','misc_terrace']" style="margin-left:180px;font-size:13pt;margin-top:20px;">
                             <tr>
                                 <td>
                                     <span>Trabajo garantizado desde el día: </span>
@@ -90,14 +90,14 @@
                                     </span>
                                 </td>
                                 <td class="pl-2" style="border-bottom:dashed 2px black;">
-                                    <span t-if="doc.guarantee_type == 'cap'" t-esc="doc.start_date+relativedelta(years=30)" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
-                                    <span t-elif="doc.guarantee_type == 'enc'" t-esc="doc.start_date+relativedelta(years=15)" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
-                                    <span t-elif="doc.guarantee_type in ['misc_deck','misc_facade','misc_terrace']" t-esc="doc.start_date+relativedelta(years=10)" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
+                                    <span t-if="doc.guarantee_type == 'cap'" t-esc="doc.guarantee_start_date+relativedelta(years=30)" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
+                                    <span t-elif="doc.guarantee_type == 'enc'" t-esc="doc.guarantee_start_date+relativedelta(years=15)" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
+                                    <span t-elif="doc.guarantee_type in ['misc_deck','misc_facade','misc_terrace']" t-esc="doc.guarantee_start_date+relativedelta(years=10)" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
                                 </td>
                             </tr>
                         </table>
                     </div>
-                    <div class="row mt-3" style="page-break-after:always;font-size:15pt;">
+                    <div class="row mt-3" style="page-break-after:always;font-size:13pt;">
                         <div class="col-1"></div>
                         <div class="col-4">
                             <div>Cliente</div>
@@ -128,9 +128,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="page">
-                <div class="oe_structure">
+                <div style="page-break-after:always;"/>
+                 <div>
+                <div class="oe_structure mt-3">
+                <br/>
+                <br/>
                 <br/>
                 <br/>
                     <div t-if="doc.guarantee_type == 'cap'" class="mt-5 px-5" style="font-size:10pt;">
@@ -404,6 +406,8 @@
                     </div>
                </div>
             </div>
+            </div>
+
         </t>
     </template>
 

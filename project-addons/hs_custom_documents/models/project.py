@@ -169,6 +169,8 @@ class ProjectProject(models.Model):
 
     guarantee_type = fields.Selection(string="Guarantee Type",
                                       selection=[('cap', 'CAP'), ('misc_deck', 'MISC Deck'), ('enc', 'ENC'),('misc_facade','MISC Facade'),('misc_terrace','MISC Terrace'),('ps','PS')])
+    guarantee_start_date = fields.Date(string="Guarantee Start Date")
+
 
     @api.depends('contract_type_id')
     def _compute_is_rcs(self):
@@ -183,6 +185,7 @@ class ProjectProject(models.Model):
         for record in self:
             if not record.with_guarantee:
                 record.guarantee_type = ''
+                record.guarantee_start_date = False
 
     @api.model
     def create(self, vals):
@@ -332,18 +335,6 @@ class ProjectProject(models.Model):
             doc = report.render_qweb_pdf([self.id])[0]
             att_doc = self.sudo().env['ir.attachment'].create({
                 'name': 'WorkDataSheet.pdf',
-                'type': 'binary',
-                'datas': base64.b64encode(doc),
-                'res_model': 'project.project',
-                'res_id': self.id,
-                'mimetype': 'application/pdf',
-            })
-            attachments.append(att_doc.id)
-        if self.with_guarantee:
-            report = self.env['ir.actions.report']._get_report_from_name('hs_custom_documents.report_common_guarantee')
-            doc = report.render_qweb_pdf([self.id])[0]
-            att_doc = self.sudo().env['ir.attachment'].create({
-                'name': 'Guarantee.pdf',
                 'type': 'binary',
                 'datas': base64.b64encode(doc),
                 'res_model': 'project.project',

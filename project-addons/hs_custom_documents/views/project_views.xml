@@ -25,6 +25,7 @@
                     <field name="project_ref" />
                     <field name="with_guarantee"/>
                     <field name="guarantee_type" attrs="{'invisible':[('with_guarantee','=',False)],'required':[('with_guarantee','=',True)]}"/>
+                    <field name="guarantee_start_date" attrs="{'invisible':[('with_guarantee','=',False)],'required':[('with_guarantee','=',True)]}"/>
                     <field name="is_rcs" invisible="1"/>
                 </group>
             </xpath>
@@ -188,8 +189,8 @@
                     </group>
                 </page>
                 <page name="worksheet" string="Work Sheet">
-                        <!-- <field name="worksheet_img" widget='image' /> -->
-                    <label string="Work Sheet Image"/>
+                    <!-- <field name="worksheet_img" widget='image' />-->
+                    <label string="Work Sheet Image" for="worksheet_img"/>
                     <field name="worksheet_img"
                         widget="image_paint"
                         width="600"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-12 11:48+0000\n"
-"PO-Revision-Date: 2023-12-12 11:48+0000\n"
+"POT-Creation-Date: 2024-01-22 15:56+0000\n"
+"PO-Revision-Date: 2024-01-22 15:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_common_guarantee_document
-msgid "<span style=\"font-size:75pt;font-weight:bold;\">Certificado</span>"
+msgid "<span style=\"font-size:70pt;font-weight:bold;\">Certificado</span>"
 msgstr ""
 
 #. module: hs_custom_documents
@@ -674,7 +674,7 @@ msgstr "Activo"
 #: selection:contract.signature.wizard,rcs_meter_type:0
 #: selection:project.project,rcs_meter_type:0
 msgid "Airthings"
-msgstr "Airthings"
+msgstr ""
 
 #. module: hs_custom_documents
 #: model_terms:ir.ui.view,arch_db:hs_custom_documents.report_work_data_sheet_document_rcs
@@ -1227,6 +1227,11 @@ msgstr ""
 #: model:ir.actions.report,name:hs_custom_documents.action_report_common_guarantee
 msgid "Guarantee"
 msgstr "Garantía"
+
+#. module: hs_custom_documents
+#: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__guarantee_start_date
+msgid "Guarantee Start Date"
+msgstr "Fecha de inicio de garantía"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__guarantee_type
@@ -2115,6 +2120,7 @@ msgstr "Hoja de obra"
 
 #. module: hs_custom_documents
 #: model:ir.model.fields,field_description:hs_custom_documents.field_project_project__worksheet_img
+#: model_terms:ir.ui.view,arch_db:hs_custom_documents.project_project_form_inherit
 msgid "Work Sheet Image"
 msgstr "Imagen de la hoja de obra"
 

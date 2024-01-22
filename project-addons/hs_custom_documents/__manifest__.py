@@ -10,7 +10,8 @@
     'depends': [
         'hs_field_service',
         'report_qweb_element_page_visibility',
-        'web_widget_image_paint'
+        'web_widget_image_paint',
+        'report_qweb_pdf_watermark'
     ],
     'data': [
         'security/ir.model.access.csv',
