@@ -8,7 +8,9 @@
     'category': 'Custom',
     'contributors': ['Comunitea ', 'Miguel Vázquez <miguel@comunitea.com>'],
     'depends': [
-        'hs_field_service','report_qweb_element_page_visibility'
+        'hs_field_service',
+        'report_qweb_element_page_visibility',
+        'web_widget_image_paint'
     ],
     'data': [
         'security/ir.model.access.csv',

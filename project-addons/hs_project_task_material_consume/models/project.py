@@ -98,3 +98,4 @@ class ProjectTaskMaterial(models.Model):
         for record in self:
             if record.stock_move_id:
                 record.stock_move_id._action_cancel()
+                record.analytic_line_id.unlink()

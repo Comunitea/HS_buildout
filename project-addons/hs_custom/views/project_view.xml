@@ -182,6 +182,7 @@
                 <field name="photo_report" />
                 <field name="timesheet_signed" />
                 <field name="timesheet_total" />
+                <field name="survey_date" />
             </xpath>
         </field>
     </record>

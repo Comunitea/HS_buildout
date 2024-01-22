@@ -188,9 +188,22 @@
                     </group>
                 </page>
                 <page name="worksheet" string="Work Sheet">
-                    <group>
-                        <field name="worksheet_img" widget='image' />
-                    </group>
+                        <!-- <field name="worksheet_img" widget='image' /> -->
+                    <label string="Work Sheet Image"/>
+                    <field name="worksheet_img"
+                        widget="image_paint"
+                        width="600"
+                        height="400"
+                        readonly="0"
+                        background="/hs_custom_documents/static/src/img/my_background.png"
+                        options="{'drawing_mode': True,
+                                    'edit_background_image': True,
+                                    'background_image_field': 'my_background_image_field',
+                                    'add_marker': True,
+                                    'marker_shape': 'x-sign',
+                                    'marker_color': 'red',
+                                    'marker_size': 20}"/>
+
                     <group>
                         <field name="worksheet_wall_thickness"/>
                         <field name="worksheet_wall_type"/>

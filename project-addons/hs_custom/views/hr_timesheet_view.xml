@@ -13,6 +13,7 @@
                 <field name="photo_report" />
                 <field name="timesheet_signed" />
                 <field name="timesheet_total" />
+                <field name="survey_date" />
             </xpath>
         </field>
     </record>
@@ -29,6 +30,21 @@
                 <field name="photo_report" />
                 <field name="timesheet_signed" />
                 <field name="timesheet_total" />
+                <field name="survey_date" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_timesheet_line_search_inherit" model="ir.ui.view">
+        <field name="name">account.analytic.line.search.inherit</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="survey_date" />
+            </xpath>
+            <xpath expr="//filter[@name='month']" position="after">
+                <filter name="survey_date" string="Survey Conducted On" date="survey_date"/>
             </xpath>
         </field>
     </record>
