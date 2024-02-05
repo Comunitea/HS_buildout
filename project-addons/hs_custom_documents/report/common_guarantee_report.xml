@@ -44,9 +44,12 @@
                         </span>
                         <span t-else=""></span>
                     </div>
-                    <t t-set="contract" t-value="doc.project_ref.split('/') if doc and doc.project_ref else []"/>
+                    <!-- <t t-set="contract" t-value="doc.project_ref.split('/') if doc and doc.project_ref else []"/>
                     <div  t-if="contract" class="text-center">
                         <span style="font-weight:bold;font-size:20pt;">Contrato <span t-esc="contract[0]" /> Nº <span style="margin-left:10px;color:red;" t-esc="contract[1]"/></span>
+                    </div> -->
+                    <div class="text-center">
+                        <span style="font-weight:bold;font-size:20pt;" t-field="doc.name"/>
                     </div>
                     <div class="mt-4">
                         <table style="margin:auto;font-size:13pt;">

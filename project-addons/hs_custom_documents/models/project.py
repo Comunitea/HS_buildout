@@ -10,7 +10,7 @@ class ProjectProject(models.Model):
 
     _inherit = 'project.project'
 
-    project_ref = fields.Char(string="Ref", readonly=True)
+    project_ref = fields.Char(string="Ref", readonly=False)
 
 
     pure_silent = fields.Boolean(string="PureSilent")
