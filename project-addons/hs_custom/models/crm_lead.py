@@ -67,6 +67,7 @@ class CrmLead(models.Model):
                 ('name', '=', record.zip)], limit=1)
             if zip_id:
                 record.state_id = zip_id.city_id.state_id.id or False
+                record._onchange_state_id()
 
     @api.onchange('state_id', 'sale_type_id')
     def _onchange_state_id(self):
@@ -173,7 +174,6 @@ class CrmLead(models.Model):
                         lambda x: x.active)
                     self = self.action_merge(tomerge)
                     self.managed= True
-
                     if users:
                         # self.allocate_salesman([users[0].id], self.team_id.id)
                         self.user_id = users[0]
@@ -193,9 +193,7 @@ class CrmLead(models.Model):
                                              [self.user_id.id], self.team_id.id)
                     self.message_post(body="Cupón nuevo", subtype='mail.mt_comment')
                 elif users_list and not self.user_id:
-                    if not self.state_id and self.zip:
-                        self._onchange_zip()
-                    self._onchange_state_id()
+                    self._onchange_zip()
                     if self.user_id:
                         self.convert_opportunity(self.partner_id.id,
                                                  [self.user_id.id], self.team_id.id)
@@ -209,13 +207,16 @@ class CrmLead(models.Model):
     @api.multi
     def get_users_list(self):
         self.ensure_one()
-        if self.state_id and self.state_id.user_list_ids:
-            users_list = self.state_id.user_list_ids.filtered(
-                lambda x: x.sale_type_id == self.sale_type_id)
-            if users_list:
-                return users_list[0]
-            else:
-                return False
+        if self.zip:
+            zip_id = self.env['res.city.zip'].search([
+                ('name', '=', self.zip)], limit=1)
+            if zip_id and self.state_id and self.state_id.user_list_ids:
+                users_list = self.state_id.user_list_ids.filtered(
+                    lambda x: zip_id in x.zip_ids and x.sale_type_id == self.sale_type_id)
+                if users_list:
+                    return users_list[0]
+                else:
+                    return False
         else:
             return False
 

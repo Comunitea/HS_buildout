@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-17 14:55+0000\n"
-"PO-Revision-Date: 2024-01-17 14:55+0000\n"
+"POT-Creation-Date: 2024-02-28 12:47+0000\n"
+"PO-Revision-Date: 2024-02-28 12:47+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -200,6 +200,11 @@ msgid "Address"
 msgstr "Dirección"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__allowed_zip_ids
+msgid "Allowed Zip Codes"
+msgstr "Códigos postales permitidos"
+
+#. module: hs_custom
 #: model:ir.model,name:hs_custom.model_account_analytic_line
 msgid "Analytic Line"
 msgstr "Línea analítica"
@@ -255,6 +260,11 @@ msgstr "Cancelar"
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__type_id
 msgid "Categoría"
 msgstr ""
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_country_state__city_ids
+msgid "Cities"
+msgstr "Ciudades"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
@@ -563,7 +573,7 @@ msgid "Instrucciones para el pago fin de obra"
 msgstr ""
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/crm_lead.py:161
+#: code:addons/hs_custom/models/crm_lead.py:162
 #, python-format
 msgid "Invalid phone number "
 msgstr "Número de teléfono erróneo"
@@ -990,6 +1000,16 @@ msgstr "Debe establecer una ubicación de origen y destino"
 #: model_terms:ir.ui.view,arch_db:hs_custom.crm_case_form_view_oppor_custom
 msgid "ZIP"
 msgstr "C.P."
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_users_list_form
+msgid "ZIPs"
+msgstr "Códigos postales"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users_list__zip_ids
+msgid "Zip Codes"
+msgstr "Códigos postales"
 
 #. module: hs_custom
 #: model:ir.actions.act_window,name:hs_custom.users_zone_action

@@ -43,7 +43,8 @@ class UsersZone(models.Model):
     name = fields.Char("Name")
     user_list_ids = fields.Many2many(comodel_name="res.users.list",string="User List")
     user_ids = fields.Many2many(comodel_name="res.users",string="Managers",
-                                domain = lambda self: [('groups_id','in',[self.env.ref('hs_custom.group_sale_salesman_zone_leads').id,self.env.ref('sales_team.group_sale_salesman_all_leads').id ]
+                                domain = lambda self: [('groups_id','in',[self.env.ref('hs_custom.group_sale_salesman_zone_leads').id,
+                                                                          self.env.ref('sales_team.group_sale_salesman_all_leads').id ]
                                                         )])
 
 
@@ -70,16 +71,23 @@ class ResUsersList(models.Model):
     )
     assignment_cycle = fields.Integer('Assignment Cycle', readonly=True)
 
-    # def rotate_users(self):
-    #     self.ensure_one()
+    zip_ids = fields.Many2many(comodel_name="res.city.zip", string="Zip Codes",
+                               domain="[('id', 'in', allowed_zip_ids)]",
+                               default=lambda self: self.allowed_zip_ids.ids)
 
-    #     if self.user_ids:
-    #         current_user = self.user_id
-    #         if current_user:
-    #             current_index = self.user_ids.ids.index(current_user.id)
-    #             next_index = (current_index + 1) % len(self.user_ids)
-    #             next_user = self.user_ids[next_index]
-    #             self.last_assigned_user = next_user
-    #             self.user_id = next_user
-    #         else:
-    #             self.user_id = self.user_ids[0]
+    allowed_zip_ids = fields.Many2many(comodel_name="res.city.zip",
+                                       string="Allowed Zip Codes",
+                                       compute="_compute_allowed_zip_ids")
+
+    @api.depends('state_id', 'state_id.city_ids')
+    def _compute_allowed_zip_ids(self):
+        for record in self:
+            if record.state_id and record.state_id.city_ids:
+                record.allowed_zip_ids = record.state_id.city_ids.mapped('zip_ids')
+            else:
+                record.allowed_zip_ids = False
+
+    @api.onchange('state_id')
+    def _onchange_state_id(self):
+        for record in self:
+            record.zip_ids = record.allowed_zip_ids

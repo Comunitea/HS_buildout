@@ -30,6 +30,10 @@
                             </tree>
                         </field>
                     </page>
+                     <page name="zips" string="ZIPs">
+                        <field name="allowed_zip_ids" invisible="1"/>
+                        <field name="zip_ids"/>
+                    </page>
                 </notebook>
             </form>
         </field>
