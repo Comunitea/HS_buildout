@@ -85,7 +85,7 @@
                                     <span>Trabajo garantizado desde el día: </span>
                                 </td>
                                 <td class="pl-2" style="border-bottom:dashed 2px black;">
-                                <span t-esc="doc.start_date" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
+                                <span t-esc="doc.guarantee_start_date" t-options="{'widget':'date','format': 'dd/MM/YYYY'}"/>
                                 </td>
                                 <td class="pl-2">
                                     <span>
