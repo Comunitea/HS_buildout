@@ -171,6 +171,7 @@ class ProjectProject(models.Model):
                                       selection=[('cap', 'CAP'), ('misc_deck', 'MISC Deck'), ('enc', 'ENC'),('misc_facade','MISC Facade'),('misc_terrace','MISC Terrace'),('ps','PS')])
     guarantee_start_date = fields.Date(string="Guarantee Start Date")
 
+    manual_contract = fields.Boolean(string="Manual Contract")
 
     @api.depends('contract_type_id')
     def _compute_is_rcs(self):
@@ -189,7 +190,8 @@ class ProjectProject(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('contract_type_id'):
+
+        if not vals.get('manual_contract',False) and  vals.get('contract_type_id', False):
             contract_type = self.env['project.contract.type'].browse(vals['contract_type_id'])
             if contract_type.contract_type == 'mps':
                 vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.mps')

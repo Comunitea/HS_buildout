@@ -18,7 +18,9 @@
         'sale_order_type',
         'hs_project_task_material_consume',
         'crm_phone_validation',
-        'account_analytic_parent'
+        'account_analytic_parent',
+        'project_template',
+        'project_status'
     ],
     'data': [
         'security/security.xml',

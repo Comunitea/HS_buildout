@@ -33,7 +33,7 @@ class ResUsers(models.Model):
     )
     assignment_cycle = fields.Integer('Assignment Cycle', default=1)
     zone_ids = fields.Many2many(comodel_name="res.users.zone", string="Zones")
-
+    commercial_project_ids = fields.One2many('project.project', 'user_id', string='Projects')
 
 class UsersZone(models.Model):
 

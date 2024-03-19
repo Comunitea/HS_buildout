@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 12:47+0000\n"
-"PO-Revision-Date: 2024-02-28 12:47+0000\n"
+"POT-Creation-Date: 2024-03-19 12:40+0000\n"
+"PO-Revision-Date: 2024-03-19 12:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -147,6 +147,11 @@ msgstr ""
 msgid "<br/><br/><br/><br/><br/><br/>\n"
 "            <b>Validez del presupuesto: 30 días</b>"
 msgstr ""
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_kanban_inherit
+msgid "<span class=\"badge-pill badge-success float-right\" attrs=\"{'invisible': [('validated', '=', False)]}\">Validated</span>"
+msgstr "<span class=\"badge-pill badge-success float-right\" attrs=\"{'invisible': [('validated', '=', False)]}\">Validado</span>"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_invoice_document_custom
@@ -304,7 +309,7 @@ msgid "Company Name:"
 msgstr "Razón Social: "
 
 #. module: hs_custom
-#: code:addons/hs_custom/models/project.py:103
+#: code:addons/hs_custom/models/project.py:107
 #, python-format
 msgid "Compose Email"
 msgstr "Redactar correo electrónico"
@@ -743,6 +748,11 @@ msgid "Project Manager"
 msgstr "Responsable de proyecto"
 
 #. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_res_users__commercial_project_ids
+msgid "Projects"
+msgstr "Proyectos"
+
+#. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_project_project__x_state_id
 #: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
 msgid "Provincia"
@@ -811,7 +821,7 @@ msgstr "Mostrar todos los registros que tienen la próxima fecha de acción ante
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_account_analytic_line__timesheet_signed
 msgid "Signed Timesheet %"
-msgstr "% Parte de obra firmado "
+msgstr "% Parte de obra firmado"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_res_users_list__state_id
@@ -887,6 +897,11 @@ msgstr "Etapa de la tarea"
 #: model_terms:ir.ui.view,arch_db:hs_custom.view_picking_form_inherit
 msgid "Tasks"
 msgstr "Tareas"
+
+#. module: hs_custom
+#: model:res.groups,name:hs_custom.group_sale_technical_delegate
+msgid "Technical Delegate"
+msgstr "Delegado técnico"
 
 #. module: hs_custom
 #: model_terms:ir.ui.view,arch_db:hs_custom.report_task_chatter_document_custom
@@ -965,6 +980,19 @@ msgstr "Lista de usuarios"
 #: model_terms:ir.ui.view,arch_db:hs_custom.res_country_state_form_inherit
 msgid "Users Lists"
 msgstr "Listas de usuarios"
+
+#. module: hs_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+msgid "Validate"
+msgstr "Validar"
+
+#. module: hs_custom
+#: model:ir.model.fields,field_description:hs_custom.field_project_project__validated
+#: model_terms:ir.ui.view,arch_db:hs_custom.edit_project_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_custom
+#: model_terms:ir.ui.view,arch_db:hs_custom.view_project_project_filter_inherit
+msgid "Validated"
+msgstr "Validado"
 
 #. module: hs_custom
 #: model:ir.model.fields,field_description:hs_custom.field_contract_signature_wizard__x_vendedor

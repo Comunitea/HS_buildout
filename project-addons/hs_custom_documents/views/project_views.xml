@@ -21,11 +21,12 @@
             </xpath>
             <xpath expr="//div[@name='options_active']" position="after">
                 <group >
+                    <field name="manual_contract" groups="project.group_project_manager" />
                     <field name="contract_type_id"/>
                     <field name="project_ref" />
-                    <field name="with_guarantee"/>
-                    <field name="guarantee_type" attrs="{'invisible':[('with_guarantee','=',False)],'required':[('with_guarantee','=',True)]}"/>
-                    <field name="guarantee_start_date" attrs="{'invisible':[('with_guarantee','=',False)],'required':[('with_guarantee','=',True)]}"/>
+                    <field name="with_guarantee" groups="project.group_project_manager"/>
+                    <field name="guarantee_type" groups="project.group_project_manager" attrs="{'invisible':[('with_guarantee','=',False)],'required':[('with_guarantee','=',True)]}"/>
+                    <field name="guarantee_start_date" groups="project.group_project_manager" attrs="{'invisible':[('with_guarantee','=',False)],'required':[('with_guarantee','=',True)]}"/>
                     <field name="is_rcs" invisible="1"/>
                 </group>
             </xpath>

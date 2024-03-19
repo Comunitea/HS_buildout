@@ -1,33 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <!-- <record id="group_project_comercial" model="res.groups">
-            <field name="name">Comercial</field>
-            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-            <field name="category_id" ref="base.module_category_project_management"/>
-        </record>
-
-        <record model="ir.rule" id="project_comercial_projects">
-            <field name="name">Project: project comercial</field>
-            <field name="model_id" ref="model_project_project"/>
-            <field name="domain_force">[('contract_signature','!=',False)]</field>
-            <field eval="0" name="perm_unlink"/>
-            <field eval="1" name="perm_write"/>
-            <field eval="0" name="perm_read"/>
-            <field eval="0" name="perm_create"/>
-            <field name="groups" eval="[(4,ref('hs_custom.group_project_comercial'))]"/>
-        </record>
-
-        <record model="ir.rule" id="project_comercial_projects">
-            <field name="name">Project: project comercial read</field>
-            <field name="model_id" ref="model_project_project"/>
-            <field name="domain_force">[(1,'=',1)]</field>
-            <field eval="0" name="perm_unlink"/>
-            <field eval="0" name="perm_write"/>
-            <field eval="1" name="perm_read"/>
-            <field eval="0" name="perm_create"/>
-            <field name="groups" eval="[(4,ref('hs_custom.group_project_comercial'))]"/>
-        </record> -->
-
         <record id="group_sale_salesman_zone_leads" model="res.groups">
             <field name="name">Zone Documents</field>
             <field name="category_id" ref="base.module_category_sales_management"/>
@@ -83,17 +55,66 @@
              <field name="perm_unlink" >False</field>
         </record>
 
-        <!-- <record id="project_project_see_zone" model="ir.rule">
-            <field name="name">Zone Projetcs</field>
-            <field ref="project.model_project_project" name="model_id"/>
-            <field name="domain_force">['|','|',('user_id','in',user.zone_ids.mapped('user_list_ids').mapped('user_ids').ids),('user_id','=',user.id),('user_id','=',False)]</field>
-            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
+        <!--DELEGADO TÉCNICO-->
+        <record id="group_sale_technical_delegate" model="res.groups">
+            <field name="name">Technical Delegate</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="implied_ids" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
         </record>
 
-        <record id="project_task_see_zone" model="ir.rule">
-            <field name="name">Zone Tasks</field>
+        <record id="ir_attachment_delegate" model="ir.rule">
+            <field name="name">ir.attachment only assets and projects</field>
+            <field ref="base.model_ir_attachment" name="model_id"/>
+            <field name="domain_force">['|',('res_model', '=', 'ir.ui.view'),'&amp;',('res_model','=','project.project'),('res_id','in',user.commercial_project_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_technical_delegate'))]"/>
+            <field name="perm_read" >True</field>
+            <field name="perm_write" >True</field>
+            <field name="perm_create" >True</field>
+            <field name="perm_unlink" >True</field>
+        </record>
+
+        <record id="no_mail_template_delegate" model="ir.rule">
+            <field name="name">mail templates projects</field>
+            <field ref="mail.model_mail_template" name="model_id"/>
+            <field name="domain_force" eval="[('id','=', ref('hs_custom.email_project_template'))]"/>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_technical_delegate'))]"/>
+            <field name="perm_read" >True</field>
+            <field name="perm_write" >False</field>
+            <field name="perm_create" >False</field>
+            <field name="perm_unlink" >False</field>
+        </record>
+
+        <record id="mail_message_delegate" model="ir.rule">
+            <field name="name">	Mensajes Del Técnico</field>
+            <field ref="mail.model_mail_message" name="model_id"/>
+            <field name="domain_force">[(1,'=', 1)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_technical_delegate'))]"/>
+            <field name="perm_read" >True</field>
+            <field name="perm_write" >True</field>
+            <field name="perm_create" >True</field>
+            <field name="perm_unlink" >True</field>
+        </record>
+
+        <record id="project_signature_delegate" model="ir.rule">
+            <field name="name">Escritura de contratos</field>
             <field ref="project.model_project_project" name="model_id"/>
-            <field name="domain_force">['|','|',('user_id','in',user.zone_ids.mapped('user_list_ids').mapped('user_ids').ids),('user_id','=',user.id),('user_id','=',False)]</field>
-            <field name="groups" eval="[(4, ref('hs_custom.group_sale_salesman_zone_leads'))]"/>
-        </record> -->
+            <field name="domain_force">[('contract_signature', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_technical_delegate'))]"/>
+            <field name="perm_write" >True</field>
+            <field name="perm_create" >True</field>
+            <field name="perm_read" >False</field>
+            <field name="perm_unlink" >False</field>
+        </record>
+
+        <record id="personal_project_delegate" model="ir.rule">
+            <field name="name">Personal contracts</field>
+            <field ref="project.model_project_project" name="model_id"/>
+            <field name="domain_force">['|','|',('user_id','=',user.id),('user_id','=',False),('message_partner_ids', 'in', [user.partner_id.id])]</field>
+            <field name="groups" eval="[(4, ref('hs_custom.group_sale_technical_delegate'))]"/>
+            <field name="perm_read" >True</field>
+            <field name="perm_unlink" >False</field>
+            <field name="perm_write" >False</field>
+            <field name="perm_create" >False</field>
+        </record>
+
 </odoo>

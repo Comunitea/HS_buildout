@@ -119,12 +119,12 @@ class ContractSignatureWizard(models.TransientModel):
 
     def action_update_contract_signature(self):
         if self.worksheet_signature and self.worksheet_id.worksheet_signature != self.worksheet_signature:
-            self.worksheet_id.write({
+            self.worksheet_id.sudo().write({
                 'worksheet_signature': self.worksheet_signature,
                 'worksheet_signature_date': fields.Date.today()
             })
         if self.is_rcs and self.rcs_signature and self.worksheet_id.rcs_signature != self.rcs_signature:
-            self.worksheet_id.write({
+            self.worksheet_id.sudo().write({
                 'rcs_signature': self.rcs_signature,
                 'rcs_signature_date': fields.Date.today()
             })

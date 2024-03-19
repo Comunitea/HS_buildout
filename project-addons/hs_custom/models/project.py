@@ -26,8 +26,7 @@ class ProjectProject(models.Model):
     x_trabajos = fields.Text("Trabajos a realizar", required=True)
     x_condiciones_pagos = fields.Text("Condiciones de Pago", required=True)
     x_subtotal = fields.Float("Subtotal", digits=(16, 2), required=True)
-    x_subtotalneto = fields.Float("Subtotal Neto", digits=(16, 2),
-                                  required=True)
+    x_subtotalneto = fields.Float("Subtotal Neto", digits=(16, 2))
     x_vendedor = fields.Char("Vendedor", readonly=True)
     x_nif = fields.Char("NIF", readonly=True)
     x_estado = fields.Char("Estado", readonly=True)
@@ -40,8 +39,7 @@ class ProjectProject(models.Model):
     end_date = fields.Date("Fin de obra")
     sale_type_id = fields.Many2one("sale.order.type", "División",
                                    required=True)
-    responsible_id = fields.Many2one("res.users", "Responsable de proyecto",
-                                     required=True)
+    responsible_id = fields.Many2one("res.users", "Responsable de proyecto")
 
     contract_signature = fields.Binary(
         string='Contract acceptance', attachment=True
@@ -49,6 +47,8 @@ class ProjectProject(models.Model):
     total = fields.Float("Total", digits=(16, 2), compute="_compute_total")
     analytic_parent_id = fields.Many2one('account.analytic.account',
                                          'Account Analytic parent')
+
+    validated = fields.Boolean("Validated", default=False)
 
     @api.multi
     def write(self, values):
@@ -63,6 +63,10 @@ class ProjectProject(models.Model):
                     project.analytic_account_id.write(_data)
         self._track_signature(values, 'contract_signature')
         return res
+
+    def toggle_validate(self):
+        for project in self:
+            project.validated = not project.validated
 
     @api.model
     def create(self, values):

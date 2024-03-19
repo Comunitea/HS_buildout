@@ -31,9 +31,10 @@ class ContractSignatureWizard(models.TransientModel):
 
     def action_update_contract_signature(self):
         if self.contract_signature and self.contract_id.contract_signature != self.contract_signature:
-            self.contract_id.write({
-                'contract_signature': self.contract_signature,
+            self.contract_id.sudo().write({
                 'start_date': fields.Date.today(),
+                'contract_signature': self.contract_signature,
+
             })
             return self.sudo().contract_id.action_contract_send()
         return True
