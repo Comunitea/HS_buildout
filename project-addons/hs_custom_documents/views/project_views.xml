@@ -21,7 +21,7 @@
             </xpath>
             <xpath expr="//div[@name='options_active']" position="after">
                 <group >
-                    <field name="manual_contract" groups="project.group_project_manager" />
+                    <field name="manual_contract"/>
                     <field name="contract_type_id"/>
                     <field name="project_ref" />
                     <field name="with_guarantee" groups="project.group_project_manager"/>

@@ -164,4 +164,17 @@
         </field>
     </record>
 
+
+    <record id="crm_case_kanban_view_leads_inherit" model="ir.ui.view">
+        <field name="name">crm.case.kanban.view.leads.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="on_create" value="0"/>
+                <attribute name="quick_create_view" value="0"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

@@ -10,7 +10,7 @@ class ProjectProject(models.Model):
 
     _inherit = 'project.project'
 
-    project_ref = fields.Char(string="Ref", readonly=False)
+    project_ref = fields.Char(string="Ref", readonly=False, copy=False)
 
 
     pure_silent = fields.Boolean(string="PureSilent")
@@ -96,7 +96,7 @@ class ProjectProject(models.Model):
     observation = fields.Text(string="Observation")
 
     #Hoja de obra
-    worksheet_img = fields.Binary(string="Work Sheet Image", attachment=True)
+    worksheet_img = fields.Binary(string="Work Sheet Image", attachment=True, copy=False)
     has_radiators = fields.Boolean(string="Radiators")
     radiators_qty = fields.Integer(string="Radiators Quantity")
     has_toilet = fields.Boolean(string="Toilet")
@@ -115,11 +115,11 @@ class ProjectProject(models.Model):
     worksheet_wall_type = fields.Char(string="Type")
     exceptional_conditions = fields.Text(string="Exceptional Conditions")
     worksheet_signature = fields.Binary(
-        string='Worksheet acceptance'
+        string='Worksheet acceptance', copy=False
     )
-    worksheet_signature_date = fields.Date(string="Work Sheet Signature Date")
+    worksheet_signature_date = fields.Date(string="Work Sheet Signature Date", copy=False)
 
-    contract_type_id = fields.Many2one(comodel_name='project.contract.type', string="Contract Type", required=True)
+    contract_type_id = fields.Many2one(comodel_name='project.contract.type', string="Contract Type", required=True, copy=False)
     contracted_distance = fields.Float(string="Contracted Distance(m)")
 
     #RADÓN
@@ -190,23 +190,10 @@ class ProjectProject(models.Model):
 
     @api.model
     def create(self, vals):
-
         if not vals.get('manual_contract',False) and  vals.get('contract_type_id', False):
             contract_type = self.env['project.contract.type'].browse(vals['contract_type_id'])
-            if contract_type.contract_type == 'mps':
-                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.mps')
-            elif contract_type.contract_type == 'ps':
-                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.ps')
-            elif contract_type.contract_type == 'misc':
-                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.misc')
-            elif contract_type.contract_type == 'enc':
-                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.enc')
-            elif contract_type.contract_type == 'cap':
-                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.cap')
-            elif contract_type.contract_type == 'rcs':
-                vals['project_ref'] = self.env['ir.sequence'].next_by_code('project.project.rcs')
-            else:
-                vals['project_ref'] = '/'
+            vals['project_ref'] = self._change_project_ref(contract_type)
+            vals['name'] = self._change_project_name(vals['project_ref'], vals.get('name', False))
         project = super(ProjectProject, self).create(vals)
         if project.worksheet_signature:
             values = {'worksheet_signature': project.worksheet_signature}
@@ -220,7 +207,45 @@ class ProjectProject(models.Model):
     def write(self, values):
         self._track_signature(values, 'worksheet_signature')
         self._track_signature(values, 'rcs_signature')
-        return super(ProjectProject, self).write(values)
+        res = super(ProjectProject, self).write(values)
+        if values.get('contract_type_id', False) and not values.get('manual_contract', False):
+            contract_type = self.env['project.contract.type'].browse(values['contract_type_id'])
+            for project in self.filtered(lambda x: not x.manual_contract):
+                vals={}
+                vals['project_ref'] = self._change_project_ref(contract_type)
+                vals['name'] = self._change_project_name(vals['project_ref'], project.name)
+                project.write(vals)
+        return res
+
+    def _change_project_ref(self, contract_type):
+        if not contract_type:
+            return False
+        project_ref = '/'
+        if contract_type.contract_type == 'mps':
+            project_ref = self.env['ir.sequence'].next_by_code('project.project.mps')
+        elif contract_type.contract_type == 'ps':
+            project_ref = self.env['ir.sequence'].next_by_code('project.project.ps')
+        elif contract_type.contract_type == 'misc':
+            project_ref = self.env['ir.sequence'].next_by_code('project.project.misc')
+        elif contract_type.contract_type == 'enc':
+            project_ref = self.env['ir.sequence'].next_by_code('project.project.enc')
+        elif contract_type.contract_type == 'cap':
+            project_ref = self.env['ir.sequence'].next_by_code('project.project.cap')
+        elif contract_type.contract_type == 'rcs':
+            project_ref = self.env['ir.sequence'].next_by_code('project.project.rcs')
+        return project_ref
+
+    def _change_project_name(self,project_ref, name):
+        if not project_ref or project_ref == '/':
+            return name
+        if not name:
+            return project_ref
+        split_name = name.split(' - ')
+        if len(split_name) > 1:
+            split_name[0] = project_ref
+            return ' - '.join(split_name)
+        else:
+            return project_ref + ' - ' + name
 
     def action_show_worksheet_signatures(self):
         return {'type': 'ir.actions.act_window',

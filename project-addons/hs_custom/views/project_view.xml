@@ -179,6 +179,17 @@
         </field>
     </record>
 
+    <record id="edit_project_stage_inherit" model="ir.ui.view">
+        <field name="name">edit.project.stage.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project_task_default_stage.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='project_stages']" position="attributes">
+                <attribute name="groups">project.group_project_manager</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record id="view_project_custom" model="ir.ui.view">
         <field name="name">project.project.tree.custom</field>
         <field name="model">project.project</field>
@@ -319,6 +330,7 @@
                         ]"/>
                 <separator/>
                 <filter name="validated" string="Validated" domain="[('validated', '=', True)]" />
+                <filter name="no_validated" string="No Validated" domain="[('validated', '=', False)]"/>
             </xpath>
         </field>
     </record>
@@ -354,6 +366,29 @@
             </xpath>
             <xpath expr="//div[@class='o_project_kanban_boxes']" position="after">
                 <div><span class="badge-pill badge-success float-right" attrs="{'invisible': [('validated', '=', False)]}">Validated</span></div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_kanban_inherit" model="ir.ui.view">
+        <field name="name">view.task.kanban.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="on_create" value="0"/>
+                <attribute name="quick_create_view" value="0"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_project_view_form_inherit" model="ir.ui.view">
+        <field name="name">project.project.view.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="sale_timesheet.project_project_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_make_billable']" position="attributes">
+                <attribute name="groups">project.group_project_manager</attribute>
             </xpath>
         </field>
     </record>

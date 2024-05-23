@@ -20,7 +20,8 @@
         'crm_phone_validation',
         'account_analytic_parent',
         'project_template',
-        'project_status'
+        'project_status',
+        'project_task_default_stage'
     ],
     'data': [
         'security/security.xml',

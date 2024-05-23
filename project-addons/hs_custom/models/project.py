@@ -42,13 +42,13 @@ class ProjectProject(models.Model):
     responsible_id = fields.Many2one("res.users", "Responsable de proyecto")
 
     contract_signature = fields.Binary(
-        string='Contract acceptance', attachment=True
+        string='Contract acceptance', attachment=True,copy=False
     )
     total = fields.Float("Total", digits=(16, 2), compute="_compute_total")
     analytic_parent_id = fields.Many2one('account.analytic.account',
                                          'Account Analytic parent')
 
-    validated = fields.Boolean("Validated", default=False)
+    validated = fields.Boolean("Validated", default=False, copy=False)
 
     @api.multi
     def write(self, values):

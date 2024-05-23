@@ -85,8 +85,8 @@
                     <t t-else="">
                     </t>
                     <div class="text-left" style="font-size:13pt;">
-                        <t t-set="contract" t-value="o.project_ref.split('/') if o and o.project_ref else []"/>
-                        <t t-if="contract">
+                        <t t-set="contract" t-value="o.project_ref.strip().split('Nº') if o and o.project_ref else []"/>
+                        <t t-if="contract and len(contract)>1">
                             <span><span t-esc="contract[0]"/> Nº : <span style="margin-left:10px;color:red;font-size:15pt;" t-esc="contract[1]"/></span>
                         </t>
                     </div>
@@ -302,8 +302,8 @@
                     <br/>
                     <br/>
                     <div class="text-left" style="font-size:13pt;">
-                        <t t-set="contract" t-value="o.project_ref.split('/') if o and o.project_ref else []"/>
-                        <t t-if="contract">
+                        <t t-set="contract" t-value="o.project_ref.strip().split('Nº') if o and o.project_ref else []"/>
+                        <t t-if="contract and len(contract)>1">
                             <span>REFERENCIA Nº : <span style="color:red;font-size:13pt;" t-esc="contract[1]"/></span>
                         </t>
                     </div>
@@ -404,5 +404,6 @@
         <div class="article o_hs_layout">
           <t t-raw="0"/>
         </div>
+
     </template>
 </odoo>
