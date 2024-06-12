@@ -146,6 +146,7 @@
                        <field name="x_condiciones_pagos"/>
                        <field name="x_subtotal"/>
                        <field name="x_subtotalneto" groups="project.group_project_manager"/>
+                       <field name="x_subtotalneto_subcontrata" groups="project.group_project_manager" />
                        <field name="x_iva_percentage"/>
                        <field name="total" />
                        <field name="x_vendedor"/>

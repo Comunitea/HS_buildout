@@ -27,6 +27,7 @@ class ProjectProject(models.Model):
     x_condiciones_pagos = fields.Text("Condiciones de Pago", required=True)
     x_subtotal = fields.Float("Subtotal", digits=(16, 2), required=True)
     x_subtotalneto = fields.Float("Subtotal Neto", digits=(16, 2))
+    x_subtotalneto_subcontrata = fields.Float("Subtotal Neto Subcontrata", digits=(16, 2))
     x_vendedor = fields.Char("Vendedor", readonly=True)
     x_nif = fields.Char("NIF", readonly=True)
     x_estado = fields.Char("Estado", readonly=True)
