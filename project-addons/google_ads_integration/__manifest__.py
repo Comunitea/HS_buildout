@@ -8,9 +8,12 @@
     'category': 'custom',
     'depends': [
         'base',
-        'crm'
+        'crm',
+        'utm'
     ],
-    'data': [],
+    'data': [
+        'views/res_company_views.xml',
+        'data/campaign.xml'],
     'auto_install': False,
     'application': False,
     'installable': True,

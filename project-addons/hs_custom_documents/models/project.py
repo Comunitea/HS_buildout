@@ -159,9 +159,9 @@ class ProjectProject(models.Model):
 
     rcs_observation = fields.Text(string="Observation")
 
-    rcs_signature = fields.Binary( string='RCS acceptance')
+    rcs_signature = fields.Binary( string='RCS acceptance', copy=False)
 
-    rcs_signature_date = fields.Date(string="RCS Signature Date")
+    rcs_signature_date = fields.Date(string="RCS Signature Date", copy=False)
 
     is_rcs = fields.Boolean(string="Is RCS?" , compute='_compute_is_rcs')
 
