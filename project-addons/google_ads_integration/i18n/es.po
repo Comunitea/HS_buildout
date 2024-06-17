@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* google_ads_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-17 09:58+0000\n"
+"PO-Revision-Date: 2024-06-17 09:58+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: google_ads_integration
+#: model:ir.model,name:google_ads_integration.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: google_ads_integration
+#: model_terms:ir.ui.view,arch_db:google_ads_integration.view_company_form_inherit
+msgid "Generate key"
+msgstr "Generar clave"
+
+#. module: google_ads_integration
+#: model:ir.model.fields,field_description:google_ads_integration.field_res_company__google_ads_key
+msgid "Google Ads Key"
+msgstr "Clave de Google Ads"
+
+#. module: google_ads_integration
+#: model_terms:ir.ui.view,arch_db:google_ads_integration.view_company_form_inherit
+msgid "GoogleAds"
+msgstr "GoogleAds"
+
+#. module: google_ads_integration
+#: model:utm.campaign,name:google_ads_integration.google_ads_lead
+msgid "GoogleAds/FORMULARIOS"
+msgstr ""
+

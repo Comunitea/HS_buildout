@@ -1,6 +1,6 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError, AccessError, MissingError, UserError
-from odoo.http import content_disposition, Controller, request, route
+from odoo.http import content_disposition, Controller, request, route, Response
 import json
 
 GOOGLEADS_TO_LEAD = {
@@ -33,7 +33,12 @@ class GoogleAdsController(Controller):
             vals['name'] = vals['contact_name'] if vals.get('contact_name',False) else 'Cupón desde Google Ads'
             campaign = request.env.ref('google_ads_integration.google_ads_lead')
             vals['campaign_id'] = campaign.id
-            lead_id = lead.create(vals)
-            return {'result': 'success', 'data': str(lead_id.id)}
+            vals['user_id'] = False
+            if vals.get('zip',False):
+                zip_id = request.env['res.city.zip'].sudo().search([('name','=',vals.get('zip'))],limit=1)
+                if zip_id:
+                    vals['state_id'] = zip_id.city_id.state_id.id
+            lead.create(vals)
+            return  {'result': 'success'}
         except Exception as e:
             return {'result': 'error', 'error': str(e)}

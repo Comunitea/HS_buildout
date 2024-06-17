@@ -9,7 +9,8 @@
     'depends': [
         'base',
         'crm',
-        'utm'
+        'utm',
+        'hs_custom'
     ],
     'data': [
         'views/res_company_views.xml',
