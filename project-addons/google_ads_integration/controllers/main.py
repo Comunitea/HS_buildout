@@ -33,11 +33,11 @@ class GoogleAdsController(Controller):
             vals['name'] = vals['contact_name'] if vals.get('contact_name',False) else 'Cupón desde Google Ads'
             campaign = request.env.ref('google_ads_integration.google_ads_lead')
             vals['campaign_id'] = campaign.id
-            vals['user_id'] = False
-            if vals.get('zip',False):
-                zip_id = request.env['res.city.zip'].sudo().search([('name','=',vals.get('zip'))],limit=1)
-                if zip_id:
-                    vals['state_id'] = zip_id.city_id.state_id.id
+            # vals['user_id'] = False
+            # if vals.get('zip',False):
+            #     zip_id = request.env['res.city.zip'].sudo().search([('name','=',vals.get('zip'))],limit=1)
+            #     if zip_id:
+            #         vals['state_id'] = zip_id.city_id.state_id.id
             lead.create(vals)
             return  {'result': 'success'}
         except Exception as e:
