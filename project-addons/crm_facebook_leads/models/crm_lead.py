@@ -90,6 +90,10 @@ class CrmLead(models.Model):
 
     def lead_creation(self, lead, form):
         vals = self.prepare_lead_creation(lead, form)
+        if vals.get('zip',False):
+            zip_id = self.env['res.city.zip'].sudo().search([('name','=',vals.get('zip'))],limit=1)
+            if zip_id:
+                vals['state_id'] = zip_id.city_id.state_id.id
         return self.create(vals)
 
     def get_opportunity_name(self, vals, lead, form):
