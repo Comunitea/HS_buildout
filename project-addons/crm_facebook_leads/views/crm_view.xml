@@ -9,6 +9,7 @@
                     <page name="categorization" string="Facebook Info">
                         <group name="facebook_info" string="Facebook Info">
                             <field name="facebook_lead_id"/>
+                            <field name="facebook_lead_ids"/>
                             <field name="facebook_date_create"/>
                             <field name="facebook_page_id"/>
                             <field name="facebook_form_id"/>

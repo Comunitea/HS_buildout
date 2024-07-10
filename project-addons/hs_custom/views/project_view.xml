@@ -341,6 +341,10 @@
         <field name="context">{}</field>
     </record>
 
+    <record model="ir.actions.act_window" id="project.open_view_project_all">
+        <field name="context">{}</field>
+    </record>
+
     <record id="action_view_incidences" model="ir.actions.act_window">
         <field name="name">Incidencias</field>
         <field name="res_model">project.task</field>

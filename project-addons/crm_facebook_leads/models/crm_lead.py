@@ -24,11 +24,26 @@ class CrmLead(models.Model):
         string='Facebook Campaign')
     facebook_date_create = fields.Datetime(readonly=True)
     facebook_is_organic = fields.Boolean(readonly=True)
+    facebook_lead_ids = fields.Char(readonly=True)
 
     _sql_constraints = [
         ('facebook_lead_unique', 'unique(facebook_lead_id)',
          'This Facebook lead already exists!')
     ]
+
+    @api.multi
+    def merge_opportunity(self, user_id=False, team_id=False):
+        facebook_lead_id = False
+        if self.ids:
+            ids = self.mapped('facebook_lead_id')
+            if len(ids) > 0:
+                facebook_lead_id = ids[0]
+                facebook_lead_ids = ', '.join(ids)
+        res = super(CrmLead, self.with_context(merge=True)).\
+            merge_opportunity(user_id=user_id, team_id=team_id)
+        if facebook_lead_id:
+            res['facebook_lead_id'] = facebook_lead_id
+        return res
 
     def get_ad(self, lead):
         ad_obj = self.env['utm.medium']
@@ -179,4 +194,5 @@ class CrmLead(models.Model):
             if r.get('error'):
                 raise UserError(r['error']['message'])
             self.lead_processing(r, form)
+            form.date_retrieval = fields.Datetime.now()
         _logger.info('Fetch of leads has ended')
