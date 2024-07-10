@@ -34,8 +34,9 @@ class CrmLead(models.Model):
     @api.multi
     def merge_opportunity(self, user_id=False, team_id=False):
         facebook_lead_id = False
+        facebook_lead_ids=False
         if self.ids:
-            ids = self.mapped('facebook_lead_id')
+            ids = [opp.facebook_lead_id for opp in self if opp.facebook_lead_id]
             if len(ids) > 0:
                 facebook_lead_id = ids[0]
                 facebook_lead_ids = ', '.join(ids)
@@ -43,6 +44,7 @@ class CrmLead(models.Model):
             merge_opportunity(user_id=user_id, team_id=team_id)
         if facebook_lead_id:
             res['facebook_lead_id'] = facebook_lead_id
+            res['facebook_lead_ids'] = facebook_lead_ids
         return res
 
     def get_ad(self, lead):
