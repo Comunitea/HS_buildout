@@ -18,3 +18,10 @@ class ResPartner(models.Model):
         if not (vals.get('customer', False) or vals.get('supplier', False)) and self._needsRef(vals=vals):
             raise ValidationError(_('You must select the type of partner'))
         return super(ResPartner, self).create(vals)
+
+class ResUsers(models.Model):
+    _inherit = 'res.users'
+
+    @api.model
+    def create(self, vals):
+        return super(ResUsers, self.with_context(default_supplier=True)).create(vals)
