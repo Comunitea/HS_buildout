@@ -32,6 +32,9 @@
             <field name="medium_id" position="attributes">
                 <attribute name="required">True</attribute>
             </field>
+            <field name="tag_ids" position="after">
+                <field name="lost_reason" attrs="{'invisible':[('lost_reason','=',False)]}"/>
+            </field>
         </field>
     </record>
 
@@ -63,6 +66,9 @@
             </field>
             <field name="user_id" position="attributes">
                 <attribute name="required">True</attribute>
+            </field>
+            <field name="lost_reason" position="attributes">
+                <attribute name="attrs">{'invisible':[('lost_reason','=',False)]}</attribute>
             </field>
         </field>
     </record>
