@@ -14,6 +14,7 @@
     ],
     'data': [
         'views/res_company_views.xml',
+        'views/crm_lead_views.xml',
         'data/campaign.xml'],
     'auto_install': False,
     'application': False,
