@@ -2,6 +2,9 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError, AccessError, MissingError, UserError
 from odoo.http import content_disposition, Controller, request, route, Response
 import json
+from odoo.addons.web.controllers.main import CSVExport
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 GOOGLEADS_TO_LEAD = {
     "FULL_NAME":"contact_name",
@@ -11,6 +14,13 @@ GOOGLEADS_TO_LEAD = {
     "STREET_ADDRESS":"street",
     "CITY":"city",
     "COUNTRY":"country_id"}
+
+CONVERSION_NAME = {
+    "invalid": _("Invalid Lead"),
+    "valid": _("Valid Lead"),
+    "qualified": _("Qualified Lead"),
+    "sale": _("Sale")
+}
 
 class GoogleAdsController(Controller):
 
@@ -42,3 +52,34 @@ class GoogleAdsController(Controller):
             return  {'result': 'success'}
         except Exception as e:
             return {'result': 'error', 'error': str(e)}
+
+class CSVExportGoogle(CSVExport):
+
+    @route('/get_google_data/<string:token>', type='http', auth='public', csrf=False, methods=['GET'],cors='*')
+    def get_google_data(self,token, **kwargs):
+        if not token:
+            return Response('Token not found', status=404)
+        company = request.env['res.company'].sudo().search([('google_ads_key','=',token)],limit=1)
+        if not company:
+            return Response('Incorrect token', status=404)
+        CRM = request.env['crm.lead'].sudo()
+        date = fields.Datetime.now() - relativedelta(days=90)
+        leads = CRM.search([('gclid','!=',False),('creation_date','>=',date)])
+        if leads:
+            column_headers = ["Google Click ID","Conversion Name","Conversion Time","Conversion Value","Conversion Currency"]
+            rows = []
+            for lead in leads:
+                rows.append([lead.gclid,
+                             (CONVERSION_NAME[lead.stage_id.conversion_name] if lead.stage_id.conversion_name else 'Valid Lead')+" "+lead.gclid,
+                             lead.creation_date.strftime('%Y-%m-%d %H:%M:%S'),
+                             lead.expected_revenue,
+                             lead.company_currency.name])
+            data = self.from_data(column_headers, rows)
+            return request.make_response(
+                data,
+                headers=[
+                    ('Content-Disposition', content_disposition('google_ads_data.csv')),
+                    ('Content-Type', 'text/csv')
+                ]
+            )
+        return Response('No data found', status=404)
