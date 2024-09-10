@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-17 09:58+0000\n"
-"PO-Revision-Date: 2024-06-17 09:58+0000\n"
+"POT-Creation-Date: 2024-09-10 09:53+0000\n"
+"PO-Revision-Date: 2024-09-10 09:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,24 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: google_ads_integration
+#: model:ir.model,name:google_ads_integration.model_crm_stage
+msgid "CRM Stages"
+msgstr "Etapas"
+
+#. module: google_ads_integration
 #: model:ir.model,name:google_ads_integration.model_res_company
 msgid "Companies"
 msgstr "Compañías"
+
+#. module: google_ads_integration
+#: model:ir.model.fields,field_description:google_ads_integration.field_crm_stage__conversion_name
+msgid "Conversion Name"
+msgstr "Nombre de Conversión"
+
+#. module: google_ads_integration
+#: model:ir.model.fields,field_description:google_ads_integration.field_crm_lead__gclid
+msgid "GCLID"
+msgstr ""
 
 #. module: google_ads_integration
 #: model_terms:ir.ui.view,arch_db:google_ads_integration.view_company_form_inherit
@@ -33,10 +48,60 @@ msgstr "Clave de Google Ads"
 #. module: google_ads_integration
 #: model_terms:ir.ui.view,arch_db:google_ads_integration.view_company_form_inherit
 msgid "GoogleAds"
-msgstr "GoogleAds"
+msgstr ""
 
 #. module: google_ads_integration
 #: model:utm.campaign,name:google_ads_integration.google_ads_lead
 msgid "GoogleAds/FORMULARIOS"
-msgstr ""
+msgstr "GoogleAds/formularios"
+
+#. module: google_ads_integration
+#: selection:crm.stage,conversion_name:0
+msgid "Invalid Lead"
+msgstr "Lead Inválido"
+
+#. module: google_ads_integration
+#: code:addons/google_ads_integration/controllers/main.py:22
+#, python-format
+msgid "Invalid Lead (GCLID)"
+msgstr "Lead Inválido (GCLID)"
+
+#. module: google_ads_integration
+#: model:ir.model,name:google_ads_integration.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: google_ads_integration
+#: selection:crm.stage,conversion_name:0
+msgid "Qualified Lead"
+msgstr "Lead Cualificado"
+
+#. module: google_ads_integration
+#: code:addons/google_ads_integration/controllers/main.py:24
+#, python-format
+msgid "Qualified Lead (GCLID)"
+msgstr "Lead Cualificado (GCLID)"
+
+#. module: google_ads_integration
+#: selection:crm.stage,conversion_name:0
+msgid "Sale"
+msgstr "Venta"
+
+#. module: google_ads_integration
+#: code:addons/google_ads_integration/controllers/main.py:25
+#, python-format
+msgid "Sale (GCLID)"
+msgstr "Venta (GCLID)"
+
+#. module: google_ads_integration
+#: selection:crm.stage,conversion_name:0
+msgid "Valid Lead"
+msgstr "Lead Válido"
+
+#. module: google_ads_integration
+#: code:addons/google_ads_integration/controllers/main.py:23
+#: code:addons/google_ads_integration/controllers/main.py:79
+#, python-format
+msgid "Valid Lead (GCLID)"
+msgstr "Lead Válido (GCLID)"
 

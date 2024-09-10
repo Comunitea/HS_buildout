@@ -6,20 +6,23 @@ from odoo.addons.web.controllers.main import CSVExport
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
+import io
+import csv
+
 GOOGLEADS_TO_LEAD = {
-    "FULL_NAME":"contact_name",
-    "EMAIL":"email_from",
-    "PHONE_NUMBER":"phone",
-    "POSTAL_CODE":"zip",
-    "STREET_ADDRESS":"street",
-    "CITY":"city",
-    "COUNTRY":"country_id"}
+    'FULL_NAME':'contact_name',
+    'EMAIL':'email_from',
+    'PHONE_NUMBER':'phone',
+    'POSTAL_CODE':'zip',
+    'STREET_ADDRESS':'street',
+    'CITY':'city',
+    'COUNTRY':'country_id'}
 
 CONVERSION_NAME = {
-    "invalid": _("Invalid Lead"),
-    "valid": _("Valid Lead"),
-    "qualified": _("Qualified Lead"),
-    "sale": _("Sale")
+    'invalid': _('Invalid Lead (GCLID)'),
+    'valid': _('Valid Lead (GCLID)'),
+    'qualified': _('Qualified Lead (GCLID)'),
+    'sale': _('Sale (GCLID)')
 }
 
 class GoogleAdsController(Controller):
@@ -64,19 +67,25 @@ class CSVExportGoogle(CSVExport):
             return Response('Incorrect token', status=404)
         CRM = request.env['crm.lead'].sudo()
         date = fields.Datetime.now() - relativedelta(days=90)
-        leads = CRM.search([('gclid','!=',False),('creation_date','>=',date)])
+        leads = CRM.search([('gclid','!=',""),('creation_date','>=',date)])
         if leads:
-            column_headers = ["Google Click ID","Conversion Name","Conversion Time","Conversion Value","Conversion Currency"]
+            first_row =['Parameters:TimeZone=+0100']
+            column_headers = ['Google Click ID','Conversion Name','Conversion Time','Conversion Value','Conversion Currency']
             rows = []
+            rows.append(first_row)
+            rows.append(column_headers)
             for lead in leads:
                 rows.append([lead.gclid,
-                             (CONVERSION_NAME[lead.stage_id.conversion_name] if lead.stage_id.conversion_name else 'Valid Lead')+" "+lead.gclid,
-                             lead.creation_date.strftime('%Y-%m-%d %H:%M:%S'),
-                             lead.expected_revenue,
+                             (CONVERSION_NAME[lead.stage_id.conversion_name] if lead.stage_id.conversion_name else _('Valid Lead (GCLID)')),
+                             lead.creation_date.strftime('%Y-%m-%d %H:%M'),
+                             None,
                              lead.company_currency.name])
-            data = self.from_data(column_headers, rows)
+            output = io.StringIO()
+            writer = csv.writer(output, quoting=csv.QUOTE_NONE)
+            writer.writerows(rows)
+            csv_data = output.getvalue()
             return request.make_response(
-                data,
+                csv_data,
                 headers=[
                     ('Content-Disposition', content_disposition('google_ads_data.csv')),
                     ('Content-Type', 'text/csv')
