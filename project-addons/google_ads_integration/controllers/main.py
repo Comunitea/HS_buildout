@@ -69,7 +69,7 @@ class CSVExportGoogle(CSVExport):
         date = fields.Datetime.now() - relativedelta(days=90)
         leads = CRM.search([('gclid','!=',""),('creation_date','>=',date)])
         if leads:
-            first_row =['Parameters:TimeZone=+0100']
+            first_row =['Parameters:TimeZone=+0000']
             column_headers = ['Google Click ID','Conversion Name','Conversion Time','Conversion Value','Conversion Currency']
             rows = []
             rows.append(first_row)

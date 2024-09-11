@@ -64,7 +64,7 @@ msgstr "Lead Inválido"
 #: code:addons/google_ads_integration/controllers/main.py:22
 #, python-format
 msgid "Invalid Lead (GCLID)"
-msgstr "Lead Inválido (GCLID)"
+msgstr "Lead Invalido (GCLID)"
 
 #. module: google_ads_integration
 #: model:ir.model,name:google_ads_integration.model_crm_lead
@@ -96,12 +96,12 @@ msgstr "Venta (GCLID)"
 #. module: google_ads_integration
 #: selection:crm.stage,conversion_name:0
 msgid "Valid Lead"
-msgstr "Lead Válido"
+msgstr "Lead Valido"
 
 #. module: google_ads_integration
 #: code:addons/google_ads_integration/controllers/main.py:23
 #: code:addons/google_ads_integration/controllers/main.py:79
 #, python-format
 msgid "Valid Lead (GCLID)"
-msgstr "Lead Válido (GCLID)"
+msgstr "Lead Valido (GCLID)"
 
