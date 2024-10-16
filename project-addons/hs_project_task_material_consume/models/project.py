@@ -29,6 +29,17 @@ class ProjectTask(models.Model):
                 elif task.consume_material and task.stock_move_ids and task.stock_state == 'assigned':
                     task.action_done()
         return res
+    
+    @api.multi
+    @api.depends('stock_move_ids.state')
+    def _compute_stock_state(self):
+        super(ProjectTask, self)._compute_stock_state()
+        for task in self:
+            if task.stock_move_ids:
+                states = task.mapped("stock_move_ids.state")
+                if any(state in states for state in ("partially_available", "waiting")):
+                    task.stock_state = 'confirmed'
+
 
     @api.onchange('stage_id')
     def _onchange_stage_id(self):
