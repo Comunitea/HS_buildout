@@ -95,7 +95,7 @@ class CrmLead(models.Model):
     @api.model
     def create(self, vals):
         res = super(CrmLead,self.with_context(merge=True)).create(vals)
-        if res.phone and res.user_id.id != 290:
+        if res.phone:
             res = res.create_opportunity()
         return res
 
